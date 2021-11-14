@@ -1,0 +1,32 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+
+.logo-box,
+.logo-box a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.list li {
+  margin-left: 3rem;
+}
+
+.list a {
+  text-decoration: none;
+  color: black;
+}
+
+.list a.active {
+  border-bottom: 1px solid black;
+}
