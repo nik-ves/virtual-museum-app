@@ -1,19 +1,26 @@
+import { useState } from "react";
 import classes from "./LoginForm.module.css";
-
-import useInput from "../../../hooks/use-input";
+import { AuthContext } from "../../context/auth-context";
+import { useContext } from "react";
 
 const LoginForm = () => {
-  const { value: email, valueChangeHandler: emailChangeHandler } = useInput();
-  const { value: password, valueChangeHandler: passwordChangeHandler } =
-    useInput();
+  const authCtx = useContext(AuthContext);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const emailChangeHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const passwordChangeHandler = (event) => {
+    setPassword(event.target.value);
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    console.log({
-      email,
-      password,
-    });
+    authCtx.authUser(email, password);
   };
 
   return (

@@ -9,12 +9,17 @@ const MainNavigation = () => {
       <Container>
         <div className={classes.content}>
           <div className={classes["logo-box"]}>
-            <NavLink to='/' >
+            <NavLink to="/">
               <h1>React Project</h1>
             </NavLink>
           </div>
 
           <ul className={classes.list}>
+            <li>
+              <NavLink to="/profile" activeClassName={classes.active}>
+                Profile
+              </NavLink>
+            </li>
             <li>
               <NavLink to="/auth/login" activeClassName={classes.active}>
                 Login

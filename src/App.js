@@ -2,9 +2,10 @@ import { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import MainNavigation from "./components/layout/MainNavigation";
-import Home from "./components/pages/Home";
-import LoginForm from "./components/pages/Auth/LoginForm";
-import SignupForm from "./components/pages/Auth/SignupForm";
+import Home from "./pages/Home";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -16,12 +17,16 @@ function App() {
           <Home />
         </Route>
 
+        <Route path="/profile">
+          <Profile />
+        </Route>
+
         <Route path="/auth/login">
-          <LoginForm />
+          <Login />
         </Route>
 
         <Route path="/auth/signup">
-          <SignupForm />
+          <Signup />
         </Route>
       </Switch>
     </Fragment>
