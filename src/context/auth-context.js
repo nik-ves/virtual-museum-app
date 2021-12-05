@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 export const AuthContext = React.createContext({
+  currentUser: "",
+  isLoggedIn: "",
   createUser: () => {},
   authUser: () => {},
-  currentUser: "",
-  // isLoggedIn: "",
+  logoutUser: () => {},
 });
 
 const AuthContextProvider = (props) => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
   const [usersList, setUsersList] = useState([
     {
       id: 1,
@@ -26,6 +27,8 @@ const AuthContextProvider = (props) => {
     },
   ]);
 
+  const isLoggedIn = currentUser;
+
   const createUserHandler = (user) => {
     setUsersList((prevState) => [...prevState, user]);
   };
@@ -34,14 +37,19 @@ const AuthContextProvider = (props) => {
     let user = usersList.find((user) => {
       return email === user.email && password === user.password;
     });
-
     setCurrentUser(user);
   };
 
+  const logoutUserHandler = () => {
+    setCurrentUser(null);
+  };
+
   const providerValue = {
+    currentUser,
+    isLoggedIn,
     createUser: createUserHandler,
     authUser: authUserHandler,
-    currentUser,
+    logoutUser: logoutUserHandler,
   };
 
   return (

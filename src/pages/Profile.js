@@ -6,10 +6,10 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>{authCtx.currentUser.firstName}</h1>
-      <h1>{authCtx.currentUser.lastName}</h1>
-      <h1>{authCtx.currentUser.email}</h1>
-      <h1>{authCtx.currentUser.password}</h1>
+      <h1>{authCtx.currentUser?.firstName}</h1>
+      <h1>{authCtx.currentUser?.lastName}</h1>
+      <h1>{authCtx.currentUser?.email}</h1>
+      <h1>{authCtx.currentUser?.password}</h1>
     </div>
   );
 };

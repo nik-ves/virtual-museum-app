@@ -24,6 +24,7 @@
 
 .list li {
   margin-left: 3rem;
+  cursor: pointer;
 }
 
 .list a {

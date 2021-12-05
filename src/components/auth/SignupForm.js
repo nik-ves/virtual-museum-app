@@ -2,82 +2,137 @@ import { useState } from "react";
 import { AuthContext } from "../../context/auth-context";
 import { useContext } from "react";
 
-import classes from "./SignupForm.module.css";
+import useInput from "../../hooks/use-input";
 
 const SignupForm = () => {
+  const [signupMessage, setSignupMessage] = useState("");
   const authCtx = useContext(AuthContext);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    value: firstNameValue,
+    hasError: firstNameHasError,
+    valueChangeHandler: firstNameChangeHandler,
+    valueBlurHandler: firstNameBlurHandler,
+    resetValue: firstNameValueReset,
+  } = useInput((value) => value.trim() !== "");
 
-  const firstNameChangeHandler = (event) => {
-    setFirstName(event.target.value);
-  };
+  const {
+    value: lastNameValue,
+    hasError: lastNameHasError,
+    valueChangeHandler: lastNameChangeHandler,
+    valueBlurHandler: lastNameBlurHandler,
+    resetValue: lastNameValueReset,
+  } = useInput((value) => value.trim() !== "");
 
-  const lastNameChangeHandler = (event) => {
-    setLastName(event.target.value);
-  };
+  const {
+    value: emailValue,
+    hasError: emailHasError,
+    valueChangeHandler: emailChangeHandler,
+    valueBlurHandler: emailBlurHandler,
+    resetValue: emailValueReset,
+  } = useInput((value) => value.includes("@"));
 
-  const emailChangeHandler = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const passwordChangeHandler = (event) => {
-    setPassword(event.target.value);
-  };
+  const {
+    value: passwordValue,
+    hasError: passwordHasError,
+    valueChangeHandler: passwordChangeHandler,
+    valueBlurHandler: passwordBlurHandler,
+    resetValue: passwordValueReset,
+  } = useInput((value) => value.length > 5);
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     authCtx.createUser({
-      id: Math.random(),
-      firstName,
-      lastName,
-      email,
-      password,
+      id: Math.trunc(Math.random() * 1000),
+      firstName: firstNameValue,
+      lastName: lastNameValue,
+      email: emailValue,
+      password: passwordValue,
     });
+
+    setSignupMessage("Signup successful!");
+
+    firstNameValueReset();
+    lastNameValueReset();
+    emailValueReset();
+    passwordValueReset();
   };
 
+  const formClasses = (value) => {
+    let formClass;
+
+    if (value) {
+      formClass = "form-control invalid";
+    } else {
+      formClass = "form-control";
+    }
+
+    return formClass;
+  };
+
+  const firstNameClasses = formClasses(firstNameHasError);
+  const lastNameClasses = formClasses(firstNameHasError);
+  const emailClasses = formClasses(firstNameHasError);
+  const passwordClasses = formClasses(firstNameHasError);
+
   return (
-    <div className={classes["form-content"]}>
-      <form onSubmit={submitHandler} className={classes.form}>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={firstNameChangeHandler}
-        />
+    <section className="form-content">
+      <form onSubmit={submitHandler}>
+        <div className={firstNameClasses}>
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            value={firstNameValue}
+            onChange={firstNameChangeHandler}
+            onBlur={firstNameBlurHandler}
+          />
+        </div>
+        {firstNameHasError && <p>First name field must not be empty!</p>}
 
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={lastNameChangeHandler}
-        />
+        <div className={lastNameClasses}>
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            value={lastNameValue}
+            onChange={lastNameChangeHandler}
+            onBlur={lastNameBlurHandler}
+          />
+        </div>
+        {lastNameHasError && <p>Last name field must not be empty!</p>}
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={emailChangeHandler}
-        />
+        <div className={emailClasses}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={emailValue}
+            onChange={emailChangeHandler}
+            onBlur={emailBlurHandler}
+          />
+        </div>
+        {emailHasError && <p>Enter a valid email address!</p>}
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={passwordChangeHandler}
-        />
+        <div className={passwordClasses}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={passwordValue}
+            onChange={passwordChangeHandler}
+            onBlur={passwordBlurHandler}
+          />
+        </div>
+        {passwordHasError && <p>Password must be longer than 5 characters!</p>}
 
-        <button type="submit">Submit</button>
+        <div className="form-actions">
+          <button type="submit">Sign Up</button>
+        </div>
+        {<p>{signupMessage}</p>}
       </form>
-    </div>
+    </section>
   );
 };
 

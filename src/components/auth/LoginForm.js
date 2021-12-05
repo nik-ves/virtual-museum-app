@@ -1,50 +1,77 @@
-import { useState } from "react";
-import classes from "./LoginForm.module.css";
+import useInput from "../../hooks/use-input";
+
 import { AuthContext } from "../../context/auth-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { useHistory } from "react-router";
 
 const LoginForm = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const authCtx = useContext(AuthContext);
+  const history = useHistory();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    value: emailValue,
+    hasError: emailHasError,
+    valueChangeHandler: emailChangeHandler,
+    valueBlurHandler: emailBlurHandler,
+  } = useInput((value) => value.includes("@"));
 
-  const emailChangeHandler = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const passwordChangeHandler = (event) => {
-    setPassword(event.target.value);
-  };
+  const {
+    value: passwordValue,
+    hasError: passwordHasError,
+    valueChangeHandler: passwordChangeHandler,
+    valueBlurHandler: passwordBlurHandler,
+  } = useInput((value) => value.length > 5);
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    authCtx.authUser(email, password);
+    authCtx.authUser(emailValue, passwordValue);
+
+    setErrorMessage("Incorrect login parameters!");
   };
 
+  if (authCtx.isLoggedIn) {
+    history.replace("/profile");
+  }
+
+  const emailClasses = emailHasError ? "form-control invalid" : "form-control";
+
+  const passwordClasses = passwordHasError
+    ? "form-control invalid"
+    : "form-control";
+
   return (
-    <div className={classes["form-content"]}>
-      <form onSubmit={submitHandler} className={classes.form}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={emailChangeHandler}
-        />
+    <section className="form-content">
+      <form onSubmit={submitHandler}>
+        <div className={emailClasses}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            onChange={emailChangeHandler}
+            onBlur={emailBlurHandler}
+          />
+        </div>
+        {emailHasError && <p>Enter a valid email address!</p>}
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={passwordChangeHandler}
-        />
+        <div className={passwordClasses}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            onChange={passwordChangeHandler}
+            onBlur={passwordBlurHandler}
+          />
+        </div>
+        {passwordHasError && <p>Password must be longer than 5 characters!</p>}
 
-        <button type="submit">Submit</button>
+        <div className="form-actions">
+          <button type="submit">Log In</button>
+        </div>
+        {<p>{errorMessage}</p>}
       </form>
-    </div>
+    </section>
   );
 };
 
