@@ -22,14 +22,14 @@ function App() {
 
         <Route path="/profile">
           {authCtx.isLoggedIn && <Profile />}
-          {!authCtx.isLoggedIn && <Redirect to="/auth/login" />}
+          {!authCtx.isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
-        <Route path="/auth/login">
+        <Route path="/sign-in">
           <SignIn />
         </Route>
 
-        <Route path="/auth/signup">
+        <Route path="/sign-up">
           <SignUp />
         </Route>
       </Switch>
