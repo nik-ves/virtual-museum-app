@@ -29,7 +29,7 @@ const MainNavigation = () => {
             {!authCtx.isLoggedIn && (
               <li>
                 <NavLink to="/auth/login" activeClassName={classes.active}>
-                  Login
+                  Sign In
                 </NavLink>
               </li>
             )}

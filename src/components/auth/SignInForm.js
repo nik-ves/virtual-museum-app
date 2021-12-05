@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/auth-context";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 
-const LoginForm = () => {
+const SignInForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const authCtx = useContext(AuthContext);
   const history = useHistory();
@@ -44,6 +44,8 @@ const LoginForm = () => {
   return (
     <section className="form-content">
       <form onSubmit={submitHandler}>
+        <h1>Sign In</h1>
+
         <div className={emailClasses}>
           <label htmlFor="email">Email</label>
           <input
@@ -67,7 +69,7 @@ const LoginForm = () => {
         {passwordHasError && <p>Password must be longer than 5 characters!</p>}
 
         <div className="form-actions">
-          <button type="submit">Log In</button>
+          <button type="submit">Sign In</button>
         </div>
         {<p>{errorMessage}</p>}
       </form>
@@ -75,4 +77,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignInForm;

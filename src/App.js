@@ -4,8 +4,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthContext } from "./context/auth-context";
 import MainNavigation from "./components/layout/MainNavigation";
 import Home from "./pages/Home";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
+import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
 
 function App() {
@@ -26,11 +26,11 @@ function App() {
         </Route>
 
         <Route path="/auth/login">
-          <Login />
+          <SignIn />
         </Route>
 
         <Route path="/auth/signup">
-          <Signup />
+          <SignUp />
         </Route>
       </Switch>
     </Fragment>

@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 import useInput from "../../hooks/use-input";
 
-const SignupForm = () => {
+const SignUpForm = () => {
   const [signupMessage, setSignupMessage] = useState("");
   const authCtx = useContext(AuthContext);
 
@@ -79,6 +79,8 @@ const SignupForm = () => {
   return (
     <section className="form-content">
       <form onSubmit={submitHandler}>
+        <h1>Sign Up</h1>
+
         <div className={firstNameClasses}>
           <label htmlFor="firstName">First Name</label>
           <input
@@ -136,4 +138,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default SignUpForm;

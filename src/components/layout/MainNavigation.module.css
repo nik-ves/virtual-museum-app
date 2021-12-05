@@ -1,5 +1,5 @@
 .header {
-  background-color: lightblue;
+  background-color: #6f0000;
 }
 
 .content {
@@ -12,7 +12,7 @@
 .logo-box a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .list {
@@ -25,13 +25,14 @@
 .list li {
   margin-left: 3rem;
   cursor: pointer;
+  color: white;
 }
 
 .list a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .list a.active {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
 }
