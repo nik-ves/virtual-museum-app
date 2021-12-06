@@ -10,6 +10,8 @@ const Profile = () => {
     <Container>
       <h1>{authCtx.currentUser?.firstName}</h1>
       <h1>{authCtx.currentUser?.lastName}</h1>
+      <h1>{authCtx.currentUser?.contactNumber}</h1>
+      <h1>{authCtx.currentUser?.currentAddress}</h1>
       <h1>{authCtx.currentUser?.email}</h1>
       <h1>{authCtx.currentUser?.password}</h1>
     </Container>

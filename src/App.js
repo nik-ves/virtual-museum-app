@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
+import Footer from "./components/layout/Footer";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -26,13 +27,17 @@ function App() {
         </Route>
 
         <Route path="/sign-in">
-          <SignIn />
+          {authCtx.isLoggedIn && <Redirect to="/profile" />}
+          {!authCtx.isLoggedIn && <SignIn />}
         </Route>
 
         <Route path="/sign-up">
-          <SignUp />
+          {authCtx.isLoggedIn && <Redirect to="/profile" />}
+          {!authCtx.isLoggedIn && <SignUp />}
         </Route>
       </Switch>
+
+      <Footer />
     </Fragment>
   );
 }

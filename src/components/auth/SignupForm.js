@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/auth-context";
 import { useContext } from "react";
 
 import useInput from "../../hooks/use-input";
+import { Link } from "react-router-dom";
 
 const SignUpForm = () => {
   const [signupMessage, setSignupMessage] = useState("");
@@ -25,6 +26,22 @@ const SignUpForm = () => {
   } = useInput((value) => value.trim() !== "");
 
   const {
+    value: contactNumberValue,
+    hasError: contactNumberHasError,
+    valueChangeHandler: contactNumberChangeHandler,
+    valueBlurHandler: contactNumberBlurHandler,
+    resetValue: contactNumberValueReset,
+  } = useInput((value) => value.length >= 8);
+
+  const {
+    value: addressValue,
+    hasError: addressHasError,
+    valueChangeHandler: addressChangeHandler,
+    valueBlurHandler: addressBlurHandler,
+    resetValue: addressValueReset,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
     value: emailValue,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
@@ -40,21 +57,11 @@ const SignUpForm = () => {
     resetValue: passwordValueReset,
   } = useInput((value) => value.length > 5);
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    authCtx.createUser({
-      id: Math.trunc(Math.random() * 1000),
-      firstName: firstNameValue,
-      lastName: lastNameValue,
-      email: emailValue,
-      password: passwordValue,
-    });
-
-    setSignupMessage("Signup successful!");
-
+  const resetValues = () => {
     firstNameValueReset();
     lastNameValueReset();
+    contactNumberValueReset();
+    addressValueReset();
     emailValueReset();
     passwordValueReset();
   };
@@ -69,6 +76,24 @@ const SignUpForm = () => {
     }
 
     return formClass;
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    authCtx.createUser({
+      id: Math.trunc(Math.random() * 1000),
+      firstName: firstNameValue,
+      lastName: lastNameValue,
+      contactNumber: contactNumberValue,
+      currentAddress: addressValue,
+      email: emailValue,
+      password: passwordValue,
+    });
+
+    setSignupMessage("Signup successful!");
+
+    resetValues();
   };
 
   const firstNameClasses = formClasses(firstNameHasError);
@@ -105,6 +130,32 @@ const SignUpForm = () => {
         </div>
         {lastNameHasError && <p>Last name field must not be empty!</p>}
 
+        <div className={lastNameClasses}>
+          <label htmlFor="contactNumber">Contact Number</label>
+          <input
+            type="number"
+            id="contactNumber"
+            value={contactNumberValue}
+            onChange={contactNumberChangeHandler}
+            onBlur={contactNumberBlurHandler}
+          />
+        </div>
+        {contactNumberHasError && (
+          <p>Contact number must be at least 8 characters long!</p>
+        )}
+
+        <div className={lastNameClasses}>
+          <label htmlFor="address">Current Address</label>
+          <input
+            type="text"
+            id="address"
+            value={addressValue}
+            onChange={addressChangeHandler}
+            onBlur={addressBlurHandler}
+          />
+        </div>
+        {addressHasError && <p>Address field must not be empty!</p>}
+
         <div className={emailClasses}>
           <label htmlFor="email">Email</label>
           <input
@@ -133,6 +184,9 @@ const SignUpForm = () => {
           <button type="submit">Sign Up</button>
         </div>
         {<p>{signupMessage}</p>}
+        <p>
+          Already have an account? Log in <Link to="/sign-in">here</Link>.
+        </p>
       </form>
     </section>
   );

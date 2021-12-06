@@ -14,11 +14,16 @@ const MainNavigation = () => {
         <div className={classes.content}>
           <div className={classes["logo-box"]}>
             <NavLink to="/">
-              <h1>React Project</h1>
+              <h1>Virtual Museum</h1>
             </NavLink>
           </div>
 
           <ul className={classes.list}>
+            <li>
+              <NavLink to="/" exact activeClassName={classes.active}>
+                Home
+              </NavLink>
+            </li>
             {authCtx.isLoggedIn && (
               <li>
                 <NavLink to="/profile" activeClassName={classes.active}>
@@ -30,13 +35,6 @@ const MainNavigation = () => {
               <li>
                 <NavLink to="/sign-in" activeClassName={classes.active}>
                   Sign In
-                </NavLink>
-              </li>
-            )}
-            {!authCtx.isLoggedIn && (
-              <li>
-                <NavLink to="/sign-up" activeClassName={classes.active}>
-                  Sign Up
                 </NavLink>
               </li>
             )}

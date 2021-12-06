@@ -3,6 +3,7 @@ import useInput from "../../hooks/use-input";
 import { AuthContext } from "../../context/auth-context";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const SignInForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -72,6 +73,9 @@ const SignInForm = () => {
           <button type="submit">Sign In</button>
         </div>
         {<p>{errorMessage}</p>}
+        <p>
+          No account? Create account <Link to="/sign-up">here</Link>.
+        </p>
       </form>
     </section>
   );
