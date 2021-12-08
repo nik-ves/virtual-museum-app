@@ -1,0 +1,38 @@
+.user-profile {
+  max-width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem auto;
+  padding: 2rem 4rem;
+  border: 1px solid black;
+  flex-direction: column;
+}
+
+.user-profile ul {
+  list-style-type: none;
+  font-size: 1.8rem;
+}
+
+.user-profile h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.user-profile li {
+  display: flex;
+  justify-content: space-between;
+  width: 30rem;
+  margin-bottom: 1rem;
+}
+
+.user-property,
+.user-info {
+  display: block;
+}
+
+.user-profile button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+}

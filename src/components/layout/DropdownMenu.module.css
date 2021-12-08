@@ -1,0 +1,41 @@
+.dropdown {
+  position: absolute;
+  top: 6rem;
+  transform: translateX(-35%);
+  width: 15rem;
+  margin-left: 0;
+  border-radius: 4px;
+
+  background-color: var(--main-bg-color);
+}
+
+.dropdown li {
+  margin-left: 0;
+}
+
+.dropdown-item {
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-item:hover {
+  background-color: black;
+}
+
+.dropdown a {
+  color: white;
+}
+
+.dropdown a.active {
+  border-bottom: 3px solid white;
+}
+
+.dropdown-item button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
+}

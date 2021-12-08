@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export const AuthContext = React.createContext({
   currentUser: "",
   isLoggedIn: "",
+  users: [],
   createUser: () => {},
   authUser: () => {},
   logoutUser: () => {},
@@ -51,6 +52,7 @@ const AuthContextProvider = (props) => {
   const providerValue = {
     currentUser,
     isLoggedIn,
+    users: usersList,
     createUser: createUserHandler,
     authUser: authUserHandler,
     logoutUser: logoutUserHandler,

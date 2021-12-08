@@ -1,11 +1,11 @@
 .header {
-  background-color: #6f0000;
+  background-color: var(--main-bg-color);
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .logo-box,
@@ -18,13 +18,12 @@
 .list {
   list-style-type: none;
   display: flex;
-  font-size: 2rem;
+  font-size: 1.7rem;
   align-items: center;
 }
 
 .list li {
   margin-left: 3rem;
-  cursor: pointer;
   color: white;
 }
 

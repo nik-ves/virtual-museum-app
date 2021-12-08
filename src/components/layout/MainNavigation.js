@@ -1,12 +1,18 @@
 import { NavLink } from "react-router-dom";
-import Container from "../UI/Container";
-import { AuthContext } from "../../context/auth-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import classes from "./MainNavigation.module.css";
+import Container from "../UI/Container";
+import { AuthContext } from "../../context/auth-context";
+import DropdownMenu from "./DropdownMenu";
 
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const isOpenHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header className={classes.header}>
@@ -24,21 +30,26 @@ const MainNavigation = () => {
                 Home
               </NavLink>
             </li>
-            {authCtx.isLoggedIn && (
-              <li>
-                <NavLink to="/profile" activeClassName={classes.active}>
-                  Profile
-                </NavLink>
-              </li>
-            )}
             {!authCtx.isLoggedIn && (
               <li>
                 <NavLink to="/sign-in" activeClassName={classes.active}>
-                  Sign In
+                  Account
                 </NavLink>
               </li>
             )}
-            {authCtx.isLoggedIn && <li onClick={authCtx.logoutUser}>Logout</li>}
+            {authCtx.isLoggedIn && (
+              <li>
+                <button
+                  className="btn-dropdown"
+                  href="#"
+                  onClick={isOpenHandler}
+                >
+                  Drop
+                </button>
+
+                {isOpen && <DropdownMenu isOpen={isOpenHandler} />}
+              </li>
+            )}
           </ul>
         </div>
       </Container>

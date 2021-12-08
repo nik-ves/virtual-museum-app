@@ -1,20 +1,20 @@
-import { AuthContext } from "../context/auth-context";
-import { useContext } from "react";
-
-import Container from "../components/UI/Container";
+import ProfileDetails from "../components/profile/ProfileDetails";
+import EditProfile from "../components/profile/EditProfile";
+import { Fragment } from "react";
+import { useState } from "react/cjs/react.development";
 
 const Profile = () => {
-  const authCtx = useContext(AuthContext);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const editingChangeHandler = () => {
+    setIsEditing(!isEditing);
+  };
 
   return (
-    <Container>
-      <h1>{authCtx.currentUser?.firstName}</h1>
-      <h1>{authCtx.currentUser?.lastName}</h1>
-      <h1>{authCtx.currentUser?.contactNumber}</h1>
-      <h1>{authCtx.currentUser?.currentAddress}</h1>
-      <h1>{authCtx.currentUser?.email}</h1>
-      <h1>{authCtx.currentUser?.password}</h1>
-    </Container>
+    <Fragment>
+      {!isEditing && <ProfileDetails isEditing={editingChangeHandler} />}
+      {isEditing && <EditProfile isEditing={editingChangeHandler} />}
+    </Fragment>
   );
 };
 

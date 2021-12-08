@@ -55,8 +55,8 @@ const SignInForm = () => {
             onChange={emailChangeHandler}
             onBlur={emailBlurHandler}
           />
+          {emailHasError && <p>Enter a valid email address!</p>}
         </div>
-        {emailHasError && <p>Enter a valid email address!</p>}
 
         <div className={passwordClasses}>
           <label htmlFor="password">Password</label>
@@ -66,14 +66,16 @@ const SignInForm = () => {
             onChange={passwordChangeHandler}
             onBlur={passwordBlurHandler}
           />
+          {passwordHasError && (
+            <p>Password must be longer than 5 characters!</p>
+          )}
         </div>
-        {passwordHasError && <p>Password must be longer than 5 characters!</p>}
 
         <div className="form-actions">
           <button type="submit">Sign In</button>
         </div>
         {<p>{errorMessage}</p>}
-        <p>
+        <p className="form-question">
           No account? Create account <Link to="/sign-up">here</Link>.
         </p>
       </form>

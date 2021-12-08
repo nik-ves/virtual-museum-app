@@ -13,6 +13,33 @@ const SettingsContextProvider = (props) => {
       timeToSee: "",
       comments: [],
     },
+    {
+      id: 2,
+      type: "History",
+      typeOfExhibits: "",
+      numberOfExhibits: "",
+      price: "",
+      timeToSee: "",
+      comments: [],
+    },
+    {
+      id: 3,
+      type: "Modern Art",
+      typeOfExhibits: "",
+      numberOfExhibits: "",
+      price: "",
+      timeToSee: "",
+      comments: [],
+    },
+    {
+      id: 3,
+      type: "Ancient Greece",
+      typeOfExhibits: "",
+      numberOfExhibits: "",
+      price: "",
+      timeToSee: "",
+      comments: [],
+    },
   ]);
 
   return <SettingsContext.Provider>{props.children}</SettingsContext.Provider>;
