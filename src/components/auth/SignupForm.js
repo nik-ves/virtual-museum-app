@@ -102,7 +102,7 @@ const SignUpForm = () => {
   const passwordClasses = formClasses(firstNameHasError);
 
   return (
-    <section className="form-content">
+    <section className="form-content form-signup">
       <form onSubmit={submitHandler} className="form">
         <h1 className="test">Sign Up</h1>
 

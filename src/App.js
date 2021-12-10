@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
+import Search from "./pages/Search";
 import Footer from "./components/layout/Footer";
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <Home />
+        </Route>
+
+        <Route path="/search">
+          <Search />
         </Route>
 
         <Route path="/profile">

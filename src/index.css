@@ -2,7 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-  --main-bg-color: #6f0000;
+  /* --main-bg-color: #26867c;
+  --secondary-bg-color: #195953;
+  --border-color: #40e0d0; */
+  /* --main-bg-color: #545454; */
+
+  /* --main-bg-color: rgb(43, 43, 43); */
+  --main-bg-color: #2b2b2b;
+  --secondary-bg-color: #151515;
+  --border-color: #40e0d0;
+  --color-text: #dc843a;
+  /* rgb(43, 43, 43) */
 }
 
 * {
@@ -34,6 +44,7 @@ button {
 .container {
   max-width: 120rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .btn-dropdown {
@@ -46,10 +57,11 @@ button {
 
 /* =========================== */
 
+/* =========================== */
+
 .form {
   display: flex;
   flex-wrap: wrap;
-  width: 73rem;
   justify-content: center;
 }
 
@@ -60,20 +72,26 @@ button {
 .form-personal {
   flex: 1;
   align-self: center;
+  max-width: 35rem;
 }
 
 .form-login {
-  padding-left: 2rem;
-  width: 50%;
+  /* padding-left: 2rem; */
+  max-width: 35rem;
 }
 
 .form-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8rem 0;
+  margin: 8rem auto;
   font-size: 1.8rem;
   color: white;
+}
+
+.form-signup {
+  width: 73rem;
+}
+
+.form-signin {
+  max-width: 35rem;
 }
 
 .form-content h1 {
@@ -90,7 +108,6 @@ button {
 .form-content form {
   padding: 2rem 4rem;
   border-radius: 4px;
-  border: 2px solid #5c1010;
   background-color: var(--main-bg-color);
 }
 
@@ -133,7 +150,7 @@ button {
 
 .form-control input:focus {
   outline: none;
-  border: 2px solid green;
+  border: 2px solid var(--border-color);
 }
 
 .form-control button {

@@ -1,0 +1,19 @@
+.home-section {
+  height: calc(100vh - 5.7rem);
+  background-image: url("../../images/hero.jpeg");
+  background-position: center;
+  position: relative;
+}
+
+.home-section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+  padding: 1rem;
+  border: 3px double white;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+}

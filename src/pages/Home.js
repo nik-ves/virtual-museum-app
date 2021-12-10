@@ -1,10 +1,16 @@
-import Container from "../components/UI/Container";
+import { Fragment } from "react";
+
+import HomeIntro from "../components/homePage/HomeIntro";
+import SettingsInfo from "../components/homePage/SettingsInfo";
+import HomeImageInfo from "../components/homePage/HomeImageInfo";
 
 const Home = () => {
   return (
-    <Container>
-      <h1>Home page</h1>
-    </Container>
+    <Fragment>
+      <HomeIntro />
+      <SettingsInfo />
+      <HomeImageInfo />
+    </Fragment>
   );
 };
 

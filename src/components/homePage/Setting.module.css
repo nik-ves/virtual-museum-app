@@ -1,0 +1,48 @@
+.setting {
+  display: inline-block;
+  width: 32%;
+  height: 50rem;
+  text-align: left;
+  border: 1px solid black;
+  position: relative;
+  background-position: center;
+  transform: scale(0.98);
+  transition: all 0.3s;
+  color: orange;
+  text-align: center;
+}
+
+.setting-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 3rem;
+  height: 45rem;
+}
+
+.setting:hover {
+  transform: scale(1);
+}
+
+.setting img {
+  background-size: contain;
+  background-position: center;
+}
+
+.setting h2 {
+  font-size: 4rem;
+}
+
+.setting p {
+  font-size: 3rem;
+}
+
+.settings-link {
+  text-decoration: none;
+  color: orange;
+  font-size: 3rem;
+}

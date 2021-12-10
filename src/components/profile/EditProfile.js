@@ -39,7 +39,7 @@ const EditProfile = (props) => {
   };
 
   return (
-    <section className="form-content">
+    <section className="form-content form-signin">
       <form onSubmit={submitHandler}>
         <h1>Edit Profile</h1>
 

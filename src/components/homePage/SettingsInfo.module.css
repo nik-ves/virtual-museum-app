@@ -1,0 +1,21 @@
+.home-settings-info {
+  text-align: center;
+  padding: 10rem 2rem;
+}
+
+.home-settings-info h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home-settings-info button {
+  font-size: 2rem;
+}
+
+.home-settings {
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem 0;
+  height: auto;
+  overflow: hidden;
+}

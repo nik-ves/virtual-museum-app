@@ -1,5 +1,5 @@
 .footer-main {
-  background: #5c1010;
+  background: var(--main-bg-color);
   color: #fff;
 }
 
@@ -12,8 +12,8 @@
 }
 
 .footer-text-box:nth-child(2) {
-  border-left: 2px solid grey;
-  border-right: 2px solid grey;
+  border-left: 2px solid var(--secondary-bg-color);
+  border-right: 2px solid var(--secondary-bg-color);
 }
 
 .footer-content ul {
@@ -63,7 +63,7 @@
 }
 
 .footer-social:hover {
-  color: #5c1010;
+  color: var(--secondary-bg-color);
   background-color: #fff;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .footer-copyright-text {
-  background-color: #490c0c;
+  background-color: var(--secondary-bg-color);
   text-align: center;
   font-size: 1.5rem;
   color: #fff;

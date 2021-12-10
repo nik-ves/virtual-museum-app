@@ -43,7 +43,7 @@ const SignInForm = () => {
     : "form-control";
 
   return (
-    <section className="form-content">
+    <section className="form-content form-signin">
       <form onSubmit={submitHandler}>
         <h1>Sign In</h1>
 

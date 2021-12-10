@@ -1,18 +1,18 @@
 .header {
   background-color: var(--main-bg-color);
+  padding: 1rem 1rem;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1rem;
 }
 
 .logo-box,
 .logo-box a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: white;
+  color: var(--color-text);
 }
 
 .list {
@@ -24,12 +24,13 @@
 
 .list li {
   margin-left: 3rem;
-  color: white;
+  color: var(--color-text);
 }
 
 .list a {
   text-decoration: none;
-  color: white;
+  padding-bottom: 0.3rem;
+  color: var(--color-text);
 }
 
 .list a.active {

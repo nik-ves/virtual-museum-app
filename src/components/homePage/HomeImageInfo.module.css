@@ -1,0 +1,21 @@
+.home-image-text img {
+  width: 50%;
+  height: 50%;
+}
+
+.content-box-box--1,
+.content-box-box--2,
+.content-box-box--3 {
+  display: flex;
+}
+
+.content-box-box--2 {
+  flex-direction: row-reverse;
+}
+
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
