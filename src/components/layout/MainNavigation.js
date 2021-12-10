@@ -26,13 +26,22 @@ const MainNavigation = () => {
 
           <ul className={classes.list}>
             <li>
-              <NavLink to="/" exact activeClassName={classes.active}>
+              <NavLink
+                to="/"
+                onClick={() => setIsOpen(false)}
+                exact
+                activeClassName={classes.active}
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/search" activeClassName={classes.active}>
-                Search
+              <NavLink
+                to="/settings"
+                onClick={() => setIsOpen(false)}
+                activeClassName={classes.active}
+              >
+                Our Settings
               </NavLink>
             </li>
             {!authCtx.isLoggedIn && (

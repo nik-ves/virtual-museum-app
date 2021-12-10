@@ -6,6 +6,7 @@ import classes from "./DropdownMenu.module.css";
 
 const DropdownMenu = (props) => {
   const authCtx = useContext(AuthContext);
+
   return (
     <ul className={classes.dropdown}>
       <li className={classes["dropdown-item"]}>

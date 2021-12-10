@@ -1,11 +1,11 @@
 .dropdown {
   position: absolute;
-  top: 6rem;
+  top: 6.8rem;
   transform: translateX(-35%);
   width: 15rem;
   margin-left: 0;
   border-radius: 4px;
-
+  z-index: 10;
   background-color: var(--main-bg-color);
 }
 
@@ -21,7 +21,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: black;
+  background-color: gray;
+  border-radius: 4px;
 }
 
 .dropdown a {
