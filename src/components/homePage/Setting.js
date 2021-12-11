@@ -6,10 +6,11 @@ const Setting = (props) => {
     <Link
       to="/sign-in"
       className={classes.setting}
-      style={{
-        backgroundImage: `url("${props.image}")`,
-      }}
+      // style={{
+      //   backgroundImage: `url("${props.image}")`,
+      // }}
     >
+      <img className={classes["setting-image"]} src={props.image} />
       <div className={classes["setting-text"]}>
         <h2>{props.type}</h2>
         <p>{props.description}</p>

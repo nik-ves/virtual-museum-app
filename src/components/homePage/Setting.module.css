@@ -3,13 +3,15 @@
   width: 32%;
   height: 50rem;
   text-align: left;
-  border: 1px solid black;
+  border: 3px solid black;
   position: relative;
   background-position: center;
   transform: scale(0.98);
   transition: all 0.3s;
-  color: orange;
+  color: #fff;
   text-align: center;
+
+  overflow: hidden;
 }
 
 .setting-text {
@@ -24,25 +26,28 @@
   height: 45rem;
 }
 
+.setting-image {
+  height: 100%;
+  /* width: 100%; */
+  background-position: center;
+  filter: brightness(40%);
+}
+
 .setting:hover {
   transform: scale(1);
 }
 
-.setting img {
-  background-size: contain;
-  background-position: center;
-}
-
 .setting h2 {
-  font-size: 4rem;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .setting p {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .settings-link {
   text-decoration: none;
-  color: orange;
-  font-size: 3rem;
+  color: #fff;
+  font-size: 2.5rem;
 }

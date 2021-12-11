@@ -3,13 +3,24 @@
   padding: 10rem 2rem;
 }
 
-.home-settings-info h1 {
-  font-size: 3rem;
-  text-align: center;
+.home-settings-info {
+  font-size: 2rem;
 }
 
-.home-settings-info button {
+.home-settings-info h1 {
+  display: inline-block;
+  border-bottom: 3px solid black;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-settings-link {
   font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: black;
 }
 
 .home-settings {
