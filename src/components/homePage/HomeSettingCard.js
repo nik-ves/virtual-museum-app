@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import classes from "./Setting.module.css";
+import classes from "./HomeSettingCard.module.css";
 
 const Setting = (props) => {
   return (
@@ -10,7 +10,11 @@ const Setting = (props) => {
       //   backgroundImage: `url("${props.image}")`,
       // }}
     >
-      <img className={classes["setting-image"]} src={props.image} />
+      <img
+        className={classes["setting-image"]}
+        src={props.image}
+        alt="home-setting-card-background"
+      />
       <div className={classes["setting-text"]}>
         <h2>{props.type}</h2>
         <p>{props.description}</p>

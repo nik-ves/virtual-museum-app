@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 import HomeIntro from "../components/homePage/HomeIntro";
-import SettingsInfo from "../components/homePage/SettingsInfo";
+import HomeSettingsInfo from "../components/homePage/HomeSettingsInfo";
 import HomeImageInfo from "../components/homePage/HomeImageInfo";
 import HomeNewsletter from "../components/homePage/HomeNewsletter";
 
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Fragment>
       <HomeIntro />
-      <SettingsInfo />
+      <HomeSettingsInfo />
       <HomeImageInfo />
       <HomeNewsletter />
     </Fragment>

@@ -1,0 +1,57 @@
+.setting {
+  display: flex;
+  width: 100%;
+  height: 25rem;
+  text-align: left;
+  border: 3px solid black;
+  transform: scale(0.98);
+  transition: all 0.3s;
+  background-color: var(--main-bg-color);
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+.setting-image {
+  width: 40%;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.setting-image img {
+  /* height: 100%; */
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.setting-text {
+  width: 60%;
+  border-left: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.setting-text h3 {
+  font-size: 2.5rem;
+}
+
+.setting-text p {
+  font-size: 2rem;
+}
+
+.settings-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.setting-links {
+  display: flex;
+  justify-content: space-between;
+}

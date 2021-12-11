@@ -7,6 +7,7 @@
   border-radius: 4px;
   z-index: 10;
   background-color: var(--main-bg-color);
+  border: 3px solid black;
 }
 
 .dropdown li {
@@ -26,17 +27,18 @@
 }
 
 .dropdown a {
-  color: white;
+  color: var(--color-text);
 }
 
 .dropdown a.active {
-  border-bottom: 3px solid white;
+  color: #fff;
+  border-bottom: 3px solid #fff;
 }
 
 .dropdown-item button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: var(--color-text);
   font-size: 1.7rem;
   cursor: pointer;
 }

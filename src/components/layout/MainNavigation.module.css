@@ -34,5 +34,6 @@
 }
 
 .list a.active {
-  border-bottom: 3px solid white;
+  color: #fff;
+  border-bottom: 3px solid #fff;
 }
