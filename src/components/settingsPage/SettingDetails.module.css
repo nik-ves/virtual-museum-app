@@ -1,0 +1,28 @@
+.setting {
+  margin: 5rem 0;
+}
+
+.setting-image-box {
+  border: 3px solid black;
+  height: 60rem;
+  overflow: hidden;
+}
+
+.setting-image-box img {
+  width: 100%;
+}
+
+.setting-text-box h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.setting-text-box p {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.setting-exhibit-box h2 {
+  font-size: 3rem;
+}

@@ -13,9 +13,10 @@ const SettingsList = () => {
       <div className={classes["settings-list"]}>
         {settings.map((setting) => (
           <SettingCard
+            key={setting.id}
             type={setting.type}
             image={setting.image}
-            description={setting.description}
+            shortDescription={setting.shortDescription}
           />
         ))}
       </div>

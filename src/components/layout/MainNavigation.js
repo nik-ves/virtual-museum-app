@@ -38,6 +38,7 @@ const MainNavigation = () => {
             <li>
               <NavLink
                 to="/settings"
+                exact
                 onClick={() => setIsOpen(false)}
                 activeClassName={classes.active}
               >

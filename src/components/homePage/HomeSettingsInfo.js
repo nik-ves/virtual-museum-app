@@ -17,8 +17,9 @@ const HomeSettingsInfo = () => {
       <div className={classes["home-settings"]}>
         {settings.map((setting) => (
           <HomeSettingCard
+            key={setting.id}
             type={setting.type}
-            description={setting.description}
+            shortDescription={setting.shortDescription}
             image={setting.image}
           />
         ))}
