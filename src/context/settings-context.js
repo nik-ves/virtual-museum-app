@@ -16,8 +16,97 @@ const SettingsContextProvider = (props) => {
         2: "In Egyptian society, religion was central to everyday life. One of the roles of the pharaoh was as an intermediary between the deities and the people. The pharaoh thus deputised for the deities in a role that was both as civil and religious administrator. The pharaoh owned all of the land in Egypt, enacted laws, collected taxes, and defended Egypt from invaders as the commander-in-chief of the army. Religiously, the pharaoh officiated over religious ceremonies and chose the sites of new temples. The pharaoh was responsible for maintaining Maat, or cosmic order, balance, and justice, and part of this included going to war when necessary to defend the country or attacking others when it was believed that this would contribute to Maat, such as to obtain resources.",
         3: 'During the early days prior to the unification of Upper and Lower Egypt, the Deshret or the "Red Crown", was a representation of the kingdom of Lower Egypt, while the Hedjet, the "White Crown", was worn by the kings of the kingdom of Upper Egypt. After the unification of both kingdoms into one united Egypt, the Pschent, the combination of both the red and white crowns was the official crown of kings. With time new headdresses were introduced during different dynasties such as the Khat, Nemes, Atef, Hemhem crown, and Khepresh. At times, it was depicted that a combination of these headdresses or crowns would be worn together.',
       },
-      exibits: [],
-      image: "../../images/pharaoh1.jpeg",
+      exhibits: [
+        {
+          id: 1,
+          name: "mask-of-tutankhamun",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 2,
+          name: "narmer-palette",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/plate.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 3,
+          name: "the-grave-mask-of-king-amenemope",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/amenemope-mask.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 4,
+          name: "statue-of-khafra",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/statue2.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 5,
+          name: "statue-of-menkaure",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/statue3.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 6,
+          name: "merneptah-stele",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/stone.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 7,
+          name: "nefertiti-bust",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/nefertiti.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+        {
+          id: 8,
+          name: "mummy-mask-of-wendjebauendjed",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/gold-mummy.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+      ],
+      image: "../../images/settings/pharaohs-of-egypt.jpeg",
     },
     {
       id: 2,
@@ -29,8 +118,20 @@ const SettingsContextProvider = (props) => {
         2: "Roughly three centuries after the Late Bronze Age collapse of Mycenaean Greece, Greek urban poleis began to form in the 8th century BC, ushering in the Archaic period and colonization of the Mediterranean Basin. This was followed by the age of Classical Greece, from the Greco-Persian Wars to the 5th to 4th centuries BC. The conquests of Alexander the Great of Macedon spread Hellenistic civilization from the western Mediterranean to Central Asia. The Hellenistic period ended with the conquest of the eastern Mediterranean world by the Roman Republic, and the annexation of the Roman province of Macedonia in Roman Greece, and later the province of Achaea during the Roman Empire.",
         3: "Classical Greek culture, especially philosophy, had a powerful influence on ancient Rome, which carried a version of it throughout the Mediterranean and much of Europe. For this reason, Classical Greece is generally considered the cradle of Western civilization, the seminal culture from which the modern West derives many of its founding archetypes and ideas in politics, philosophy, science, and art.",
       },
-      exibits: [],
-      image: "../../images/greece1.jpeg",
+      exhibits: [
+        {
+          id: 1,
+          name: "mask-of-tutankhamun",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+      ],
+      image: "../../images/settings/ancient-greece.jpeg",
     },
     {
       id: 3,
@@ -44,8 +145,20 @@ const SettingsContextProvider = (props) => {
         4: "Shortages caused by the Allied naval blockade led Germany to initiate unrestricted submarine warfare in early 1917, bringing the previously neutral United States into the war on 6 April 1917. In Russia, the Bolsheviks seized power in the 1917 October Revolution and made peace in the March 1918 Treaty of Brest-Litovsk, freeing up large numbers of German troops. By transferring these to the Western Front, the German General Staff hoped to win a decisive victory before American reinforcements could impact the war, and launched the March 1918 German Spring Offensive. Despite initial success, it was soon halted by heavy casualties and ferocious defence; in August, the Allies launched the Hundred Days Offensive and although the German army continued to fight hard, it could no longer halt their advance.",
         5: "The Central Powers began to collapse; Bulgaria signed an Armistice on 29 September, followed by the Ottomans on 31 October, then Austria-Hungary on 3 November. Isolated, facing revolution at home and an army on the verge of mutiny, Kaiser Wilhelm abdicated on 9 November and the new German government signed the Armistice of 11 November 1918, bringing the fighting to a close. The 1919 Paris Peace Conference imposed various settlements on the defeated powers, the best known being the Treaty of Versailles. The dissolution of the Russian, German, Ottoman and Austro-Hungarian empires led to numerous uprisings and the creation of independent states, including Poland, Czechoslovakia and Yugoslavia. For reasons that are still debated, failure to manage the instability that resulted from this upheaval during the Interwar period ended with the outbreak of World War II in 1939.",
       },
-      exibits: [],
-      image: "../../images/ww1.jpg",
+      exhibits: [
+        {
+          id: 1,
+          name: "mask-of-tutankhamun",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          comments: [],
+        },
+      ],
+      image: "../../images/settings/ww1.jpg",
     },
   ]);
 

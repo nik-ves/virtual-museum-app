@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Footer from "./components/layout/Footer";
 import SettingInfo from "./pages/SettingInfo";
+import ExhibitInfo from "./pages/ExhibitInfo";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -29,8 +30,12 @@ function App() {
           <Settings />
         </Route>
 
-        <Route path="/settings/:settingId">
+        <Route path="/settings/:settingId" exact>
           <SettingInfo />
+        </Route>
+
+        <Route path="/settings/:settingId/:exhibitId">
+          <ExhibitInfo />
         </Route>
 
         <Route path="/profile">

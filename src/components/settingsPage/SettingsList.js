@@ -17,6 +17,7 @@ const SettingsList = () => {
             type={setting.type}
             image={setting.image}
             shortDescription={setting.shortDescription}
+            exhibits={setting.exhibits}
           />
         ))}
       </div>

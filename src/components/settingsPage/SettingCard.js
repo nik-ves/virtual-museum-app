@@ -20,9 +20,8 @@ const SettingCard = (props) => {
         <p>{props.shortDescription}</p>
 
         <div className={classes["setting-links"]}>
+          <p>Exhibits: {props.exhibits.length}</p>
           <p>Length: 59 mins</p>
-
-          <p>Exhibit number: 10</p>
         </div>
       </div>
     </Link>

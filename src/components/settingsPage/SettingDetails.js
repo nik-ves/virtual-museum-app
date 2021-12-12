@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
-
 import { SettingsContext } from "../../context/settings-context";
 import { useContext } from "react";
 import Container from "../UI/Container";
+import ExhibitCard from "./ExhibitCard";
 import classes from "./SettingDetails.module.css";
 
 const SettingDetails = () => {
@@ -14,7 +14,8 @@ const SettingDetails = () => {
   const setting = settingsList.find(
     (setting) => setting.type === params.settingId
   );
-  console.log(setting);
+
+  const exhibits = setting.exhibits;
 
   const formatedName = (name) => {
     return name
@@ -37,8 +38,12 @@ const SettingDetails = () => {
           })}
         </div>
 
-        <div className={classes["setting-exhibit-box"]}>
+        <div className={classes["exhibit-box"]}>
           <h2>Selected exhibits for this setting</h2>
+
+          <div className={classes["exhibit-link"]}>
+            <ExhibitCard exhibits={exhibits} setting={setting} />
+          </div>
         </div>
       </section>
     </Container>

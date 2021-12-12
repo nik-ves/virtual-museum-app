@@ -1,0 +1,23 @@
+.exhibit {
+  margin: 10rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exhibit-image-box {
+  height: 60rem;
+  overflow: hidden;
+  width: 45%;
+  background-color: var(--main-bg-color);
+  border: 3px solid black;
+  text-align: center;
+}
+
+.exhibit-image-box img {
+  height: 100%;
+}
+
+.exhibit-text-box {
+  width: 45%;
+  height: 100%;
+}

@@ -4,7 +4,7 @@ const HomeImageInfo = () => {
   return (
     <section className={classes["home-image-text"]}>
       <div className={classes["content-box-box--1"]}>
-        <img src="images/4.jpg" alt="image4" />
+        <img src="images/quote-1.jpg" alt="image4" />
         <div className={classes["text-box"]}>
           <h1>
             “A visit to a museum is a search for beauty, truth, and meaning in
@@ -15,7 +15,7 @@ const HomeImageInfo = () => {
       </div>
 
       <div className={classes["content-box-box--2"]}>
-        <img src="images/6.jpg" alt="image6" />
+        <img src="images/quote-2.jpg" alt="image6" />
 
         <div className={classes["text-box"]}>
           <h1>“Give me a museum and I’ll fill it.”</h1>
@@ -24,7 +24,7 @@ const HomeImageInfo = () => {
       </div>
 
       <div className={classes["content-box-box--3"]}>
-        <img src="images/9.jpg" alt="image9" />
+        <img src="images/quote-3.jpg" alt="image9" />
 
         <div className={classes["text-box"]}>
           <h1>
