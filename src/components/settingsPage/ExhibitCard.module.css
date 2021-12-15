@@ -7,6 +7,7 @@
 .exhibit-image-box img {
   width: 100%;
   filter: brightness(60%);
+  text-align: center;
 }
 
 .exhibit-text-box {

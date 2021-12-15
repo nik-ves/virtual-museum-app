@@ -9,6 +9,22 @@ const SettingCard = (props) => {
       .join(" ");
   };
 
+  const settingPrice = props.exhibits
+    .map((exhibit) => {
+      return exhibit.price;
+    })
+    .reduce((prev, cur) => {
+      return prev + cur;
+    });
+
+  const settingTime = props.exhibits
+    .map((exhibit) => {
+      return exhibit.time;
+    })
+    .reduce((prev, cur) => {
+      return prev + cur;
+    });
+
   return (
     <Link to={`/settings/${props.type}`} className={classes.setting}>
       <div className={classes["setting-image"]}>
@@ -21,7 +37,8 @@ const SettingCard = (props) => {
 
         <div className={classes["setting-links"]}>
           <p>Exhibits: {props.exhibits.length}</p>
-          <p>Length: 59 mins</p>
+          <p>Price: {settingPrice} EUR</p>
+          <p>Time: {settingTime} min</p>
         </div>
       </div>
     </Link>

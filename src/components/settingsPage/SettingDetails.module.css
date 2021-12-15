@@ -46,6 +46,8 @@
   margin-bottom: 2rem;
   transition: all 0.3s;
   overflow: hidden;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
 }
 
 .exhibit-link a:hover {

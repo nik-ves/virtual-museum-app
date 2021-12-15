@@ -38,8 +38,21 @@ const ExhibitDetails = () => {
         </div>
 
         <div className={classes["exhibit-text-box"]}>
-          <h1>{formatedName(exhibit.name)}</h1>
-          <p>{exhibit.description}</p>
+          <p>
+            <span>Name</span>: {formatedName(exhibit.name)}
+          </p>
+          <p>
+            <span>Description</span>: {exhibit.description}
+          </p>
+          <p>
+            <span>Country of origin</span>: {exhibit.countryOfOrigin}
+          </p>
+          <p>
+            <span>Price</span>: {exhibit.price} EUR
+          </p>
+          <p>
+            <span>Time to see</span>: {exhibit.time} min
+          </p>
         </div>
       </section>
     </Container>

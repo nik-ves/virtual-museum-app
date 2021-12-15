@@ -19,7 +19,11 @@ const ExhibitCard = ({ exhibits, setting }) => {
             to={`/settings/${setting.type}/${exhibit.name}`}
           >
             <div className={classes["exhibit-image-box"]}>
-              <img src={exhibit.image} alt="exhibit-card" />
+              <img
+                src={exhibit.image}
+                alt="exhibit-card"
+                className={classes["exhibit-image"]}
+              />
             </div>
 
             <div className={classes["exhibit-text-box"]}>

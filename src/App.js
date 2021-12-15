@@ -15,6 +15,7 @@ import ExhibitInfo from "./pages/ExhibitInfo";
 
 function App() {
   const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
 
   return (
     <Fragment>
@@ -39,18 +40,18 @@ function App() {
         </Route>
 
         <Route path="/profile">
-          {authCtx.isLoggedIn && <Profile />}
-          {!authCtx.isLoggedIn && <Redirect to="/sign-in" />}
+          {isLoggedIn && <Profile />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/sign-in">
-          {authCtx.isLoggedIn && <Redirect to="/profile" />}
-          {!authCtx.isLoggedIn && <SignIn />}
+          {isLoggedIn && <Redirect to="/profile" />}
+          {!isLoggedIn && <SignIn />}
         </Route>
 
         <Route path="/sign-up">
-          {authCtx.isLoggedIn && <Redirect to="/profile" />}
-          {!authCtx.isLoggedIn && <SignUp />}
+          {isLoggedIn && <Redirect to="/profile" />}
+          {!isLoggedIn && <SignUp />}
         </Route>
       </Switch>
 

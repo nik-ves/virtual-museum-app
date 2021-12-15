@@ -18,6 +18,18 @@
 }
 
 .exhibit-text-box {
-  width: 45%;
+  flex: 1;
+  padding-left: 4rem;
   height: 100%;
+  align-self: center;
+}
+
+.exhibit-text-box p {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.exhibit-text-box span {
+  font-weight: 700;
+  text-transform: uppercase;
 }
