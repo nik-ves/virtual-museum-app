@@ -27,18 +27,18 @@ const SettingCard = (props) => {
 
   return (
     <Link to={`/settings/${props.type}`} className={classes.setting}>
-      <div className={classes["setting-image"]}>
-        <img src={props.image} alt="home-setting-card-background" />
-      </div>
-
+      <img
+        className={classes["setting-image"]}
+        src={props.image}
+        alt="home-setting-card-background"
+      />
       <div className={classes["setting-text"]}>
-        <h3>{formatedName(props.type)}</h3>
-        <p>{props.shortDescription}</p>
+        <h2>{formatedName(props.type)}</h2>
 
-        <div className={classes["setting-links"]}>
+        <div className={classes["setting-info"]}>
           <p>Exhibits: {props.exhibits.length}</p>
           <p>Price: {settingPrice} EUR</p>
-          <p>Time: {settingTime} min</p>
+          <p>Length: {settingTime} min</p>
         </div>
       </div>
     </Link>
