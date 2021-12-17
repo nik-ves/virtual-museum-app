@@ -16,7 +16,7 @@ const ExhibitCard = ({ exhibits, setting }) => {
         return (
           <Link
             key={exhibit.id}
-            to={`/settings/${setting.type}/${exhibit.name}`}
+            to={`/settings/${setting.params}/${exhibit.name}`}
           >
             <div className={classes["exhibit-image-box"]}>
               <img

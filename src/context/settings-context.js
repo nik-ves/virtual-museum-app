@@ -2,13 +2,17 @@ import React, { useState } from "react";
 
 export const SettingsContext = React.createContext({
   settingsList: [],
+  filteredSettings: [],
+  filterSettings: () => {},
 });
 
 const SettingsContextProvider = (props) => {
   const [settingsList] = useState([
     {
       id: 1,
-      type: "pharaohs-of-egypt",
+      name: "Pharaohs of Egypt",
+      type: "Historic",
+      params: "pharaohs-of-egypt",
       shortDescription:
         "The Pharaoh in ancient Egypt was the political and religious leader of the people and held the titles 'Lord of the Two Lands' and 'High Priest of Every Temple'. The word 'pharaoh' is the Greek form of the Egyptian pero or per-a-a, which was the designation for the royal residence and means `Great House'.",
       longDescription: {
@@ -113,7 +117,9 @@ const SettingsContextProvider = (props) => {
     },
     {
       id: 2,
-      type: "ancient-greece",
+      name: "Ancient Greece",
+      type: "Art",
+      params: "ancient-greece",
       shortDescription:
         "Ancient Greece was a civilization that dominated much of the Mediterranean thousands of years ago. Ancient Greece formed the foundation of much of Western culture today. Everything from government, philosophy, science, mathematics, art, literature, and even sports was impacted by the ancient Greeks.",
       longDescription: {
@@ -177,7 +183,9 @@ const SettingsContextProvider = (props) => {
     },
     {
       id: 3,
-      type: "world-war-i",
+      name: "World War I",
+      type: "Art",
+      params: "world-war-i",
       shortDescription:
         "One of the deadliest conflicts in history, an estimated 9 million were killed in combat, while over 5 million civilians died from occupation, bombardment, hunger or disease.",
       longDescription: {
@@ -203,9 +211,44 @@ const SettingsContextProvider = (props) => {
       image: "../../images/settings/ww1.jpg",
     },
   ]);
+  const [filteredSettings, setFilteredSettings] = useState([]);
+
+  // PROBAJ SWITCH CASE OVDE
+  const filterSettings = (exhibitName, exhibitsNumber) => {
+    exhibitName.toLowerCase();
+
+    if (exhibitsNumber) {
+      setFilteredSettings(
+        settingsList.filter((setting) => {
+          return setting.exhibits.length <= exhibitsNumber;
+        })
+      );
+    }
+
+    if (exhibitName) {
+      setFilteredSettings(
+        settingsList.filter((setting) => {
+          return setting.name.toLowerCase() === exhibitName.toLowerCase();
+        })
+      );
+    }
+
+    if (exhibitName && exhibitsNumber) {
+      setFilteredSettings(
+        settingsList.filter((setting) => {
+          return (
+            setting.name === exhibitName &&
+            setting.exhibits.length <= exhibitsNumber
+          );
+        })
+      );
+    }
+  };
 
   const settingValue = {
     settingsList,
+    filteredSettings,
+    filterSettings,
   };
 
   return (

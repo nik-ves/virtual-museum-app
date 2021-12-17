@@ -12,10 +12,12 @@ const SettingDetails = () => {
   const params = useParams();
 
   const setting = settingsList.find(
-    (setting) => setting.type === params.settingId
+    (setting) => setting.params === params.settingId
   );
 
   const exhibits = setting.exhibits;
+
+  console.log(setting);
 
   const formatedName = (name) => {
     return name
@@ -32,7 +34,7 @@ const SettingDetails = () => {
         </div>
 
         <div className={classes["setting-text-box"]}>
-          <h1>{formatedName(setting.type)}</h1>
+          <h1>{setting.type}</h1>
           {Object.values(setting.longDescription).map((value) => {
             return <p key={Math.random()}>{value}</p>;
           })}

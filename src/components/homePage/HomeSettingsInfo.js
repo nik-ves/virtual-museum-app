@@ -18,7 +18,7 @@ const HomeSettingsInfo = () => {
         {settings.map((setting) => (
           <HomeSettingCard
             key={setting.id}
-            type={setting.type}
+            name={setting.name}
             shortDescription={setting.shortDescription}
             image={setting.image}
           />

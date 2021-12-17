@@ -15,7 +15,7 @@ const ExhibitDetails = () => {
   const params = useParams();
 
   const setting = settingsList.find(
-    (setting) => setting.type === params.settingId
+    (setting) => setting.params === params.settingId
   );
 
   const exhibit = setting.exhibits.find(

@@ -17,7 +17,7 @@ const Setting = (props) => {
         alt="home-setting-card-background"
       />
       <div className={classes["setting-text"]}>
-        <h2>{formatedName(props.type)}</h2>
+        <h2>{props.name}</h2>
         <p>{props.shortDescription}</p>
         <p className={classes["settings-link"]} to="/sign-up">
           Click to see more
