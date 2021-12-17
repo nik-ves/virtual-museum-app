@@ -11,7 +11,7 @@ const SettingsContextProvider = (props) => {
     {
       id: 1,
       name: "Pharaohs of Egypt",
-      type: "History",
+      type: "Art",
       params: "pharaohs-of-egypt",
       shortDescription:
         "The Pharaoh in ancient Egypt was the political and religious leader of the people and held the titles 'Lord of the Two Lands' and 'High Priest of Every Temple'. The word 'pharaoh' is the Greek form of the Egyptian pero or per-a-a, which was the designation for the royal residence and means `Great House'.",
@@ -113,6 +113,7 @@ const SettingsContextProvider = (props) => {
           grade: [1, 2, 3],
         },
       ],
+      exhibitsType: ["Masks", "Vases"],
       image: "../../images/settings/pharaohs-of-egypt.jpeg",
     },
     {
@@ -179,6 +180,7 @@ const SettingsContextProvider = (props) => {
           grade: [1, 2, 3],
         },
       ],
+      exhibitsType: ["Vases"],
       image: "../../images/settings/ancient-greece.jpeg",
     },
     {
@@ -219,6 +221,7 @@ const SettingsContextProvider = (props) => {
           grade: [1, 2],
         },
       ],
+      exhibitsType: ["Masks"],
       image: "../../images/settings/ww1.jpg",
     },
   ]);
@@ -226,54 +229,70 @@ const SettingsContextProvider = (props) => {
 
   const filterSettings = (
     settingType,
+    exhibitType,
     exhibitNumber,
+    priceFrom,
     priceTo,
     averageTime,
     grade
   ) => {
-    return setFilteredSettings(
-      settingsList.filter((setting) => {
-        const settingPrice = setting.exhibits
-          .map((exhibit) => {
-            return exhibit.price;
-          })
-          .reduce((prev, cur) => {
-            return prev + cur;
-          });
-
-        const settingTime = setting.exhibits
-          .map((exhibit) => {
-            return exhibit.time;
-          })
-          .reduce((prev, cur) => {
-            return prev + cur;
-          });
-
-        let average = [];
-
-        setting.exhibits.forEach((exhibit) => {
-          let test =
-            exhibit.grade.reduce((prev, cur) => {
+    if ((settingType, exhibitType, exhibitNumber)) {
+      return setFilteredSettings(
+        settingsList.filter((setting) => {
+          return (
+            setting.type.toLowerCase() === settingType &&
+            setting.exhibitsType.includes(exhibitType) &&
+            setting.exhibits.length <= exhibitNumber
+          );
+        })
+      );
+    } else {
+      return setFilteredSettings(
+        settingsList.filter((setting) => {
+          const settingPrice = setting.exhibits
+            .map((exhibit) => {
+              return exhibit.price;
+            })
+            .reduce((prev, cur) => {
               return prev + cur;
-            }) / exhibit.grade.length;
+            });
 
-          average.push(test);
-        });
+          const settingTime = setting.exhibits
+            .map((exhibit) => {
+              return exhibit.time;
+            })
+            .reduce((prev, cur) => {
+              return prev + cur;
+            });
 
-        const averageGradeOfSetting =
-          average.reduce((prev, cur) => {
-            return prev + cur;
-          }) / average.length;
+          let average = [];
 
-        return (
-          setting.type.toLowerCase() === settingType &&
-          setting.exhibits.length <= exhibitNumber &&
-          settingPrice <= priceTo &&
-          settingTime <= averageTime &&
-          averageGradeOfSetting <= grade
-        );
-      })
-    );
+          setting.exhibits.forEach((exhibit) => {
+            let test =
+              exhibit.grade.reduce((prev, cur) => {
+                return prev + cur;
+              }) / exhibit.grade.length;
+
+            average.push(test);
+          });
+
+          const averageGradeOfSetting =
+            average.reduce((prev, cur) => {
+              return prev + cur;
+            }) / average.length;
+
+          return (
+            setting.type.toLowerCase() === settingType &&
+            setting.exhibitsType.includes(exhibitType) &&
+            setting.exhibits.length <= exhibitNumber &&
+            settingPrice >= priceFrom &&
+            settingPrice <= priceTo &&
+            settingTime <= averageTime &&
+            averageGradeOfSetting <= grade
+          );
+        })
+      );
+    }
   };
 
   const settingValue = {

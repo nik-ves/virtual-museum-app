@@ -3,11 +3,83 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-.settings-search form {
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+  color: #fff;
+}
+
+.form h2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-control {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 2rem;
+}
+
+.form-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.form-actions select:focus {
+  outline: none;
+  border: 2px solid var(--border-color);
+}
+
+.form-control label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.form-control p {
+  cursor: pointer;
+}
+
+.form-control input {
+  border: 2px solid white;
+  border-radius: 4px;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-control select {
+  border: 2px solid white;
+  border-radius: 4px;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-control input:focus {
+  outline: none;
+  border: 2px solid blue;
+}
+
+.form-control button {
+  align-self: center;
+  justify-self: center;
+}
+
+.form-actions button {
+  display: block;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  border: 2px solid gray;
+  border-radius: 4px;
 }

@@ -3,9 +3,15 @@ import { useContext } from "react";
 import useInput from "../../hooks/use-input";
 
 import classes from "./SettingsSearch.module.css";
+import { useState } from "react/cjs/react.development";
 
 const SettingsSearch = (props) => {
   const settingsCtx = useContext(SettingsContext);
+  const [showAdvancedMenu, setShowAdvancedMenu] = useState(false);
+
+  const showAdvancedMenuHandler = () => {
+    setShowAdvancedMenu(!showAdvancedMenu);
+  };
 
   // setting type
   const {
@@ -26,6 +32,13 @@ const SettingsSearch = (props) => {
     value: exhibitNumber,
     valueChangeHandler: exhibitNumberChangeHandler,
     resetValue: exhibitNumberResetValue,
+  } = useInput((value) => value.trim());
+
+  // price from
+  const {
+    value: priceFrom,
+    valueChangeHandler: priceFromChangeHandler,
+    resetValue: priceFromResetValue,
   } = useInput((value) => value.trim());
 
   // price to
@@ -56,87 +69,116 @@ const SettingsSearch = (props) => {
 
     settingsCtx.filterSettings(
       settingType,
-      // exhibitType,
+      exhibitType,
       exhibitNumber,
+      priceFrom,
       priceTo,
       averageTime,
       grade
     );
+  };
 
+  const resetFormValues = () => {
     exhibitTypeResetValue();
     settingTypeResetValue();
     exhibitNumberResetValue();
+    priceFromResetValue();
     priceToResetValue();
     averageTimeResetValue();
     gradeResetValue();
-
-    console.log(grade);
   };
 
   return (
     <section className={classes["settings-search"]}>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="settingType">Type of setting</label>
-        <select
-          id="settingType"
-          required
-          value={settingType}
-          onChange={settingTypeChangeHandler}
-        >
-          <option disabled hidden value=""></option>
-          <option value="art">Art</option>
-          <option value="history">History</option>
-        </select>
+      <form onSubmit={submitHandler} className={classes["form"]}>
+        <h2>Search our settings</h2>
+        <div className={classes["form-control"]}>
+          <label htmlFor="settingType">Type of setting</label>
+          <select
+            id="settingType"
+            required
+            value={settingType}
+            onChange={settingTypeChangeHandler}
+          >
+            <option disabled hidden value=""></option>
+            <option value="art">Art</option>
+            <option value="history">History</option>
+          </select>
 
-        {/* <label htmlFor="exhibitType">Type of exhibits</label>
-        <select
-          id="exhibitType"
-          required
-          value={exhibitType}
-          onChange={exhibitTypeChangeHandler}
-        >
-          <option disabled hidden value=""></option>
-          <option value="art">Art</option>
-          <option value="history">History</option>
-        </select> */}
+          <label htmlFor="exhibitType">Type of exhibits</label>
+          <select
+            id="exhibitType"
+            required
+            value={exhibitType}
+            onChange={exhibitTypeChangeHandler}
+          >
+            <option disabled hidden value=""></option>
+            <option value="Masks">Masks</option>
+            <option value="Vases">Vases</option>
+          </select>
 
-        <label htmlFor="exhibitNumber">Number of exhibits</label>
-        <input
-          id="exhibitNumber"
-          required
-          type="text"
-          value={exhibitNumber}
-          onChange={exhibitNumberChangeHandler}
-        />
+          <label htmlFor="exhibitNumber">Number of exhibits</label>
+          <input
+            id="exhibitNumber"
+            required
+            type="text"
+            value={exhibitNumber}
+            onChange={exhibitNumberChangeHandler}
+          />
 
-        <label htmlFor="price">Price to</label>
-        <input
-          id="price"
-          required
-          type="number"
-          value={priceTo}
-          onChange={priceToChangeHandler}
-        />
+          <p onClick={showAdvancedMenuHandler}>
+            {showAdvancedMenu ? "Hide advanced search" : "Show advanced search"}
+          </p>
+        </div>
 
-        <label htmlFor="averageTime">Average time</label>
-        <input
-          id="averageTime"
-          required
-          type="number"
-          value={averageTime}
-          onChange={averageTimeChangeHandler}
-        />
+        {showAdvancedMenu && (
+          <div className={classes["form-control"]}>
+            <label htmlFor="priceFrom">Price from</label>
+            <input
+              id="priceFrom"
+              required
+              type="number"
+              value={priceFrom}
+              onChange={priceFromChangeHandler}
+            />
 
-        <label htmlFor="grade">Grade</label>
-        <input
-          id="grade"
-          required
-          type="number"
-          value={grade}
-          onChange={gradeChangeHandler}
-        />
+            <label htmlFor="priceTo">Price to</label>
+            <input
+              id="priceTo"
+              required
+              type="number"
+              value={priceTo}
+              onChange={priceToChangeHandler}
+            />
+          </div>
+        )}
 
-        <button type="submit">Submit</button>
+        {showAdvancedMenu && (
+          <div className={classes["form-control"]}>
+            <label htmlFor="averageTime">Average time</label>
+            <input
+              id="averageTime"
+              required
+              type="number"
+              value={averageTime}
+              onChange={averageTimeChangeHandler}
+            />
+
+            <label htmlFor="grade">Grade</label>
+            <input
+              id="grade"
+              required
+              type="number"
+              value={grade}
+              onChange={gradeChangeHandler}
+            />
+          </div>
+        )}
+
+        <div className={classes["form-actions"]}>
+          <button type="submit">Search</button>
+          {/* <button onClick={resetFormValues}>Reset Values</button> */}
+        </div>
       </form>
       <button onClick={props.setShowAll}>Show all</button>
     </section>
