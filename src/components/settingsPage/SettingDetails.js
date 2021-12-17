@@ -17,15 +17,6 @@ const SettingDetails = () => {
 
   const exhibits = setting.exhibits;
 
-  console.log(setting);
-
-  const formatedName = (name) => {
-    return name
-      .split("-")
-      .map((word) => word[0].toUpperCase() + word.slice(1))
-      .join(" ");
-  };
-
   return (
     <Container>
       <section className={classes["setting"]}>

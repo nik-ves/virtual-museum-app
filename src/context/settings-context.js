@@ -11,7 +11,7 @@ const SettingsContextProvider = (props) => {
     {
       id: 1,
       name: "Pharaohs of Egypt",
-      type: "Historic",
+      type: "History",
       params: "pharaohs-of-egypt",
       shortDescription:
         "The Pharaoh in ancient Egypt was the political and religious leader of the people and held the titles 'Lord of the Two Lands' and 'High Priest of Every Temple'. The word 'pharaoh' is the Greek form of the Egyptian pero or per-a-a, which was the designation for the royal residence and means `Great House'.",
@@ -31,7 +31,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 2,
@@ -42,7 +42,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 3,
@@ -53,7 +53,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 4,
@@ -64,7 +64,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 5,
@@ -76,7 +76,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 6,
@@ -87,7 +87,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 7,
@@ -98,7 +98,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 8,
@@ -110,7 +110,7 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
       ],
       image: "../../images/settings/pharaohs-of-egypt.jpeg",
@@ -136,7 +136,7 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 2,
@@ -146,7 +146,7 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 3,
@@ -156,7 +156,7 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 4,
@@ -166,7 +166,7 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
         {
           id: 5,
@@ -176,7 +176,7 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [1, 2, 3],
         },
       ],
       image: "../../images/settings/ancient-greece.jpeg",
@@ -205,7 +205,18 @@ const SettingsContextProvider = (props) => {
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          comments: [],
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 2,
+          name: "mask-of-tutankhamun",
+          description:
+            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
+          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2],
         },
       ],
       image: "../../images/settings/ww1.jpg",
@@ -213,36 +224,56 @@ const SettingsContextProvider = (props) => {
   ]);
   const [filteredSettings, setFilteredSettings] = useState([]);
 
-  // PROBAJ SWITCH CASE OVDE
-  const filterSettings = (exhibitName, exhibitsNumber) => {
-    exhibitName.toLowerCase();
+  const filterSettings = (
+    settingType,
+    exhibitNumber,
+    priceTo,
+    averageTime,
+    grade
+  ) => {
+    return setFilteredSettings(
+      settingsList.filter((setting) => {
+        const settingPrice = setting.exhibits
+          .map((exhibit) => {
+            return exhibit.price;
+          })
+          .reduce((prev, cur) => {
+            return prev + cur;
+          });
 
-    if (exhibitsNumber) {
-      setFilteredSettings(
-        settingsList.filter((setting) => {
-          return setting.exhibits.length <= exhibitsNumber;
-        })
-      );
-    }
+        const settingTime = setting.exhibits
+          .map((exhibit) => {
+            return exhibit.time;
+          })
+          .reduce((prev, cur) => {
+            return prev + cur;
+          });
 
-    if (exhibitName) {
-      setFilteredSettings(
-        settingsList.filter((setting) => {
-          return setting.name.toLowerCase() === exhibitName.toLowerCase();
-        })
-      );
-    }
+        let average = [];
 
-    if (exhibitName && exhibitsNumber) {
-      setFilteredSettings(
-        settingsList.filter((setting) => {
-          return (
-            setting.name === exhibitName &&
-            setting.exhibits.length <= exhibitsNumber
-          );
-        })
-      );
-    }
+        setting.exhibits.forEach((exhibit) => {
+          let test =
+            exhibit.grade.reduce((prev, cur) => {
+              return prev + cur;
+            }) / exhibit.grade.length;
+
+          average.push(test);
+        });
+
+        const averageGradeOfSetting =
+          average.reduce((prev, cur) => {
+            return prev + cur;
+          }) / average.length;
+
+        return (
+          setting.type.toLowerCase() === settingType &&
+          setting.exhibits.length <= exhibitNumber &&
+          settingPrice <= priceTo &&
+          settingTime <= averageTime &&
+          averageGradeOfSetting <= grade
+        );
+      })
+    );
   };
 
   const settingValue = {

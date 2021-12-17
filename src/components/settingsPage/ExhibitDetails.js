@@ -29,7 +29,11 @@ const ExhibitDetails = () => {
       .join(" ");
   };
 
-  console.log(exhibit);
+  const averageGrade =
+    exhibit.grade.reduce((prev, cur) => {
+      return prev + cur;
+    }) / exhibit.grade.length;
+
   return (
     <Container>
       <section className={classes["exhibit"]}>
@@ -52,6 +56,9 @@ const ExhibitDetails = () => {
           </p>
           <p>
             <span>Time to see</span>: {exhibit.time} min
+          </p>
+          <p>
+            <span>Grade</span>: {averageGrade} / 5
           </p>
         </div>
       </section>

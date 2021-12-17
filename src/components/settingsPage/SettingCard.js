@@ -2,13 +2,6 @@ import { Link } from "react-router-dom";
 import classes from "./SettingCard.module.css";
 
 const SettingCard = (props) => {
-  const formatedName = (name) => {
-    return name
-      .split("-")
-      .map((word) => word[0].toUpperCase() + word.slice(1))
-      .join(" ");
-  };
-
   const settingPrice = props.setting.exhibits
     .map((exhibit) => {
       return exhibit.price;
@@ -17,6 +10,8 @@ const SettingCard = (props) => {
       return prev + cur;
     });
 
+  let average = [];
+
   const settingTime = props.setting.exhibits
     .map((exhibit) => {
       return exhibit.time;
@@ -24,6 +19,20 @@ const SettingCard = (props) => {
     .reduce((prev, cur) => {
       return prev + cur;
     });
+
+  props.setting.exhibits.forEach((exhibit) => {
+    let test =
+      exhibit.grade.reduce((prev, cur) => {
+        return prev + cur;
+      }) / exhibit.grade.length;
+
+    average.push(test);
+  });
+
+  const averageGradeOfSetting =
+    average.reduce((prev, cur) => {
+      return prev + cur;
+    }) / average.length;
 
   return (
     <Link to={`/settings/${props.setting.params}`} className={classes.setting}>
@@ -37,8 +46,10 @@ const SettingCard = (props) => {
 
         <div className={classes["setting-info"]}>
           <p>Exhibits: {props.setting.exhibits.length}</p>
+          <p>Type: {props.setting.type}</p>
           <p>Price: {settingPrice} EUR</p>
           <p>Length: {settingTime} min</p>
+          <p>Average Grade: {averageGradeOfSetting} / 5</p>
         </div>
       </div>
     </Link>
