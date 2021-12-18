@@ -1,6 +1,7 @@
 import useInput from "../../hooks/use-input";
 import { AuthContext } from "../../context/auth-context";
 import { useContext } from "react";
+import classes from "./EditProfile.module.css";
 
 const EditProfile = (props) => {
   const authCtx = useContext(AuthContext);
@@ -26,6 +27,9 @@ const EditProfile = (props) => {
     valueChangeHandler: newAddressChangeHandler,
   } = useInput((value) => value.length > 5);
 
+  const { value: newFavorites, valueChangeHandler: newFavoritesChangeHandler } =
+    useInput((value) => value.length > 5);
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -33,6 +37,7 @@ const EditProfile = (props) => {
     currentUser.lastName = newLastNameValue;
     currentUser.contactNumber = newContactNumberValue;
     currentUser.currentAddress = newAddressValue;
+    currentUser.favorites = newFavorites;
 
     props.isEditing();
   };
@@ -79,6 +84,16 @@ const EditProfile = (props) => {
             id="currentAddress"
             onChange={newAddressChangeHandler}
             placeholder={currentUser.currentAddress}
+          />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="favorites">Favorites</label>
+          <textarea
+            type="text"
+            id="favorites"
+            onChange={newFavoritesChangeHandler}
+            placeholder={currentUser.favorites}
           />
         </div>
 

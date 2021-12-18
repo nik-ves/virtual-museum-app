@@ -10,51 +10,39 @@ const ProfileDetails = (props) => {
   return (
     <Container>
       <section className={classes["user-profile"]}>
-        <h1>Your Profile</h1>
+        <div className={classes["user-profile-image-box"]}>
+          <img src="images/profile.jpg" alt="profile" />
+        </div>
 
-        <ul>
-          <li>
-            <span className={classes["user-property"]}>First Name:</span>
-            <span className={classes["user-info"]}>
-              {" "}
-              {userProfile.firstName}
-            </span>
-          </li>
-          <li>
-            <span className={classes["user-property"]}>Last Name:</span>
-            <span className={classes["user-info"]}>
-              {" "}
-              {userProfile.lastName}
-            </span>
-          </li>
-          <li>
-            <span className={classes["user-property"]}>Contact Number:</span>
-            <span className={classes["user-info"]}>
-              {" "}
-              {userProfile.contactNumber}
-            </span>
-          </li>
-          <li>
-            <span className={classes["user-property"]}>Current Address:</span>
-            <span className={classes["user-info"]}>
-              {" "}
-              {userProfile.currentAddress}
-            </span>
-          </li>
-          <li>
-            <span className={classes["user-property"]}>Favorites:</span>
-            <span className={classes["user-info"]}>
-              {" "}
-              {userProfile.favorites}
-            </span>
-          </li>
-          <li>
-            <span className={classes["user-property"]}>Email:</span>
-            <span className={classes["user-info"]}> {userProfile.email}</span>
-          </li>
-        </ul>
+        <div className={classes["user-profile-text-box"]}>
+          <h1>Your information</h1>
 
-        <button onClick={props.isEditing}>Edit Profile</button>
+          <p>
+            <span>First name:</span> {userProfile.firstName}
+          </p>
+          <p>
+            <span>Last name:</span> {userProfile.lastName}
+          </p>
+          <p>
+            <span>Contact number:</span> {userProfile.contactNumber}
+          </p>
+          <p>
+            <span>Address:</span> {userProfile.currentAddress}
+          </p>
+          <p>
+            <span>Favorites:</span> {userProfile.favorites}
+          </p>
+          <p>
+            <span>Email:</span> {userProfile.email}
+          </p>
+
+          <button
+            className={classes["user-profile-edit"]}
+            onClick={props.isEditing}
+          >
+            Edit Profile
+          </button>
+        </div>
       </section>
     </Container>
   );

@@ -70,6 +70,7 @@ const SignUpForm = () => {
     lastNameValueReset();
     contactNumberValueReset();
     addressValueReset();
+    favoritesValueReset();
     emailValueReset();
     passwordValueReset();
   };

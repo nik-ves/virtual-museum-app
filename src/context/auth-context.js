@@ -18,7 +18,8 @@ const AuthContextProvider = (props) => {
       lastName: "Stefanovic",
       contactNumber: "123456789",
       currentAddress: "Adresa 1",
-      favorites: "Krompir",
+      favorites:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
       email: "stefan@test.com",
       password: "stefan123",
     },

@@ -1,38 +1,55 @@
 .user-profile {
-  max-width: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5rem auto;
-  padding: 2rem 4rem;
-  border: 1px solid black;
-  flex-direction: column;
-}
-
-.user-profile ul {
-  list-style-type: none;
-  font-size: 1.8rem;
-}
-
-.user-profile h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
-.user-profile li {
+  margin: 10rem auto;
   display: flex;
   justify-content: space-between;
-  width: 30rem;
-  margin-bottom: 1rem;
+  padding: 3rem;
+  background-color: #dbdbdb;
+  border-radius: 4px;
 }
 
-.user-property,
-.user-info {
-  display: block;
+.user-profile-image-box {
+  width: 40%;
+  border: 2px solid black;
+  height: 50%;
 }
 
-.user-profile button {
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  margin: 0.5rem auto;
+.user-profile-image-box img {
+  width: 100%;
+}
+
+.user-profile-text-box {
+  width: 50%;
+  flex: 1;
+  margin-left: 10rem;
+  height: 100%;
+  align-self: center;
+}
+
+.user-profile-text-box h1 {
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 3px solid black;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+
+.user-profile-text-box p {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-profile-text-box span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.user-profile-edit {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  padding: 0 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  color: white;
+  cursor: pointer;
 }
