@@ -247,6 +247,89 @@ const SettingsContextProvider = (props) => {
       exhibitsType: ["Masks"],
       image: "../../images/settings/ww1.jpg",
     },
+    {
+      id: 3,
+      name: "World War II",
+      type: "Art",
+      params: "world-war-ii",
+      shortDescription:
+        "One of the deadliest conflicts in history, an estimated 9 million were killed in combat, while over 5 million civilians died from occupation, bombardment, hunger or disease.",
+      longDescription: {
+        1: "World War II or the Second World War, often abbreviated as WWII or WW2, was a global war that lasted from 1939 to 1945. It involved the vast majority of the world's countries—including all of the great powers—forming two opposing military alliances: the Allies and the Axis powers. In a total war directly involving more than 100 million personnel from more than 30 countries, the major participants threw their entire economic, industrial, and scientific capabilities behind the war effort, blurring the distinction between civilian and military resources. Aircraft played a major role in the conflict, enabling the strategic bombing of population centres and the only two uses of nuclear weapons in war. World War II was by far the deadliest conflict in human history; it resulted in 70 to 85 million fatalities, a majority being civilians. Tens of millions of people died due to genocides (including the Holocaust), starvation, massacres, and disease. In the wake of the Axis defeat, Germany and Japan were occupied, and war crimes tribunals were conducted against German and Japanese leaders.",
+        2: "World War II is generally considered to have begun on 1 September 1939, when Nazi Germany, under Adolf Hitler, invaded Poland. The United Kingdom and France subsequently declared war on Germany on 3 September. Under the Molotov–Ribbentrop Pact of August 1939, Germany and the Soviet Union had partitioned Poland and marked out their 'spheres of influence' across Finland, Romania and the Baltic states. From late 1939 to early 1941, in a series of campaigns and treaties, Germany conquered or controlled much of continental Europe, and formed the Axis alliance with Italy and Japan (along with other countries later on). Following the onset of campaigns in North Africa and East Africa, and the fall of France in mid-1940, the war continued primarily between the European Axis powers and the British Empire, with war in the Balkans, the aerial Battle of Britain, the Blitz of the UK, and the Battle of the Atlantic. On 22 June 1941, Germany led the European Axis powers in an invasion of the Soviet Union, opening the Eastern Front, the largest land theatre of war in history.",
+        3: "World War II changed the political alignment and social structure of the globe. The United Nations (UN) was established to foster international co-operation and prevent future conflicts, and the victorious great powers—China, France, the Soviet Union, the United Kingdom, and the United States—became the permanent members of its Security Council. The Soviet Union and the United States emerged as rival superpowers, setting the stage for the nearly half-century-long Cold War. In the wake of European devastation, the influence of its great powers waned, triggering the decolonisation of Africa and Asia. Most countries whose industries had been damaged moved towards economic recovery and expansion. Political integration, especially in Europe, began as an effort to forestall future hostilities, end pre-war enmities and forge a sense of common identity.",
+      },
+      exhibits: [
+        {
+          id: 1,
+          name: "operation-dynamo",
+          description:
+            "After German soldiers swept through Belgium and Northern France in a blitzkrieg in May of 1940, all communication and transport between Allied forces were cut, leaving thousands of troops stranded. Operation Dynamo was quickly put in place to evacuate the Allies stuck along the beaches of Dunkirk, France. Soldiers waded through the water hoping to escape by rescue vessels, military ships, or civilian ships. More than 338,000 soldiers were saved during what would be later called, the 'Miracle of Dunkirk.'",
+          image: "../../images/exhibits/world-war-ii/1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 2,
+          name: "d-day",
+          description:
+            "The Normandy landings were the landing operations and associated airborne operations on Tuesday, 6 June 1944 of the Allied invasion of Normandy in Operation Overlord during World War II. Codenamed Operation Neptune and often referred to as D-Day, it was the largest seaborne invasion in history. The operation began the liberation of France (and later western Europe) and laid the foundations of the Allied victory on the Western Front.'",
+          image: "../../images/exhibits/world-war-ii/2.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 3,
+          name: "german-surrender",
+          description:
+            "On 8 May 1945, in Berlin, Field Marshal Wilhelm Keitel signs the Act of Unconditional Military Surrender of the German Armed Forces.",
+          image: "../../images/exhibits/world-war-ii/3.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 4,
+          name: "auschwitz",
+          description:
+            "On January 27, 1945, the Soviet army entered Auschwitz and found approximately 7,600 Jewish detainees who had been left behind. Here, a doctor of the 322nd Rifle Division of the Red Army helps take survivors out of Auschwitz. They stand at the entrance, where its iconic sign reads “Arbeit Mecht Frei,” (“Work Brings Freedom”). The Soviet Army also discovered mounds of corpses and hundreds of thousands of personal belongings.",
+          image: "../../images/exhibits/world-war-ii/4.jpeg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 5,
+          name: "american-victory",
+          description:
+            "This Pulitzer Prize winning photo has become synonymous with American victory. Taken during the Battle of Iwo Jima by Associated Press photographer Joe Rosenthal, it is one of the most reproduced, and copied, photographs in history. During the battle, marines took an American flag to the highest point on the island: Mount Suribachi. U.S. Marine photographer Louis Lowery captured the original shot but several hours later, more Marines headed to the crest with a larger flag. It was on this second attempt, that the iconic image was snapped. Three of the six soldiers seen raising the flag in the famous Rosenthal photo were killed during the Battle of Iwo Jima.",
+          image: "../../images/exhibits/world-war-ii/5.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 6,
+          name: "v-j-day",
+          description:
+            "Photographer Alfred Eisenstaedt captured this photo in Time Square on Victory against Japan Day (“V-J Day”), August 14, 1945. Sailor George Mendonsa saw dental assistant Greta Zimmer Friedman for the first time among the celebration at V-J Day. He grabbed and kissed her. This photograph would go on to become one of the most well-known in history, while also stirring up controversy. Many women have claimed to be the nurse over the years, some saying it depicts a nonconsensual moment, even sexual harassment.",
+          image: "../../images/exhibits/world-war-ii/6.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+      ],
+      exhibitsType: ["Masks"],
+      image: "../../images/settings/ww2.jpg",
+    },
   ]);
   const [filteredSettings, setFilteredSettings] = useState([]);
 
