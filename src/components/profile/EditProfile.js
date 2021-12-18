@@ -1,44 +1,61 @@
-import useInput from "../../hooks/use-input";
 import { AuthContext } from "../../context/auth-context";
 import { useContext } from "react";
 import BackgroundImage from "../UI/BackroundImage";
 import classes from "./EditProfile.module.css";
+import useEdit from "../../hooks/use-edit";
 
 const EditProfile = (props) => {
   const authCtx = useContext(AuthContext);
   const currentUser = authCtx.currentUser;
 
   const {
-    value: newFirstNameValue,
-    valueChangeHandler: newFirstNameChangeHandler,
-  } = useInput((value) => value.includes("@"));
+    value: firstNameValue,
+    valueChangeHandler: firstNameChangeHandler,
+    hasError: firstNameHasError,
+  } = useEdit(currentUser.firstName);
 
   const {
-    value: newLastNameValue,
-    valueChangeHandler: newLastNameChangeHandler,
-  } = useInput((value) => value.length > 5);
+    value: lastNameValue,
+    valueChangeHandler: lastNameChangeHandler,
+    hasError: lastNameHasError,
+  } = useEdit(currentUser.lastName);
 
   const {
-    value: newContactNumberValue,
-    valueChangeHandler: newContactNumberChangeHandler,
-  } = useInput((value) => value.length > 5);
+    value: contactNumberValue,
+    valueChangeHandler: contactNumberChangeHandler,
+    hasError: contactNumberHasError,
+  } = useEdit(currentUser.contactNumber);
 
   const {
-    value: newAddressValue,
-    valueChangeHandler: newAddressChangeHandler,
-  } = useInput((value) => value.length > 5);
+    value: currentAddressValue,
+    valueChangeHandler: currentAddressChangeHandler,
+    hasError: currentAddressHasError,
+  } = useEdit(currentUser.currentAddress);
 
-  const { value: newFavorites, valueChangeHandler: newFavoritesChangeHandler } =
-    useInput((value) => value.length > 5);
+  const {
+    value: favoritesValue,
+    valueChangeHandler: favoritesChangeHandler,
+    hasError: favoritesHasError,
+  } = useEdit(currentUser.favorites);
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    currentUser.firstName = newFirstNameValue;
-    currentUser.lastName = newLastNameValue;
-    currentUser.contactNumber = newContactNumberValue;
-    currentUser.currentAddress = newAddressValue;
-    currentUser.favorites = newFavorites;
+    if (
+      firstNameHasError ||
+      lastNameHasError ||
+      contactNumberHasError ||
+      currentAddressHasError ||
+      favoritesHasError
+    ) {
+      return;
+    }
+
+    currentUser.firstName = firstNameValue;
+    currentUser.lastName = lastNameValue;
+    currentUser.contactNumber = contactNumberValue;
+    currentUser.currentAddress = currentAddressValue;
+    currentUser.favorites = favoritesValue;
 
     props.isEditing();
   };
@@ -46,63 +63,76 @@ const EditProfile = (props) => {
   return (
     <BackgroundImage>
       {" "}
-      <section className="form-content form-signin">
-        <form onSubmit={submitHandler}>
+      <section className={classes["form-content"]}>
+        <form onSubmit={submitHandler} className={classes["form-edit"]}>
           <h1>Edit Profile</h1>
 
-          <div className="form-control">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              type="text"
-              id="firstName"
-              onChange={newFirstNameChangeHandler}
-              placeholder={currentUser.firstName}
-            />
+          <div className={classes["form-row"]}>
+            <div className={classes["form-control"]}>
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                value={firstNameValue}
+                onChange={firstNameChangeHandler}
+              />
+              {firstNameHasError && <p>Field must not be empty!</p>}
+            </div>
+
+            <div className={classes["form-control"]}>
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                value={lastNameValue}
+                onChange={lastNameChangeHandler}
+              />
+              {lastNameHasError && <p>Field must not be empty!</p>}
+            </div>
+
+            <div className={classes["form-control"]}>
+              <label htmlFor="contactNumber">Contact Number</label>
+              <input
+                type="number"
+                id="contactNumber"
+                value={contactNumberValue}
+                onChange={contactNumberChangeHandler}
+              />
+              {contactNumberHasError && <p>Field must not be empty!</p>}
+            </div>
           </div>
 
-          <div className="form-control">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              type="text"
-              id="lastName"
-              onChange={newLastNameChangeHandler}
-              placeholder={currentUser.lastName}
-            />
+          <div className={classes["form-row"]}>
+            <div className={classes["form-control"]}>
+              <label htmlFor="currentAddress">Current Address</label>
+              <input
+                type="text"
+                id="currentAddress"
+                value={currentAddressValue}
+                onChange={currentAddressChangeHandler}
+              />
+              {currentAddressHasError && <p>Field must not be empty!</p>}
+            </div>
+
+            <div className={classes["form-control"]}>
+              <label htmlFor="favorites">Favorites</label>
+              <textarea
+                type="text"
+                id="favorites"
+                value={favoritesValue}
+                onChange={favoritesChangeHandler}
+              />
+            </div>
+            {favoritesHasError && <p>Field must not be empty!</p>}
           </div>
 
-          <div className="form-control">
-            <label htmlFor="contactNumber">Contact Number</label>
-            <input
-              type="number"
-              id="contactNumber"
-              onChange={newContactNumberChangeHandler}
-              placeholder={currentUser.contactNumber}
-            />
-          </div>
-
-          <div className="form-control">
-            <label htmlFor="currentAddress">Current Address</label>
-            <input
-              type="text"
-              id="currentAddress"
-              onChange={newAddressChangeHandler}
-              placeholder={currentUser.currentAddress}
-            />
-          </div>
-
-          <div className="form-control">
-            <label htmlFor="favorites">Favorites</label>
-            <textarea
-              type="text"
-              id="favorites"
-              onChange={newFavoritesChangeHandler}
-              placeholder={currentUser.favorites}
-            />
-          </div>
-
-          <div className="form-actions">
-            <button type="submit">Save Changes</button>
-            <button onClick={props.isEditing}>Cancel</button>
+          <div className={classes["form-actions"]}>
+            <button className={classes["btn-save"]} type="submit">
+              Save Changes
+            </button>
+            <button className={classes["btn-cancel"]} onClick={props.isEditing}>
+              Cancel
+            </button>
           </div>
         </form>
       </section>
