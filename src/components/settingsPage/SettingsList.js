@@ -8,15 +8,45 @@ import { Link } from "react-router-dom";
 
 const SettingsList = () => {
   const [showAll, setShowAll] = useState(true);
+  const [showFilterForm, setShowFilterForm] = useState(false);
   const settingsCtx = useContext(SettingsContext);
   const settings = settingsCtx.settingsList;
 
+  const showFilterFormHandler = () => {
+    setShowFilterForm(!showFilterForm);
+  };
+
   return (
     <Container>
-      <SettingsSearch setShowAll={setShowAll} />
+      <div className={classes["setting-list"]}>
+        <h1>Tour the history</h1>
+
+        <p>
+          Tour the history of Europe through our settings bellow. Each setting
+          has a large number of unique exhibits to show you how once pharaohs or
+          greek philosophers lived. See sculptures and paintings made by
+          Michelangelo and Leonardo and many other things...{" "}
+        </p>
+
+        {!showFilterForm && (
+          <p>
+            If you're looking for something specific, click{" "}
+            <Link to="/settings" onClick={showFilterFormHandler}>
+              here
+            </Link>{" "}
+            for filter form.
+          </p>
+        )}
+      </div>
+      {showFilterForm && (
+        <SettingsSearch
+          showFilterForm={showFilterFormHandler}
+          setShowAll={setShowAll}
+        />
+      )}
 
       {showAll && (
-        <div className={classes["settings-list"]}>
+        <div className={classes["settings-list-cards"]}>
           {settings.map((setting) => (
             <SettingCard key={setting.id} setting={setting} />
           ))}
@@ -24,7 +54,7 @@ const SettingsList = () => {
       )}
 
       {!showAll && (
-        <div className={classes["settings-list"]}>
+        <div className={classes["settings-list-cards"]}>
           <div className={classes["setting-error"]}>
             <p>
               {settingsCtx.filteredSettings.length === 0

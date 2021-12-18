@@ -96,7 +96,10 @@ const SettingsSearch = (props) => {
       <form onSubmit={submitHandler} className={classes["form"]}>
         <div className={classes["form-header"]}>
           <h2>Search our settings</h2>
-          <IoClose className={classes["form-close"]} />
+          <IoClose
+            onClick={props.showFilterForm}
+            className={classes["form-close"]}
+          />
         </div>
 
         <div className={classes["form-control"]}>
@@ -124,7 +127,7 @@ const SettingsSearch = (props) => {
             <option value="Vases">Vases</option>
           </select>
 
-          <label htmlFor="exhibitNumber">Number of exhibits</label>
+          <label htmlFor="exhibitNumber">Max number of exhibits</label>
           <input
             id="exhibitNumber"
             required
@@ -171,7 +174,7 @@ const SettingsSearch = (props) => {
               onChange={averageTimeChangeHandler}
             />
 
-            <label htmlFor="grade">Grade</label>
+            <label htmlFor="grade">Max rating</label>
             <input
               id="grade"
               required

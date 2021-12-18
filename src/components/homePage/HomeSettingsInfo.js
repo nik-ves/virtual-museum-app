@@ -9,21 +9,31 @@ const HomeSettingsInfo = () => {
   const settingsCtx = useContext(SettingsContext);
   const settings = settingsCtx.settingsList;
 
+  const test = settings.filter((setting) => {
+    return setting.exhibits.length > 6;
+  });
+
+  console.log(test);
+
   return (
     <section className={classes["home-settings-info"]}>
       <h1>FEATURED SETTINGS</h1>
       <p>Some of our featured settings that you might like.</p>
 
       <div className={classes["home-settings"]}>
-        {settings.map((setting) => (
-          <HomeSettingCard
-            key={setting.id}
-            name={setting.name}
-            shortDescription={setting.shortDescription}
-            image={setting.image}
-            params={setting.params}
-          />
-        ))}
+        {settings
+          .filter((setting) => {
+            return setting.id <= 3;
+          })
+          .map((setting) => (
+            <HomeSettingCard
+              key={setting.id}
+              name={setting.name}
+              shortDescription={setting.shortDescription}
+              image={setting.image}
+              params={setting.params}
+            />
+          ))}
       </div>
 
       <Link className={classes["home-settings-link"]} to="/settings">
@@ -34,3 +44,13 @@ const HomeSettingsInfo = () => {
 };
 
 export default HomeSettingsInfo;
+
+// .map((setting) => (
+//   <HomeSettingCard
+//     key={setting.id}
+//     name={setting.name}
+//     shortDescription={setting.shortDescription}
+//     image={setting.image}
+//     params={setting.params}
+//   />
+// ))}

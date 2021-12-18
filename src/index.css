@@ -6,6 +6,7 @@
   --secondary-bg-color: #151515;
   --border-color: #40e0d0;
   --color-text: #b2b2b2;
+  --color-error-text: #ff6666;
 }
 
 * {
@@ -129,12 +130,15 @@ button {
 .form-content h1 {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 3rem;
 }
 
 .form-content h2 {
+  display: inline-block;
   margin-top: 3rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  border-bottom: 2px solid white;
 }
 
 .form-content form {
@@ -144,8 +148,7 @@ button {
 }
 
 .form-control p {
-  color: white;
-  text-align: center;
+  color: var(--color-error-text);
   font-size: 1.5rem;
   margin: 0.5rem 0;
 }
@@ -169,18 +172,20 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.form-control input {
+.form-control input,
+.form-control textarea {
   border: 2px solid white;
   border-radius: 4px;
   padding: 0 0.5rem;
-  font: inherit;
+  font-size: 1.5rem;
   width: 30rem;
   max-width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
 }
 
-.form-control input:focus {
+.form-control input:focus,
+.form-control textarea:focus {
   outline: none;
   border: 2px solid var(--border-color);
 }

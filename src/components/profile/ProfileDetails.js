@@ -42,6 +42,13 @@ const ProfileDetails = (props) => {
             </span>
           </li>
           <li>
+            <span className={classes["user-property"]}>Favorites:</span>
+            <span className={classes["user-info"]}>
+              {" "}
+              {userProfile.favorites}
+            </span>
+          </li>
+          <li>
             <span className={classes["user-property"]}>Email:</span>
             <span className={classes["user-info"]}> {userProfile.email}</span>
           </li>

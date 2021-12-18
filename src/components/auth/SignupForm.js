@@ -42,6 +42,14 @@ const SignUpForm = () => {
   } = useInput((value) => value.trim() !== "");
 
   const {
+    value: favoritesValue,
+    hasError: favoritesHasError,
+    valueChangeHandler: favoritesChangeHandler,
+    valueBlurHandler: favoritesBlurHandler,
+    resetValue: favoritesValueReset,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
     value: emailValue,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
@@ -87,6 +95,7 @@ const SignUpForm = () => {
       lastName: lastNameValue,
       contactNumber: contactNumberValue,
       currentAddress: addressValue,
+      favorites: favoritesValue,
       email: emailValue,
       password: passwordValue,
     });
@@ -156,6 +165,18 @@ const SignUpForm = () => {
               onBlur={addressBlurHandler}
             />
             {addressHasError && <p>Address field must not be empty!</p>}
+          </div>
+
+          <div className={lastNameClasses}>
+            <label htmlFor="favorites">Favorite settings and exhibits</label>
+            <textarea
+              type="text"
+              id="address"
+              value={favoritesValue}
+              onChange={favoritesChangeHandler}
+              onBlur={favoritesBlurHandler}
+            />
+            {favoritesHasError && <p>Favorites field must not be empty!</p>}
           </div>
         </div>
 
