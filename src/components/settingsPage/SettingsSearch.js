@@ -1,6 +1,7 @@
 import { SettingsContext } from "../../context/settings-context";
 import { useContext } from "react";
 import useInput from "../../hooks/use-input";
+import { IoClose } from "react-icons/io5";
 
 import classes from "./SettingsSearch.module.css";
 import { useState } from "react/cjs/react.development";
@@ -76,6 +77,8 @@ const SettingsSearch = (props) => {
       averageTime,
       grade
     );
+
+    resetFormValues();
   };
 
   const resetFormValues = () => {
@@ -91,7 +94,11 @@ const SettingsSearch = (props) => {
   return (
     <section className={classes["settings-search"]}>
       <form onSubmit={submitHandler} className={classes["form"]}>
-        <h2>Search our settings</h2>
+        <div className={classes["form-header"]}>
+          <h2>Search our settings</h2>
+          <IoClose className={classes["form-close"]} />
+        </div>
+
         <div className={classes["form-control"]}>
           <label htmlFor="settingType">Type of setting</label>
           <select

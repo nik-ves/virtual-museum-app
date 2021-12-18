@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import SettingCard from "./SettingCard";
 import classes from "./SettingsList.module.css";
 import SettingsSearch from "./SettingsSearch";
+import { Link } from "react-router-dom";
 
 const SettingsList = () => {
   const [showAll, setShowAll] = useState(true);
@@ -12,7 +13,6 @@ const SettingsList = () => {
 
   return (
     <Container>
-      {/* <h1>Settings</h1> */}
       <SettingsSearch setShowAll={setShowAll} />
 
       {showAll && (
@@ -25,7 +25,22 @@ const SettingsList = () => {
 
       {!showAll && (
         <div className={classes["settings-list"]}>
-          <button onClick={setShowAll}>Back to all settings</button>
+          <div className={classes["setting-error"]}>
+            <p>
+              {settingsCtx.filteredSettings.length === 0
+                ? "No settings found."
+                : `${settingsCtx.filteredSettings.length} settings found.`}
+            </p>
+
+            <p>
+              Click{" "}
+              <Link onClick={setShowAll} to="/settings">
+                here
+              </Link>{" "}
+              to show all of our settings.
+            </p>
+          </div>
+
           {settingsCtx.filteredSettings.map((setting) => (
             <SettingCard key={setting.id} setting={setting} />
           ))}

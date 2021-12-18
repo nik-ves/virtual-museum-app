@@ -263,12 +263,11 @@ const SettingsContextProvider = (props) => {
       image: "../../images/settings/ww1.jpg",
     },
     {
-      id: 3,
+      id: 4,
       name: "World War II",
       type: "Art",
       params: "world-war-ii",
-      shortDescription:
-        "One of the deadliest conflicts in history, an estimated 9 million were killed in combat, while over 5 million civilians died from occupation, bombardment, hunger or disease.",
+      shortDescription: "",
       longDescription: {
         1: "World War II or the Second World War, often abbreviated as WWII or WW2, was a global war that lasted from 1939 to 1945. It involved the vast majority of the world's countries—including all of the great powers—forming two opposing military alliances: the Allies and the Axis powers. In a total war directly involving more than 100 million personnel from more than 30 countries, the major participants threw their entire economic, industrial, and scientific capabilities behind the war effort, blurring the distinction between civilian and military resources. Aircraft played a major role in the conflict, enabling the strategic bombing of population centres and the only two uses of nuclear weapons in war. World War II was by far the deadliest conflict in human history; it resulted in 70 to 85 million fatalities, a majority being civilians. Tens of millions of people died due to genocides (including the Holocaust), starvation, massacres, and disease. In the wake of the Axis defeat, Germany and Japan were occupied, and war crimes tribunals were conducted against German and Japanese leaders.",
         2: "World War II is generally considered to have begun on 1 September 1939, when Nazi Germany, under Adolf Hitler, invaded Poland. The United Kingdom and France subsequently declared war on Germany on 3 September. Under the Molotov–Ribbentrop Pact of August 1939, Germany and the Soviet Union had partitioned Poland and marked out their 'spheres of influence' across Finland, Romania and the Baltic states. From late 1939 to early 1941, in a series of campaigns and treaties, Germany conquered or controlled much of continental Europe, and formed the Axis alliance with Italy and Japan (along with other countries later on). Following the onset of campaigns in North Africa and East Africa, and the fall of France in mid-1940, the war continued primarily between the European Axis powers and the British Empire, with war in the Balkans, the aerial Battle of Britain, the Blitz of the UK, and the Battle of the Atlantic. On 22 June 1941, Germany led the European Axis powers in an invasion of the Soviet Union, opening the Eastern Front, the largest land theatre of war in history.",
@@ -344,6 +343,88 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/ww2.jpg",
+    },
+    {
+      id: 5,
+      name: "Cold War",
+      type: "Art",
+      params: "cold-war",
+      shortDescription: "",
+      longDescription: {
+        1: "The Cold War was a period of geopolitical tension between the United States and the Soviet Union and their respective allies, the Western Bloc and the Eastern Bloc, which began following World War II. Historians do not fully agree on its starting and ending points, but the period is generally considered to span the 1947 Truman Doctrine (12 March 1947) to the 1991 Dissolution of the Soviet Union (26 December 1991). The term cold war is used because there was no large-scale fighting directly between the two superpowers, but they each supported major regional conflicts known as proxy wars. The conflict was based around the ideological and geopolitical struggle for global influence by these two superpowers, following their temporary alliance and victory against Nazi Germany in 1945. Aside from the nuclear arsenal development and conventional military deployment, the struggle for dominance was expressed via indirect means such as psychological warfare, propaganda campaigns, espionage, far-reaching embargoes, rivalry at sports events and technological competitions such as the Space Race.",
+        2: "The Western Bloc was led by the United States as well as the other First World nations of the Western Bloc that were generally liberal democratic but tied to a network of the authoritarian states, most of which were their former colonies. The Eastern Bloc was led by the Soviet Union and its Communist Party, which had an influence across the Second World. The US government supported right-wing governments and uprisings across the world, while the Soviet government funded communist parties and revolutions around the world. As nearly all the colonial states achieved independence in the period 1945–1960, they became Third World battlefields in the Cold War.",
+        3: "The first phase of the Cold War began shortly after the end of the Second World War in 1945. The United States and its allies created the NATO military alliance in 1949 in the apprehension of a Soviet attack and termed their global policy against Soviet influence containment. The Soviet Union formed the Warsaw Pact in 1955 in response to NATO. Major crises of this phase included the 1948–49 Berlin Blockade, the 1927–1949 Chinese Civil War, the 1950–1953 Korean War, the 1956 Hungarian Revolution, the 1956 Suez Crisis, the Berlin Crisis of 1961 and the 1962 Cuban Missile Crisis. The US and the USSR competed for influence in Latin America, the Middle East, and the decolonizing states of Africa and Asia.",
+      },
+      exhibits: [
+        {
+          id: 1,
+          name: "ivy-mike",
+          description:
+            "Ivy Mike was the codename given to the first full-scale test of a thermonuclear device, in which part of the explosive yield comes from nuclear fusion. Ivy Mike was detonated on November 1, 1952, by the United States on the island of Elugelab in Enewetak Atoll, in the now independent island nation of the Marshall Islands, as part of Operation Ivy. It was the first full test of the Teller–Ulam design, a staged fusion device. As a result of the collection of samples from the explosion by U.S. Air Force pilots, scientists found traces of the isotopes plutonium-246 and plutonium-244, and confirmed the existence of the predicted but undiscovered elements einsteinium and fermium.",
+          image: "../../images/exhibits/cold-war/1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 2,
+          name: "fall-of-the-berlin-wall",
+          description:
+            "The fall of the Berlin Wall on 9 November 1989 was a pivotal event in world history which marked the falling of the Iron Curtain and the start of the fall of communism in Eastern and Central Europe. The fall of the inner German border took place shortly afterwards. An end to the Cold War was declared at the Malta Summit three weeks later and the German reunification took place in October the following year.",
+          image: "../../images/exhibits/cold-war/2.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 3,
+          name: "space-race",
+          description:
+            "The Space Race was a 20th-century competition between two Cold War adversaries, the Soviet Union (USSR) and the United States of America (USA), to achieve superior spaceflight capability. It had its origins in the ballistic missile-based nuclear arms race between the two nations following World War II. The technological advantage demonstrated by spaceflight achievement was seen as necessary for national security, and became part of the symbolism and ideology of the time. The Space Race brought pioneering launches of artificial satellites, robotic space probes to the Moon, Venus, and Mars, and human spaceflight in low Earth orbit and ultimately to the Moon.",
+          image: "../../images/exhibits/cold-war/3.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 4,
+          name: "august-coup",
+          description:
+            "The 1991 Soviet coup d'état attempt, also known as the August Coup, was a failed attempt made by communist hard-liners of the Soviet Union to take control of the country from Mikhail Gorbachev, who was Soviet President and General Secretary of the party. The coup leaders consisted of top military and civilian officials who formed the State Committee on the State of Emergency (GKChP). They were hard-line opponents of Gorbachev's reform program, angry at the loss of control over Eastern European states, and fearful of the new union treaty that was about to be signed. The treaty decentralized much of the central government's power to the 15 republics. The hard-liners were very poorly organized. They met defeat by a short but effective campaign of anticommunist counterrevolutionaries, mainly in Moscow, led by Russian president Boris Yeltsin, who had been both an ally and critic of Gorbachev. The coup collapsed in only two days and Gorbachev returned to office, while all the plotters lost office. Yeltsin became the dominant leader and Gorbachev lost much of his influence. The failed coup led to both the immediate collapse of the Communist Party of the Soviet Union and the dissolution of the USSR four months later.",
+          image: "../../images/exhibits/cold-war/4.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 5,
+          name: "apollo-soyuz",
+          description:
+            "American astronaut Thomas P. Stafford (right) and Soviet cosmonaut Alexei Leonov (left) shake hands in outer space, 1975. Apollo–Soyuz was the first manned international space mission, carried out jointly by the United States and the Soviet Union in July 1975. Millions of people around the world watched on television as a United States Apollo module docked with a Soviet Union Soyuz capsule. The project, and its memorable handshake in space, was a symbol of détente between the two superpowers during the Cold War, and it is generally considered to mark the end of the Space Race, which had begun in 1957 with the Soviet Union's launch of Sputnik 1.",
+          image: "../../images/exhibits/cold-war/5.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 6,
+          name: "cuban-missile-crisis",
+          description:
+            "The Cuban Missile Crisis, also known as the October Crisis of 1962, the Caribbean Crisis, or the Missile Scare, was a 1-month, 4 day (16 October – 20 November 1962) confrontation between the United States and the Soviet Union which escalated into an international crisis when American deployments of missiles in Italy and Turkey were matched by Soviet deployments of similar ballistic missiles in Cuba. Despite the short time frame, the Cuban Missile Crisis remains a defining moment in U.S. national security and nuclear war preparation. The confrontation is often considered the closest the Cold War came to escalating into a full-scale nuclear war.",
+          image: "../../images/exhibits/cold-war/6.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+      ],
+      exhibitsType: ["Masks"],
+      image: "../../images/settings/cold-war.jpg",
     },
   ]);
   const [filteredSettings, setFilteredSettings] = useState([]);
