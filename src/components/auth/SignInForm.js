@@ -1,5 +1,5 @@
 import useInput from "../../hooks/use-input";
-
+import BackgroundImage from "../UI/BackroundImage";
 import { AuthContext } from "../../context/auth-context";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router";
@@ -43,43 +43,45 @@ const SignInForm = () => {
     : "form-control";
 
   return (
-    <section className="form-content form-signin">
-      <form onSubmit={submitHandler}>
-        <h1>Sign In</h1>
+    <BackgroundImage>
+      <section className="form-content form-signin">
+        <form onSubmit={submitHandler}>
+          <h1>Sign In</h1>
 
-        <div className={emailClasses}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            onChange={emailChangeHandler}
-            onBlur={emailBlurHandler}
-          />
-          {emailHasError && <p>Enter a valid email address!</p>}
-        </div>
+          <div className={emailClasses}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              onChange={emailChangeHandler}
+              onBlur={emailBlurHandler}
+            />
+            {emailHasError && <p>Enter a valid email address!</p>}
+          </div>
 
-        <div className={passwordClasses}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            onChange={passwordChangeHandler}
-            onBlur={passwordBlurHandler}
-          />
-          {passwordHasError && (
-            <p>Password must be longer than 5 characters!</p>
-          )}
-        </div>
+          <div className={passwordClasses}>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              onChange={passwordChangeHandler}
+              onBlur={passwordBlurHandler}
+            />
+            {passwordHasError && (
+              <p>Password must be longer than 5 characters!</p>
+            )}
+          </div>
 
-        <div className="form-actions">
-          <button type="submit">Sign In</button>
-        </div>
-        {<p>{errorMessage}</p>}
-        <p className="form-question">
-          No account? Create account <Link to="/sign-up">here</Link>.
-        </p>
-      </form>
-    </section>
+          <div className="form-actions">
+            <button type="submit">Sign In</button>
+          </div>
+          {<p>{errorMessage}</p>}
+          <p className="form-question">
+            No account? Create account <Link to="/sign-up">here</Link>.
+          </p>
+        </form>
+      </section>
+    </BackgroundImage>
   );
 };
 

@@ -49,6 +49,13 @@ button {
   cursor: pointer;
 }
 
+.background-image {
+  background-image: url("./images/general-background.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  padding: 1rem 0;
+}
+
 /* =========================== */
 
 .backdrop {
@@ -114,7 +121,7 @@ button {
 }
 
 .form-content {
-  margin: 8rem auto;
+  margin: 10rem auto;
   font-size: 1.8rem;
   color: white;
 }
