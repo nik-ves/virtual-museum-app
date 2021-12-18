@@ -161,16 +161,6 @@ const SettingsContextProvider = (props) => {
         },
         {
           id: 4,
-          name: "The Siren vase",
-          description: "",
-          image: "../../images/exhibits/ancient-greece/4.jpg",
-          price: 33,
-          time: 5,
-          countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
-        },
-        {
-          id: 5,
           name: "Motya Charioteer",
           description: "",
           image: "../../images/exhibits/ancient-greece/5.jpg",
@@ -200,10 +190,10 @@ const SettingsContextProvider = (props) => {
       exhibits: [
         {
           id: 1,
-          name: "mask-of-tutankhamun",
+          name: "brooding-soldier",
           description:
-            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
-          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+            "Tree limbs surround the World War One Canadian Memorial, also known as the 'Brooding Soldier' in St. Julien, Belgium on March 7, 2014. The statue is a memorial to the Canadian troops who died in the first gas attacks of the First World War in 1915.",
+          image: "../../images/exhibits/world-war-i/1.jpg",
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
@@ -211,14 +201,47 @@ const SettingsContextProvider = (props) => {
         },
         {
           id: 2,
-          name: "mask-of-tutankhamun",
+          name: "ub148",
           description:
-            "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1334–1325 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo The mask is one of the best-known works of art in the world and a prominent symbol of ancient Egypt.",
-          image: "../../images/exhibits/pharaohs-of-egypt/mask1.jpg",
+            "The former German submarine UB 148 at sea, after having been surrendered to the Allies. UB-148, a small coastal submarine, was laid down during the winter of 1917 and 1918 at Bremen, Germany, but never commissioned in the Imperial German Navy. She was completing preparations for commissioning when the armistice of November 11 ended hostilities. On November 26, UB-148 was surrendered to the British at Harwich, England. Later, when the United States Navy expressed an interest in acquiring several former U-boats to use in conjunction with a Victory Bond drive, UB-148 was one of the six boats allocated for that purpose.",
+          image: "../../images/exhibits/world-war-i/2.jpg",
           price: 33,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2],
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 3,
+          name: "maplewood",
+          description:
+            "British cargo ship SS Maplewood under attack by German submarine SM U-35 on April 7, 1917, 47 nautical miles/87 km southwest of Sardinia. The U-35 participated in the entire war, becoming the most successful U-boat in WWI, sinking 224 ships, killing thousands.",
+          image: "../../images/exhibits/world-war-i/3.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 4,
+          name: "german-trenches",
+          description:
+            "French soldiers standing in German trenches seized after being shelled on the Somme front, northern France in 1916.",
+          image: "../../images/exhibits/world-war-i/4.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 5,
+          name: "battle-of-the-somme",
+          description:
+            "Wounded are dressed in a trench during the Courcelette operation of the Battle of the Somme, France on September 15, 1916. July 1, 2016, marks the 100th anniversary of the first Battle of the Somme -- one of the bloodiest battles in history which claimed 1,250,000 casualties.",
+          image: "../../images/exhibits/world-war-i/5.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
         },
       ],
       exhibitsType: ["Masks"],

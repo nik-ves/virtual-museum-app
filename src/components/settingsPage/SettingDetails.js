@@ -25,7 +25,7 @@ const SettingDetails = () => {
         </div>
 
         <div className={classes["setting-text-box"]}>
-          <h1>{setting.type}</h1>
+          <h1>{setting.name}</h1>
           {Object.values(setting.longDescription).map((value) => {
             return <p key={Math.random()}>{value}</p>;
           })}

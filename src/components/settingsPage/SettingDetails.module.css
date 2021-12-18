@@ -41,9 +41,9 @@
 .exhibit-link a {
   color: white;
   position: relative;
-  width: 27rem;
+  width: 36rem;
   height: 35rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transition: all 0.3s;
   overflow: hidden;
   background-color: var(--main-bg-color);

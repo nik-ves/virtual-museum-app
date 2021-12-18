@@ -7,14 +7,16 @@
 .exhibit-image-box {
   height: 60rem;
   overflow: hidden;
-  width: 45%;
+  width: 50%;
   background-color: var(--main-bg-color);
   border: 3px solid black;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .exhibit-image-box img {
   height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .exhibit-text-box {

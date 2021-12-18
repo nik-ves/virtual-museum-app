@@ -1,7 +1,7 @@
 .setting {
   display: inline-block;
-  width: 45%;
-  height: 25rem;
+  width: 100%;
+  height: 40rem;
   text-align: left;
   border: 3px solid black;
   position: relative;
@@ -12,6 +12,11 @@
   text-align: center;
   overflow: hidden;
   margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.setting img {
+  margin-top: -10%;
 }
 
 .setting-text {
@@ -33,9 +38,7 @@
 }
 
 .setting-image {
-  /* height: 100%; */
   width: 100%;
-  background-position: center;
   filter: brightness(40%);
 }
 

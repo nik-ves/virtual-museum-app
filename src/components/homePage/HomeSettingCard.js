@@ -3,7 +3,7 @@ import classes from "./HomeSettingCard.module.css";
 
 const Setting = (props) => {
   return (
-    <Link to={`/settings/${props.type}`} className={classes.setting}>
+    <Link to={`/settings/${props.params}`} className={classes.setting}>
       <img
         className={classes["setting-image"]}
         src={props.image}

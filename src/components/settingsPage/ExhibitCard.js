@@ -13,11 +13,6 @@ const ExhibitCard = ({ exhibits, setting }) => {
   return (
     <Fragment>
       {exhibits.map((exhibit) => {
-        const averageGrade =
-          exhibit.grade.reduce((prev, cur) => {
-            return prev + cur;
-          }) / exhibit.grade.length;
-
         return (
           <Link
             key={exhibit.id}
@@ -33,7 +28,7 @@ const ExhibitCard = ({ exhibits, setting }) => {
 
             <div className={classes["exhibit-text-box"]}>
               <h3>{formatedName(exhibit.name)}</h3>
-              <h3>{averageGrade}</h3>
+              {/* <h3>{averageGrade}</h3> */}
             </div>
           </Link>
         );

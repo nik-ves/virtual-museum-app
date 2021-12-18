@@ -177,10 +177,9 @@ const SettingsSearch = (props) => {
 
         <div className={classes["form-actions"]}>
           <button type="submit">Search</button>
-          {/* <button onClick={resetFormValues}>Reset Values</button> */}
+          {/* <button onClick={props.setShowAll(true)}>Show all</button> */}
         </div>
       </form>
-      <button onClick={props.setShowAll}>Show all</button>
     </section>
   );
 };

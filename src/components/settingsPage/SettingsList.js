@@ -12,6 +12,7 @@ const SettingsList = () => {
 
   return (
     <Container>
+      {/* <h1>Settings</h1> */}
       <SettingsSearch setShowAll={setShowAll} />
 
       {showAll && (
@@ -24,6 +25,7 @@ const SettingsList = () => {
 
       {!showAll && (
         <div className={classes["settings-list"]}>
+          <button onClick={setShowAll}>Back to all settings</button>
           {settingsCtx.filteredSettings.map((setting) => (
             <SettingCard key={setting.id} setting={setting} />
           ))}
