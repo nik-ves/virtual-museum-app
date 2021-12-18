@@ -541,6 +541,99 @@ const SettingsContextProvider = (props) => {
       exhibitsType: ["Masks"],
       image: "../../images/settings/cold-war.jpg",
     },
+    {
+      id: 7,
+      name: "Roman Empire",
+      type: "Art",
+      params: "roman-empire",
+      shortDescription: "",
+      longDescription: {
+        1: "The Roman Empire was the post-Republican period of ancient Rome. As a polity it included large territorial holdings around the Mediterranean Sea in Europe, Northern Africa, and Western Asia ruled by emperors. From the accession of Caesar Augustus to the military anarchy of the 3rd century, it was a principate with Italy as metropole of the provinces and the city of Rome as sole capital (27 BC – AD 286). After the military crisis, the empire was ruled by multiple emperors who shared rule over the Western Roman Empire and over the Eastern Roman Empire. Rome remained the nominal capital of both parts until AD 476, when the imperial insignia were sent to Constantinople[citation needed], following the capture of Ravenna by the barbarians of Odoacer and the subsequent deposition of Romulus Augustulus. The adoption of Christianity as the state church of the Roman Empire in AD 380 and the fall of the Western Roman Empire to Germanic kings conventionally marks the end of Classical antiquity and the beginning of the Middle Ages. Because of those events, along with the gradual hellenization of the Eastern Roman Empire, historians distinguish the medieval Roman Empire that remained in the Eastern provinces as the Byzantine Empire.",
+        2: "The predecessor state of the Roman Empire, the Roman Republic (which had replaced Rome's monarchy in the 6th century BC) became severely destabilized in a series of civil wars and political conflicts. In the mid-1st century BC, Julius Caesar was appointed as perpetual dictator and then assassinated in 44 BC. Civil wars and proscriptions continued, eventually culminating in the victory of Octavian, Caesar's adopted son, over Mark Antony and Cleopatra at the Battle of Actium in 31 BC. The following year Octavian conquered Ptolemaic Egypt, ending the Hellenistic period that had begun with the conquests of Alexander the Great of Macedon in the 4th century BC. Octavian's power then became unassailable, and in 27 BC the Roman Senate formally granted him overarching power and the new title Augustus, effectively making him the first Roman emperor.",
+        3: "Due to the Roman Empire's vast extent and long endurance, the institutions and culture of Rome had a profound and lasting influence on the development of language, religion, art, architecture, literature, philosophy, law, and forms of government in the territory it governed, and far beyond. The Latin language of the Romans evolved into the Romance languages of the medieval and modern world, while Medieval Greek became the language of the Eastern Roman Empire. The Empire's adoption of Christianity led to the formation of medieval Christendom. Greek and Roman art had a profound impact on the Italian Renaissance. Rome's architectural tradition served as the basis for Romanesque, Renaissance and Neoclassical architecture, and also had a strong influence on Islamic architecture. The rediscovery of Greek and Roman science and technology (which also formed the basis for Islamic science) in Medieval Europe led to the Scientific Renaissance and Scientific Revolution. The corpus of Roman law has its descendants in many legal systems of the world today, such as the Napoleonic Code, while Rome's republican institutions have left an enduring legacy, influencing the Italian city-state republics of the medieval period, as well as the early United States and other modern democratic republics.",
+      },
+      exhibits: [
+        {
+          id: 1,
+          name: "romulus-and-remus",
+          description:
+            "Romulus and Remus are twin brothers whose story tells the events that led to the founding of the city of Rome and the Roman Kingdom by Romulus. The killing of Remus by his twin, along with other tales from their story, have inspired artists throughout the ages. Since ancient times, the image of a she-wolf suckling the twins has been a symbol of the city of Rome and the ancient Romans. Although the tale takes place before the founding of Rome around 750 BC, the earliest known written account of the myth is from the late 3rd century BC. Possible historical basis for the story, as well as whether the twins' myth was an original part of Roman myth or a later development, is a subject of ongoing debate.",
+          image: "../../images/exhibits/roman-empire/1.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 2,
+          name: "head-of-nero",
+          description:
+            "Nero was the fifth emperor of Rome. He was adopted by the Roman emperor Claudius at the age of thirteen, and succeeded him to the throne. Nero seems to have been popular with his Praetorian guards, and with lower-class commoners in Rome and the provinces, but was deeply resented by the Roman aristocracy. Most contemporary sources describe him as tyrannical, self-indulgent and debauched. He was overthrown by his Senate and committed suicide aged 30, last emperor of the Julio-Claudian dynasty.",
+          image: "../../images/exhibits/roman-empire/2.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 3,
+          name: "limestone-stela",
+          description:
+            "Limestone stela, gable missing, surface worn in places. A female figure stands on a high pedestal in a round-arched niche within a gabled shrine. Her extended left hand holds an offering. Her right hand is bent inwards to her chest. She wears a tunic and enveloping mantle and a double-stranded necklace. The shrine is supported by columns with voluted capitals. ",
+          image: "../../images/exhibits/roman-empire/3.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 4,
+          name: "marble-torso",
+          description:
+            "Marble torso of the Emperor Hadrian in military dress. The scene on the breastplate refers to the legendary foundation of Rome by Aeneas. The elephants' heads around the edge of the cuirass may symbolise Rome's conquest of the East.",
+          image: "../../images/exhibits/roman-empire/4.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 5,
+          name: "head-of-augustus",
+          description:
+            "Caesar Augustus, also known as Octavian, was the first Roman emperor, reigning from 27 BC until his death in AD 14. His status as the founder of the Roman Principate (the first phase of the Roman Empire) has consolidated a legacy as one of the most effective leaders in human history. The reign of Augustus initiated an era of relative peace known as the Pax Romana. The Roman world was largely free from large-scale conflict for more than two centuries, despite continuous wars of imperial expansion on the Empire's frontiers and the year-long civil war known as the 'Year of the Four Emperors' over the imperial succession.",
+          image: "../../images/exhibits/roman-empire/5.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 6,
+          name: "arch-of-constantine",
+          description:
+            "The Arch of Constantine is a triumphal arch in Rome dedicated to the emperor Constantine the Great. The arch was commissioned by the Roman Senate to commemorate Constantine's victory over Maxentius at the Battle of Milvian Bridge in AD 312. Situated between the Colosseum and the Palatine Hill, the arch spans the Via triumphalis, the route taken by victorious military leaders when they entered the city in a triumphal procession. [a] Dedicated in 315, it is the largest Roman triumphal arch, with overall dimensions of[1] 21 m (69 ft) high, 25.9 m (85 ft) wide and 7.4 m (24 ft) deep. It has three bays, the central one being 11.5 m (38 ft) high and 6.5 m (21 ft) wide and the laterals 7.4 m (24 ft) by 3.4 m (11 ft) each. The arch is constructed of brick-faced concrete covered in marble.",
+          image: "../../images/exhibits/roman-empire/6.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+        {
+          id: 7,
+          name: "cippus",
+          description:
+            "Limestone base of a tomb-marker (cippus), probably once surmounted by a stone sphere or cone. It is decorated with cable pattern at the corners, and all four sides are carved in low relief, with: a boy with a lyre between two dancing youths; a girl between a man and woman, all three dancing; and, on the remaining two sides, a scene of a boy playing double-pipes.",
+          image: "../../images/exhibits/roman-empire/7.png",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [3, 4, 1, 5, 2],
+        },
+      ],
+      exhibitsType: ["Masks"],
+      image: "../../images/settings/roman-empire.jpg",
+    },
   ]);
   const [filteredSettings, setFilteredSettings] = useState([]);
 
