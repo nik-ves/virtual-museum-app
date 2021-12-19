@@ -122,8 +122,8 @@ const EditProfile = (props) => {
                 value={favoritesValue}
                 onChange={favoritesChangeHandler}
               />
+              {favoritesHasError && <p>Field must not be empty!</p>}
             </div>
-            {favoritesHasError && <p>Field must not be empty!</p>}
           </div>
 
           <div className={classes["form-actions"]}>

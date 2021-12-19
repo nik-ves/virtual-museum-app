@@ -115,6 +115,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks", "Vases"],
       image: "../../images/settings/pharaohs-of-egypt.jpeg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 4,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 2,
+        },
+      ],
     },
     {
       id: 2,
@@ -187,6 +201,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Vases"],
       image: "../../images/settings/ancient-greece.jpeg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
     {
       id: 3,
@@ -261,6 +289,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/ww1.jpg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
     {
       id: 4,
@@ -343,6 +385,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/ww2.jpg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
     {
       id: 5,
@@ -458,6 +514,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/renaissance.jpg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
     {
       id: 6,
@@ -540,6 +610,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/cold-war.jpg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
     {
       id: 7,
@@ -633,6 +717,20 @@ const SettingsContextProvider = (props) => {
       ],
       exhibitsType: ["Masks"],
       image: "../../images/settings/roman-empire.jpg",
+      comments: [
+        {
+          id: 1,
+          from: "stefan@test.com",
+          message: "Nije lose",
+          rating: 5,
+        },
+        {
+          id: 2,
+          from: "marko@test.com",
+          message: "Moze i bolje",
+          rating: 4,
+        },
+      ],
     },
   ]);
   const [filteredSettings, setFilteredSettings] = useState([]);
@@ -675,21 +773,14 @@ const SettingsContextProvider = (props) => {
               return prev + cur;
             });
 
-          let average = [];
-
-          setting.exhibits.forEach((exhibit) => {
-            let test =
-              exhibit.grade.reduce((prev, cur) => {
-                return prev + cur;
-              }) / exhibit.grade.length;
-
-            average.push(test);
+          let ratings = [];
+          props.setting.comments.forEach((comment) => {
+            ratings.push(comment.rating);
           });
 
-          const averageGradeOfSetting =
-            average.reduce((prev, cur) => {
-              return prev + cur;
-            }) / average.length;
+          const sumOfRatings = ratings.reduce((prevV, curV) => {
+            return prevV + curV;
+          });
 
           return (
             setting.type.toLowerCase() === settingType &&
@@ -698,7 +789,7 @@ const SettingsContextProvider = (props) => {
             settingPrice >= priceFrom &&
             settingPrice <= priceTo &&
             settingTime <= averageTime &&
-            averageGradeOfSetting <= grade
+            sumOfRatings <= grade
           );
         })
       );

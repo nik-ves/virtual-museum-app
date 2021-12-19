@@ -4,6 +4,7 @@ import { useContext } from "react";
 import Container from "../UI/Container";
 import ExhibitCard from "./ExhibitCard";
 import classes from "./SettingDetails.module.css";
+import SettingComments from "./SettingComments";
 
 const SettingDetails = () => {
   const settingCtx = useContext(SettingsContext);
@@ -38,6 +39,8 @@ const SettingDetails = () => {
             <ExhibitCard exhibits={exhibits} setting={setting} />
           </div>
         </div>
+
+        <SettingComments comments={setting.comments} />
       </section>
     </Container>
   );

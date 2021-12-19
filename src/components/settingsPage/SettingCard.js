@@ -10,7 +10,7 @@ const SettingCard = (props) => {
       return prev + cur;
     });
 
-  let average = [];
+  // let average = [];
 
   const settingTime = props.setting.exhibits
     .map((exhibit) => {
@@ -20,19 +20,14 @@ const SettingCard = (props) => {
       return prev + cur;
     });
 
-  props.setting.exhibits.forEach((exhibit) => {
-    let test =
-      exhibit.grade.reduce((prev, cur) => {
-        return prev + cur;
-      }) / exhibit.grade.length;
-
-    average.push(test);
+  let ratings = [];
+  props.setting.comments.forEach((comment) => {
+    ratings.push(comment.rating);
   });
 
-  const averageGradeOfSetting =
-    average.reduce((prev, cur) => {
-      return prev + cur;
-    }) / average.length;
+  const sumOfRatings = ratings.reduce((prevV, curV) => {
+    return prevV + curV;
+  });
 
   return (
     <Link to={`/settings/${props.setting.params}`} className={classes.setting}>
@@ -49,7 +44,7 @@ const SettingCard = (props) => {
           <p>Type: {props.setting.type}</p>
           <p>Price: {settingPrice} EUR</p>
           <p>Length: {settingTime} min</p>
-          <p>Average Grade: {averageGradeOfSetting} / 5</p>
+          <p>Average Grade: {sumOfRatings / ratings.length} / 5</p>
         </div>
       </div>
     </Link>
