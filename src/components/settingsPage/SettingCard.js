@@ -10,8 +10,6 @@ const SettingCard = (props) => {
       return prev + cur;
     });
 
-  // let average = [];
-
   const settingTime = props.setting.exhibits
     .map((exhibit) => {
       return exhibit.time;

@@ -44,6 +44,12 @@ const SettingsContextProvider = (props) => {
               message: "Nije neki eksponat",
               rating: 2,
             },
+            {
+              id: 3,
+              from: "ana@test.com",
+              message: "Ne svidja mi se",
+              rating: 4,
+            },
           ],
         },
         {

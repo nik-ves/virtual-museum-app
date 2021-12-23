@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { SettingsContext } from "../../context/settings-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Container from "../UI/Container";
 import CommentList from "./CommentList";
+import useRating from "../../hooks/use-rating";
 
 import classes from "./ExhibitDetails.module.css";
 
@@ -11,14 +12,14 @@ const ExhibitDetails = () => {
   const settingsList = settingCtx.settingsList;
 
   const params = useParams();
-
   const setting = settingsList.find(
     (setting) => setting.params === params.settingId
   );
-
   const exhibit = setting.exhibits.find(
     (exhibit) => exhibit.name === params.exhibitId
   );
+
+  const [commentList, setCommentList] = useState(exhibit.comments);
 
   const formatedName = (name) => {
     return name
@@ -27,14 +28,7 @@ const ExhibitDetails = () => {
       .join(" ");
   };
 
-  let ratings = [];
-  exhibit.comments.forEach((comment) => {
-    ratings.push(comment.rating);
-  });
-
-  const sumOfRatings = ratings.reduce((prevV, curV) => {
-    return prevV + curV;
-  });
+  const { rating } = useRating(commentList);
 
   return (
     <Container>
@@ -60,7 +54,7 @@ const ExhibitDetails = () => {
             <span>Time to see</span>: {exhibit.time} min
           </p>
           <p>
-            <span>Grade</span>: {sumOfRatings / exhibit.comments.length} / 5
+            <span>Grade</span>: {rating.toFixed(1)} / 5
           </p>
         </div>
       </section>
