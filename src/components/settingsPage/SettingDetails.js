@@ -4,7 +4,7 @@ import { useContext } from "react";
 import Container from "../UI/Container";
 import ExhibitCard from "./ExhibitCard";
 import classes from "./SettingDetails.module.css";
-import SettingComments from "./SettingComments";
+import CommentList from "./CommentList";
 
 const SettingDetails = () => {
   const settingCtx = useContext(SettingsContext);
@@ -40,7 +40,7 @@ const SettingDetails = () => {
           </div>
         </div>
 
-        <SettingComments comments={setting.comments} />
+        <CommentList comments={setting.comments} />
       </section>
     </Container>
   );

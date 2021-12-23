@@ -8,10 +8,12 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
+import MyPlanner from "./pages/MyPlanner";
+// import PlannedTours from "./pages/PlannedTours";
 import Settings from "./pages/Settings";
-import Footer from "./components/layout/Footer";
 import SettingInfo from "./pages/SettingInfo";
 import ExhibitInfo from "./pages/ExhibitInfo";
+import Footer from "./components/layout/Footer";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -27,30 +29,41 @@ function App() {
           <Home />
         </Route>
 
+        {/* <Route path="/planned-tours" exact>
+          <PlannedTours />
+        </Route> */}
+
         <Route path="/settings" exact>
-          <Settings />
+          {isLoggedIn && <Settings />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         <Route path="/settings/:settingId" exact>
-          <SettingInfo />
+          {isLoggedIn && <SettingInfo />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         <Route path="/settings/:settingId/:exhibitId">
-          <ExhibitInfo />
+          {isLoggedIn && <ExhibitInfo />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
-        <Route path="/profile">
+        <Route path="/profile" exact>
           {isLoggedIn && <Profile />}
-          {!isLoggedIn && <Redirect to="/sign-in" />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
-        <Route path="/sign-in">
-          {isLoggedIn && <Redirect to="/profile" />}
+        <Route path="/profile/my-planner">
+          <MyPlanner />
+        </Route>
+
+        <Route path="/auth/sign-in">
+          {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignIn />}
         </Route>
 
-        <Route path="/sign-up">
-          {isLoggedIn && <Redirect to="/profile" />}
+        <Route path="/auth/sign-up">
+          {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignUp />}
         </Route>
       </Switch>

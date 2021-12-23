@@ -9,11 +9,9 @@ const HomeSettingsInfo = () => {
   const settingsCtx = useContext(SettingsContext);
   const settings = settingsCtx.settingsList;
 
-  const test = settings.filter((setting) => {
+  settings.filter((setting) => {
     return setting.exhibits.length > 6;
   });
-
-  console.log(test);
 
   return (
     <section className={classes["home-settings-info"]}>

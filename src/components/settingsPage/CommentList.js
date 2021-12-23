@@ -1,9 +1,9 @@
-import classes from "./SettingComments.module.css";
+import classes from "./CommentList.module.css";
 import { useState, useContext } from "react";
-import SettingCommentsForm from "./SettingCommentsForm";
+import CommentForm from "./CommentForm";
 import { AuthContext } from "../../context/auth-context";
 
-const SettingComments = (props) => {
+const CommentList = (props) => {
   const [comments, setComments] = useState(props.comments);
 
   const authCtx = useContext(AuthContext);
@@ -17,11 +17,11 @@ const SettingComments = (props) => {
     <section className={classes["section-comments"]}>
       <h1>Comment section</h1>
 
-      {!hasCommented && <SettingCommentsForm setComments={setComments} />}
+      {!hasCommented && <CommentForm setComments={setComments} />}
 
       {comments.map((comment) => {
         return (
-          <div className={classes["comment-box"]}>
+          <div key={Math.random()} className={classes["comment-box"]}>
             <p>
               <span>From:</span> {comment.from}
             </p>
@@ -38,4 +38,4 @@ const SettingComments = (props) => {
   );
 };
 
-export default SettingComments;
+export default CommentList;

@@ -31,7 +31,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Hahahahahaha",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Nije neki eksponat",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 2,
@@ -42,7 +55,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 3,
@@ -53,7 +79,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 4,
@@ -64,7 +103,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 5,
@@ -76,7 +128,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 6,
@@ -87,7 +152,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 7,
@@ -98,7 +176,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
         {
           id: 8,
@@ -110,7 +201,20 @@ const SettingsContextProvider = (props) => {
           price: 10,
           time: 5,
           countryOfOrigin: "Egypt",
-          grade: [1, 2, 3],
+          comments: [
+            {
+              id: 1,
+              from: "stefan@test.com",
+              message: "Nije lose",
+              rating: 4,
+            },
+            {
+              id: 2,
+              from: "marko@test.com",
+              message: "Moze i bolje",
+              rating: 2,
+            },
+          ],
         },
       ],
       exhibitsType: ["Masks", "Vases"],

@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import classes from "./SettingCommentsForm.module.css";
+import classes from "./CommentForm.module.css";
 import { AuthContext } from "../../context/auth-context";
 
-const SettingCommentsForm = ({ setComments }) => {
+const CommentForm = ({ setComments }) => {
   const [commentMessage, setCommentMessage] = useState("");
   const [commentRating, setCommentRating] = useState("");
 
@@ -66,4 +66,4 @@ const SettingCommentsForm = ({ setComments }) => {
   );
 };
 
-export default SettingCommentsForm;
+export default CommentForm;

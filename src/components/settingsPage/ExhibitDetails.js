@@ -2,11 +2,9 @@ import { useParams } from "react-router-dom";
 import { SettingsContext } from "../../context/settings-context";
 import { useContext } from "react";
 import Container from "../UI/Container";
+import CommentList from "./CommentList";
 
 import classes from "./ExhibitDetails.module.css";
-
-// Korisnik bira eksponat iz postavke. Za svaki eksponat prikazati, naziv, opis, sliku, cenu obilaska,
-// vreme obilaska, zemlju porekla i recenzije korisnika koji su eksponat prethodno posetili
 
 const ExhibitDetails = () => {
   const settingCtx = useContext(SettingsContext);
@@ -29,10 +27,14 @@ const ExhibitDetails = () => {
       .join(" ");
   };
 
-  const averageGrade =
-    exhibit.grade.reduce((prev, cur) => {
-      return prev + cur;
-    }) / exhibit.grade.length;
+  let ratings = [];
+  exhibit.comments.forEach((comment) => {
+    ratings.push(comment.rating);
+  });
+
+  const sumOfRatings = ratings.reduce((prevV, curV) => {
+    return prevV + curV;
+  });
 
   return (
     <Container>
@@ -58,9 +60,13 @@ const ExhibitDetails = () => {
             <span>Time to see</span>: {exhibit.time} min
           </p>
           <p>
-            <span>Grade</span>: {averageGrade} / 5
+            <span>Grade</span>: {sumOfRatings / exhibit.comments.length} / 5
           </p>
         </div>
+      </section>
+
+      <section className={classes["comments"]}>
+        <CommentList comments={exhibit.comments} />
       </section>
     </Container>
   );

@@ -2,14 +2,11 @@ import useInput from "../../hooks/use-input";
 import BackgroundImage from "../UI/BackroundImage";
 import { AuthContext } from "../../context/auth-context";
 import { useContext, useState } from "react";
-import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
 const SignInForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const authCtx = useContext(AuthContext);
-  const history = useHistory();
-
   const {
     value: emailValue,
     hasError: emailHasError,
@@ -31,10 +28,6 @@ const SignInForm = () => {
 
     setErrorMessage("Incorrect login parameters!");
   };
-
-  if (authCtx.isLoggedIn) {
-    history.replace("/profile");
-  }
 
   const emailClasses = emailHasError ? "form-control invalid" : "form-control";
 
@@ -77,7 +70,7 @@ const SignInForm = () => {
           </div>
           {<p>{errorMessage}</p>}
           <p className="form-question">
-            No account? Create account <Link to="/sign-up">here</Link>.
+            No account? Create account <Link to="/auth/sign-up">here</Link>.
           </p>
         </form>
       </section>

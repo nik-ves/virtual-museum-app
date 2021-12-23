@@ -216,7 +216,8 @@ const SignUpForm = () => {
             <button type="submit">Sign Up</button>
             {<p>{signupMessage}</p>}
             <p className="form-question">
-              Already have an account? Log in <Link to="/sign-in">here</Link>.
+              Already have an account? Log in{" "}
+              <Link to="/auth/sign-in">here</Link>.
             </p>
           </div>
         </form>

@@ -1,10 +1,9 @@
 import { SettingsContext } from "../../context/settings-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useInput from "../../hooks/use-input";
 import { IoClose } from "react-icons/io5";
 
 import classes from "./SettingsSearch.module.css";
-import { useState } from "react/cjs/react.development";
 
 const SettingsSearch = (props) => {
   const settingsCtx = useContext(SettingsContext);
@@ -187,7 +186,6 @@ const SettingsSearch = (props) => {
 
         <div className={classes["form-actions"]}>
           <button type="submit">Search</button>
-          {/* <button onClick={props.setShowAll(true)}>Show all</button> */}
         </div>
       </form>
     </section>

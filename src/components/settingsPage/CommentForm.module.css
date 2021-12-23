@@ -5,16 +5,18 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 2rem;
-  width: 35%;
+  width: 45rem;
+  max-width: 100%;
   color: white;
   background-color: var(--main-bg-color);
-  margin: 5rem 0;
+  margin: 2.5rem 0;
   border-radius: 4px;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .form-control label {
@@ -28,9 +30,9 @@
   border-radius: 4px;
   padding: 0 0.5rem;
   font-size: 1.5rem;
+  max-width: 100%;
   width: 30rem;
   height: 10rem;
-  max-width: 100%;
   padding: 1rem;
   outline: none;
 }

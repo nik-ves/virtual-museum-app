@@ -8,6 +8,7 @@ import DropdownMenu from "./DropdownMenu";
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const isLoggedIn = authCtx.isLoggedIn;
 
   const isOpenHandler = () => {
     setIsOpen(!isOpen);
@@ -34,23 +35,38 @@ const MainNavigation = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            {isLoggedIn && (
+              <li>
+                <NavLink
+                  to="/settings"
+                  onClick={() => setIsOpen(false)}
+                  activeClassName={classes.active}
+                >
+                  Museum Settings
+                </NavLink>
+              </li>
+            )}
+            {/* <li>
               <NavLink
-                to="/settings"
+                to="/planned-tours"
                 onClick={() => setIsOpen(false)}
                 activeClassName={classes.active}
               >
-                Our Settings
+                Planned Tours
               </NavLink>
-            </li>
-            {!authCtx.isLoggedIn && (
+            </li> */}
+            {!isLoggedIn && (
               <li>
-                <NavLink to="/sign-in" activeClassName={classes.active}>
+                <NavLink
+                  to="/auth/sign-in"
+                  activeClassName={classes.active}
+                  exact
+                >
                   Account
                 </NavLink>
               </li>
             )}
-            {authCtx.isLoggedIn && (
+            {isLoggedIn && (
               <li>
                 <button
                   className="btn-dropdown"

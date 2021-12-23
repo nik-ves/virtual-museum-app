@@ -6,14 +6,17 @@ import App from "./App";
 
 import AuthContextProvider from "./context/auth-context";
 import SettingsContextProvider from "./context/settings-context";
+import ToursContextProvider from "./context/tours-context";
 
 ReactDOM.render(
-  <SettingsContextProvider>
-    <AuthContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthContextProvider>
-  </SettingsContextProvider>,
+  <ToursContextProvider>
+    <SettingsContextProvider>
+      <AuthContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AuthContextProvider>
+    </SettingsContextProvider>
+  </ToursContextProvider>,
   document.getElementById("root")
 );

@@ -1,5 +1,5 @@
 .exhibit {
-  margin: 10rem auto;
+  margin: 10rem auto 5rem auto;
   display: flex;
   justify-content: space-between;
 }
@@ -34,4 +34,8 @@
 .exhibit-text-box span {
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.comments {
+  margin-bottom: 5rem;
 }

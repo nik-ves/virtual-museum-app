@@ -1,7 +1,6 @@
 import ProfileDetails from "../components/profile/ProfileDetails";
 import EditProfile from "../components/profile/EditProfile";
-import { Fragment } from "react";
-import { useState } from "react/cjs/react.development";
+import { Fragment, useState } from "react";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
