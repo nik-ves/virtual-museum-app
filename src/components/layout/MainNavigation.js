@@ -46,15 +46,15 @@ const MainNavigation = () => {
                 </NavLink>
               </li>
             )}
-            {/* <li>
+            <li>
               <NavLink
-                to="/planned-tours"
+                to="/tours"
                 onClick={() => setIsOpen(false)}
                 activeClassName={classes.active}
               >
-                Planned Tours
+                Tours
               </NavLink>
-            </li> */}
+            </li>
             {!isLoggedIn && (
               <li>
                 <NavLink

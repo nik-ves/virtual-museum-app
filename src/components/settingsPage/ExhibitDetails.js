@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { SettingsContext } from "../../context/settings-context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Container from "../UI/Container";
 import CommentList from "./CommentList";
 import useRating from "../../hooks/use-rating";
@@ -19,8 +19,6 @@ const ExhibitDetails = () => {
     (exhibit) => exhibit.name === params.exhibitId
   );
 
-  const [commentList, setCommentList] = useState(exhibit.comments);
-
   const formatedName = (name) => {
     return name
       .split("-")
@@ -28,7 +26,7 @@ const ExhibitDetails = () => {
       .join(" ");
   };
 
-  const { rating } = useRating(commentList);
+  const { rating } = useRating(exhibit.comments);
 
   return (
     <Container>

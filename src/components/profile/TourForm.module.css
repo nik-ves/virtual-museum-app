@@ -1,0 +1,9 @@
+.tour-form {
+  padding: 2rem;
+}
+
+.form-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

@@ -22,12 +22,12 @@ const DropdownMenu = (props) => {
 
       <li className={classes["dropdown-item"]}>
         <NavLink
-          to="/profile/my-planner"
+          to="/profile/my-tours"
           exact
           activeClassName={classes.active}
           onClick={props.isOpen}
         >
-          Create a Tour
+          My Tours
         </NavLink>
       </li>
 

@@ -8,8 +8,8 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
-import MyPlanner from "./pages/MyPlanner";
-// import PlannedTours from "./pages/PlannedTours";
+import MyTours from "./pages/MyTours";
+import Tours from "./pages/Tours";
 import Settings from "./pages/Settings";
 import SettingInfo from "./pages/SettingInfo";
 import ExhibitInfo from "./pages/ExhibitInfo";
@@ -29,9 +29,9 @@ function App() {
           <Home />
         </Route>
 
-        {/* <Route path="/planned-tours" exact>
-          <PlannedTours />
-        </Route> */}
+        <Route path="/tours" exact>
+          <Tours />
+        </Route>
 
         <Route path="/settings" exact>
           {isLoggedIn && <Settings />}
@@ -53,8 +53,8 @@ function App() {
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
-        <Route path="/profile/my-planner">
-          <MyPlanner />
+        <Route path="/profile/my-tours">
+          <MyTours />
         </Route>
 
         <Route path="/auth/sign-in">

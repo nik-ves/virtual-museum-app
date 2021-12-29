@@ -53,34 +53,3 @@
 .exhibit-link a:hover {
   transform: scale(1.05);
 }
-
-/* .exhibit-box h2 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 5rem;
-}
-
-.exhibit-image-box {
-  overflow: hidden;
-  border-radius: 4px;
-  position: relative;
-}
-
-.exhibit-image-box img {
-  width: 100%;
-  filter: brightness(60%);
-}
-
-.exhibit-text-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-}
-
-.exhibit-text-box h3 {
-  font-size: 2.5rem;
-} */
