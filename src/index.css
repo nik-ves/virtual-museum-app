@@ -10,6 +10,8 @@
 
   --color-btn-green: #007f00;
   --color-btn-red: #660000;
+
+  --test-color: #647c90;
 }
 
 * {
@@ -245,22 +247,6 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.exhibit-card {
-  color: white;
-  position: relative;
-  width: 20rem;
-  height: 20rem;
-  margin-bottom: 3rem;
-  transition: all 0.3s;
-  overflow: hidden;
-  background-color: var(--main-bg-color);
-  border-radius: 4px;
-}
-
-.exhibit-card:hover {
-  transform: scale(1.05);
 }
 
 .my-tours-box form {

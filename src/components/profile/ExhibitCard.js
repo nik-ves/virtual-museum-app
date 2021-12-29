@@ -10,7 +10,10 @@ const ExhibitCard = ({ exhibit, onExhibit }) => {
 
   return (
     <>
-      <div className="exhibit-card" onClick={onExhibit.bind(this, exhibit)}>
+      <div
+        className={classes["exhibit-card"]}
+        onClick={onExhibit.bind(this, exhibit)}
+      >
         <div className={classes["exhibit-image-box"]}>
           <img
             src={exhibit.image}
