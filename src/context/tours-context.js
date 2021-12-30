@@ -313,8 +313,6 @@ const ToursContextProvider = (props) => {
     setSelectedExhibits([]);
   };
 
-  console.log(tours);
-
   const toursValue = {
     tours,
     addExhibit,
