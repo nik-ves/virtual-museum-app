@@ -1,5 +1,7 @@
+import ToursList from "../components/toursPage/ToursList";
+
 const Tours = () => {
-  return <div>tours</div>;
+  return <ToursList />;
 };
 
 export default Tours;

@@ -53,7 +53,7 @@ function App() {
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
-        <Route path="/profile/my-tours">
+        <Route path="/profile/create-a-tour">
           <MyTours />
         </Route>
 
