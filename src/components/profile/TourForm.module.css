@@ -37,7 +37,6 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
-  border: 2px solid white;
 }
 
 .form-control label {
@@ -48,7 +47,8 @@
   text-transform: uppercase;
 }
 
-.form-control input {
+.form-control input,
+.form-control textarea {
   border: 2px solid white;
   border-radius: 4px;
   padding: 0 0.5rem;

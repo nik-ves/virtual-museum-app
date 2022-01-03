@@ -5,6 +5,7 @@ export const ToursContext = React.createContext({
   addExhibit: () => {},
   removeExhibit: () => {},
   makeTour: () => {},
+  deleteTour: () => {},
   selectedExhibits: [],
 });
 
@@ -13,6 +14,7 @@ const ToursContextProvider = (props) => {
     {
       id: 1,
       name: "Mixed history",
+      description: "Mixed history tour 1",
       maker: "nikola@test.com",
       selectedExhibits: [
         {
@@ -217,10 +219,12 @@ const ToursContextProvider = (props) => {
           ],
         },
       ],
+      status: "Ongoing",
     },
     {
       id: 2,
       name: "Mixed history 2",
+      description: "Mixed history tour 2",
       maker: "stefan@test.com",
       selectedExhibits: [
         {
@@ -279,6 +283,7 @@ const ToursContextProvider = (props) => {
           grade: [1, 2, 3],
         },
       ],
+      status: "Ongoing",
     },
   ]);
   const [selectedExhibits, setSelectedExhibits] = useState([]);
@@ -297,15 +302,17 @@ const ToursContextProvider = (props) => {
     );
   };
 
-  const makeTour = (name, currentUser) => {
+  const makeTour = (name, description, currentUser) => {
     setTours((prevState) => {
       return [
         ...prevState,
         {
           id: Math.random(),
           name,
+          description,
           maker: currentUser,
           selectedExhibits,
+          status: "Ongoing",
         },
       ];
     });
@@ -313,11 +320,20 @@ const ToursContextProvider = (props) => {
     setSelectedExhibits([]);
   };
 
+  const deleteTour = (tourName) => {
+    setTours(
+      tours.filter((tour) => {
+        return tour.name !== tourName;
+      })
+    );
+  };
+
   const toursValue = {
     tours,
     addExhibit,
     removeExhibit,
     makeTour,
+    deleteTour,
     selectedExhibits,
   };
 

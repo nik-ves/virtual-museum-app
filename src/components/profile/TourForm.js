@@ -5,19 +5,24 @@ import classes from "./TourForm.module.css";
 import ExhibitCard from "./ExhibitCard";
 
 const TourForm = ({ allExhibits }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [nameValue, setNameValue] = useState("");
+  const [descriptionValue, setDescriptionValue] = useState("");
 
   const toursCtx = useContext(ToursContext);
   const { currentUser } = useContext(AuthContext);
 
-  const inputChangeHandler = (event) => {
-    setInputValue(event.target.value);
+  const nameValueChangeHandler = (event) => {
+    setNameValue(event.target.value);
+  };
+
+  const descriptionValueChangeHandler = (event) => {
+    setDescriptionValue(event.target.value);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    toursCtx.makeTour(inputValue, currentUser.email);
+    toursCtx.makeTour(nameValue, descriptionValue, currentUser.email);
   };
 
   return (
@@ -62,12 +67,22 @@ const TourForm = ({ allExhibits }) => {
       </div>
 
       <div className={classes["form-control"]}>
-        <label htmlFor="name">Name Your Tour</label>
+        <label htmlFor="name">Tour Name</label>
         <input
           id="name"
           type="text"
-          onChange={inputChangeHandler}
-          value={inputValue}
+          onChange={nameValueChangeHandler}
+          value={nameValue}
+        />
+      </div>
+
+      <div className={classes["form-control"]}>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          type="text"
+          onChange={descriptionValueChangeHandler}
+          value={descriptionValue}
         />
       </div>
 
