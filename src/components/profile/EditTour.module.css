@@ -1,0 +1,81 @@
+.tour-form {
+  padding: 2rem;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+  color: white;
+  margin: 5rem auto;
+}
+
+.tour-form h1 {
+  text-align: center;
+}
+
+.tour-form h2 {
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+}
+
+.tour-form-info {
+  width: 80rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.form-cards {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-cards p {
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.form-control label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.form-control input,
+.form-control textarea {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  width: 30rem;
+  max-width: 100%;
+  padding: 1rem;
+  align-self: center;
+}
+
+.form-control input:focus {
+  outline: none;
+  border: 2px solid var(--border-color);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.form-actions button {
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  background-color: var(--test-color);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}

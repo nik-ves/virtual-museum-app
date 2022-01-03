@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import classes from "./TourCard.module.css";
 import { AuthContext } from "../../context/auth-context";
 import { ToursContext } from "../../context/tours-context";
-import { useContext } from "react";
+import { useState, useContext } from "react";
+import EditTour from "../profile/EditTour";
 
-const TourCard = ({ tour }) => {
+const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
   const { deleteTour } = useContext(ToursContext);
 
@@ -41,8 +42,11 @@ const TourCard = ({ tour }) => {
         </div>
         {validateUser && (
           <button onClick={deleteTour.bind(this, tour.name)}>
-            Delete your tour
+            Delete tour
           </button>
+        )}
+        {validateUser && (
+          <button onClick={showEditHandler.bind(this, tour)}>Edit tour</button>
         )}
       </div>
     </Link>

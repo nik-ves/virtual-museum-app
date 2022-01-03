@@ -285,6 +285,70 @@ const ToursContextProvider = (props) => {
       ],
       status: "Ongoing",
     },
+    {
+      id: 3,
+      name: "Mixed history 3",
+      description: "Mixed history tour 2",
+      maker: "nikola@test.com",
+      selectedExhibits: [
+        {
+          id: 1,
+          name: "aphrodite-of-milos",
+          description:
+            "The Venus de Milo is an ancient Greek sculpture from the Hellenistic period, depicting a Greek goddess. It is one of the most famous works of ancient Greek sculpture. The Venus de Milo has been prominently displayed at the Louvre Museum in Paris since shortly after the statue was rediscovered on the island of Milos, Greece in 1820.",
+          image: "../../images/exhibits/ancient-greece/1.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2, 3],
+        },
+        {
+          id: 2,
+          name: "winged-victory-of-samothrace",
+          description:
+            "The Winged Victory of Samothrace, or the Nike of Samothrace, is a votive monument originally found on the island of Samothrace, north of the Aegean Sea. It is a masterpiece of Greek sculpture from the Hellenistic era, dating from the beginning of the 2nd century BCE. It is composed of a statue representing the goddess Niké, whose head and arms are missing, and its base in the shape of a ship's bow.",
+          image: "../../images/exhibits/ancient-greece/2.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2, 3],
+        },
+        {
+          id: 3,
+          name: "riace-bronzes",
+          description:
+            "The Riace bronzes, also called the Riace Warriors, are two full-size Greek bronzes of naked bearded warriors, cast about 460–450 BC that were found in the sea in 1972 near Riace, Calabria, in southern Italy. The bronzes are now in the Museo Nazionale della Magna Grecia in the nearby city of Reggio Calabria. They are two of the few surviving full-size ancient Greek bronzes (which were usually melted down in later times), and as such demonstrate the superb technical craftsmanship and exquisite artistic features that were achieved at this time.",
+          image: "../../images/exhibits/ancient-greece/3.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2, 3],
+        },
+        {
+          id: 4,
+          name: "motya-charioteer",
+          description:
+            "The Motya (or Mozia) Charioteer is a marble statue dating from the ancient Greek Classical Period. It was found in October 1979 in the ancient city of Motya, originally a Phoenician settlement which occupied the island of San Pantaleo off the coast of Sicily. It is owned by, and on view in, the Museo Giuseppe Whitaker (inv. no. 4310) on the same island.",
+          image: "../../images/exhibits/ancient-greece/4.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2, 3],
+        },
+        {
+          id: 5,
+          name: "moschophoros",
+          description:
+            "Moschophoros is an ancient Greek statue of the Archaic period, also known in English as The Calf Bearer. It was excavated in fragments in the Perserschutt in the Acropolis of Athens in 1864. The statue, dated c. 560 BC and estimated to have originally measured 1.65 meters (5.4 ft) in height, is now in the Acropolis Museum in Athens, Greece.",
+          image: "../../images/exhibits/ancient-greece/5.jpg",
+          price: 33,
+          time: 5,
+          countryOfOrigin: "Egypt",
+          grade: [1, 2, 3],
+        },
+      ],
+      status: "Ongoing",
+    },
   ]);
   const [selectedExhibits, setSelectedExhibits] = useState([]);
 
