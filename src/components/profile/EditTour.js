@@ -5,7 +5,7 @@ import ExhibitCard from "./ExhibitCard";
 import useEdit from "../../hooks/use-edit";
 const _ = require("lodash");
 
-const EditTour = ({ currentTour }) => {
+const EditTour = ({ currentTour, showEditHandler }) => {
   const { value: nameValue, valueChangeHandler: nameValueChangeHandler } =
     useEdit(currentTour.name);
   const {
@@ -51,13 +51,7 @@ const EditTour = ({ currentTour }) => {
 
   return (
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
-      <h1>Tour Maker</h1>
-
-      <p className={classes["tour-form-info"]}>
-        Select exhibits to include in your personal tour. Mix histories by your
-        choice. You can visit all available user made tours here or visit
-        premade museum settings here.
-      </p>
+      <h1>Edit Your Tour</h1>
 
       <h2>Select exhibits for your tour</h2>
       <div className={classes["form-cards"]}>
@@ -109,7 +103,8 @@ const EditTour = ({ currentTour }) => {
       </div>
 
       <div className={classes["form-actions"]}>
-        <button type="submit">Make a tour</button>
+        <button type="submit">Save Changes</button>
+        <button onClick={showEditHandler}>Cancel</button>
       </div>
     </form>
   );

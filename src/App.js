@@ -14,6 +14,7 @@ import Settings from "./pages/Settings";
 import SettingInfo from "./pages/SettingInfo";
 import ExhibitInfo from "./pages/ExhibitInfo";
 import Footer from "./components/layout/Footer";
+import TourDetails from "./components/toursPage/TourDetails";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -29,10 +30,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/tours" exact>
-          <Tours />
-        </Route>
-
+        {/* ===== SETTINGS ===== */}
         <Route path="/settings" exact>
           {isLoggedIn && <Settings />}
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
@@ -48,6 +46,7 @@ function App() {
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
+        {/* ===== PROFLE ===== */}
         <Route path="/profile" exact>
           {isLoggedIn && <Profile />}
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
@@ -57,6 +56,16 @@ function App() {
           <MyTours />
         </Route>
 
+        {/* ===== TOURS ===== */}
+        <Route path="/tours" exact>
+          <Tours />
+        </Route>
+
+        <Route path="/tours/:tourId" exact>
+          <TourDetails />
+        </Route>
+
+        {/* ===== AUTH ===== */}
         <Route path="/auth/sign-in">
           {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignIn />}

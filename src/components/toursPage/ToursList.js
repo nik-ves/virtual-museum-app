@@ -30,7 +30,9 @@ const ToursList = () => {
           })}
         </div>
       )}
-      {showEdit && <EditTour currentTour={currentTour} />}
+      {showEdit && (
+        <EditTour currentTour={currentTour} showEditHandler={showEditHandler} />
+      )}
     </Container>
   );
 };

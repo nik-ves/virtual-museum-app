@@ -56,6 +56,36 @@ const AuthContextProvider = (props) => {
       email: "marko@test.com",
       password: "marko123",
     },
+    {
+      id: 3,
+      firstName: "Pera",
+      lastName: "Peric",
+      contactNumber: "987654321",
+      currentAddress: "Adresa 2",
+      favorites: "Testenina",
+      email: "pera@test.com",
+      password: "pera123",
+    },
+    {
+      id: 4,
+      firstName: "Boban",
+      lastName: "Bobanic",
+      contactNumber: "987654321",
+      currentAddress: "Adresa 2",
+      favorites: "Testenina",
+      email: "boban@test.com",
+      password: "boban123",
+    },
+    {
+      id: 5,
+      firstName: "Katarina",
+      lastName: "Katarinovic",
+      contactNumber: "987654321",
+      currentAddress: "Adresa 2",
+      favorites: "Testenina",
+      email: "katarina@test.com",
+      password: "katarina123",
+    },
   ]);
 
   const isLoggedIn = currentUser;
