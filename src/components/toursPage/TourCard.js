@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import classes from "./TourCard.module.css";
 import { AuthContext } from "../../context/auth-context";
 import { ToursContext } from "../../context/tours-context";
-import { useState, useContext } from "react";
-import EditTour from "../profile/EditTour";
+import { useContext } from "react";
 
 const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
@@ -30,24 +29,30 @@ const TourCard = ({ tour, showEditHandler }) => {
   return (
     <Link to="/tours" className={classes["tour-link"]}>
       <div className={classes["tour-content"]}>
-        <div className={classes["test"]}>
+        <div className={classes["tour-name"]}>
           <p>{tour.name}</p>
         </div>
-        <div className={classes["test2"]}>
+
+        <div className={classes["tour-info"]}>
           <p>Description: {tour.description}</p>
-          <p>Length: {tourPrice} min</p>
-          {/* <p>Price: {tourTime} $</p> */}
+          <p>Price: {tourPrice} $</p>
+          <p>Length: {tourTime} min</p>
           <p>Status: {tour.status}</p>
           <p>By: {tour.maker}</p>
         </div>
-        {validateUser && (
-          <button onClick={deleteTour.bind(this, tour.name)}>
-            Delete tour
-          </button>
-        )}
-        {validateUser && (
-          <button onClick={showEditHandler.bind(this, tour)}>Edit tour</button>
-        )}
+
+        <div className={classes["tour-actions"]}>
+          {validateUser && (
+            <button onClick={showEditHandler.bind(this, tour)}>
+              Edit Tour
+            </button>
+          )}
+          {validateUser && (
+            <button onClick={deleteTour.bind(this, tour.name)}>
+              Delete Tour
+            </button>
+          )}
+        </div>
       </div>
     </Link>
   );

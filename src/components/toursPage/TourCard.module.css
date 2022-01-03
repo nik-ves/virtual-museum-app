@@ -18,10 +18,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.test {
-  width: 50%;
+.tour-name {
+  width: 45%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -29,12 +30,31 @@
   font-size: 4rem;
 }
 
-.test2 {
-  width: 50%;
+.tour-info {
+  width: 40%;
   height: 100%;
   border-left: 2px solid white;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.tour-actions {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.tour-actions button {
+  margin: 2rem auto;
+  width: 10rem;
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
