@@ -59,6 +59,7 @@ const TourCard = ({ tour, showEditHandler }) => {
         )}
         {tour.status === "Finished" && (
           <Rating
+            name="star-rating"
             precision={0.5}
             size="large"
             className={classes["rating-stars"]}

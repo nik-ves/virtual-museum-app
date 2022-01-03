@@ -1,0 +1,28 @@
+.exhibit-box h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.exhibit-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exhibit-link a {
+  color: white;
+  position: relative;
+  width: 36rem;
+  height: 35rem;
+  margin-bottom: 3rem;
+  transition: all 0.3s;
+  overflow: hidden;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+}
+
+.exhibit-link a:hover {
+  transform: scale(1.05);
+}

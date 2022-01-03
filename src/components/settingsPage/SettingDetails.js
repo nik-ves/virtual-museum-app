@@ -36,7 +36,11 @@ const SettingDetails = () => {
           <h2>Selected exhibits for this setting</h2>
 
           <div className={classes["exhibit-link"]}>
-            <ExhibitCard exhibits={exhibits} setting={setting} />
+            <ExhibitCard
+              link={"settings"}
+              exhibits={exhibits}
+              setting={setting}
+            />
           </div>
         </div>
 

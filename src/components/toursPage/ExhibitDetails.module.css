@@ -1,0 +1,41 @@
+.exhibit {
+  margin: 10rem auto 5rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exhibit-image-box {
+  height: 60rem;
+  overflow: hidden;
+  width: 50%;
+  background-color: var(--main-bg-color);
+  border: 3px solid black;
+  /* text-align: center; */
+}
+
+.exhibit-image-box img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.exhibit-text-box {
+  flex: 1;
+  padding-left: 4rem;
+  height: 100%;
+  align-self: center;
+}
+
+.exhibit-text-box p {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.exhibit-text-box span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.comments {
+  margin-bottom: 5rem;
+}

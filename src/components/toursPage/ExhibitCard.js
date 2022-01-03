@@ -1,8 +1,7 @@
-import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import classes from "./ExhibitCard.module.css";
 
-const ExhibitCard = ({ link, exhibits, setting }) => {
+const ExhibitCard = ({ params, exhibits }) => {
   const formatedName = (name) => {
     return name
       .split("-")
@@ -11,13 +10,10 @@ const ExhibitCard = ({ link, exhibits, setting }) => {
   };
 
   return (
-    <Fragment>
+    <>
       {exhibits.map((exhibit) => {
         return (
-          <Link
-            key={exhibit.id}
-            to={`/${link}/${setting.params}/${exhibit.name}`}
-          >
+          <Link to={`/tours/${params}/${exhibit.name}`} key={exhibit.id}>
             <div className={classes["exhibit-image-box"]}>
               <img
                 src={exhibit.image}
@@ -33,7 +29,7 @@ const ExhibitCard = ({ link, exhibits, setting }) => {
           </Link>
         );
       })}
-    </Fragment>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ import Tours from "./pages/Tours";
 import Settings from "./pages/Settings";
 import SettingInfo from "./pages/SettingInfo";
 import ExhibitInfo from "./pages/ExhibitInfo";
+import ExhibitDetails from "./components/toursPage/ExhibitDetails";
 import Footer from "./components/layout/Footer";
 import TourDetails from "./components/toursPage/TourDetails";
 
@@ -63,6 +64,10 @@ function App() {
 
         <Route path="/tours/:tourId" exact>
           <TourDetails />
+        </Route>
+
+        <Route path="/tours/:tourId/:exhibitId" exact>
+          <ExhibitDetails />
         </Route>
 
         {/* ===== AUTH ===== */}
