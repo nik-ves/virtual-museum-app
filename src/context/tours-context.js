@@ -6,6 +6,8 @@ export const ToursContext = React.createContext({
   removeExhibit: () => {},
   makeTour: () => {},
   deleteTour: () => {},
+  filterTours: () => {},
+  filteredTours: [],
   selectedExhibits: [],
 });
 
@@ -478,6 +480,7 @@ const ToursContextProvider = (props) => {
       status: "Ongoing",
     },
   ]);
+  const [filteredTours, setFilteredTours] = useState([]);
   const [selectedExhibits, setSelectedExhibits] = useState([]);
 
   const addExhibit = (exhibit) => {
@@ -520,12 +523,43 @@ const ToursContextProvider = (props) => {
     );
   };
 
+  const filterTours = (priceFrom, priceTo, lengthInMins, status) => {
+    return setFilteredTours(
+      tours.filter((tour) => {
+        const tourTime = tour.selectedExhibits
+          .map((tour) => {
+            return tour.time;
+          })
+          .reduce((prev, cur) => {
+            return prev + cur;
+          });
+
+        const tourPrice = tour.selectedExhibits
+          .map((tour) => {
+            return tour.price;
+          })
+          .reduce((prev, cur) => {
+            return prev + cur;
+          });
+
+        return (
+          tourPrice >= priceFrom &&
+          tourPrice <= priceTo &&
+          tourTime <= lengthInMins &&
+          tour.status === status
+        );
+      })
+    );
+  };
+
   const toursValue = {
     tours,
     addExhibit,
     removeExhibit,
     makeTour,
     deleteTour,
+    filterTours,
+    filteredTours,
     selectedExhibits,
   };
 
