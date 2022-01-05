@@ -2,7 +2,8 @@
   margin: 10rem auto;
   font-size: 1.8rem;
   color: white;
-  width: 40%;
+  width: 80rem;
+  max-width: 100%;
 }
 
 .form-edit {
@@ -63,34 +64,14 @@
   border: 2px solid var(--border-color);
 }
 
-.form-control button {
-  align-self: center;
-  justify-self: center;
-}
-
 .form-actions {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   margin: 3rem auto 0 auto;
 }
 
 .form-actions button {
-  display: block;
-  width: 15rem;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  font: inherit;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-save {
-  background-color: var(--color-btn-green);
-}
-
-.btn-cancel {
-  background-color: var(--color-btn-red);
+  margin: auto 2rem;
 }

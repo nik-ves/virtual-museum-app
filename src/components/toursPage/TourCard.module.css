@@ -3,6 +3,14 @@
   width: 100%;
   transform: scale(0.98);
   transition: all 0.3s;
+  border: 3px solid grey;
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    to right,
+    var(--main-bg-color),
+    var(--test-color)
+  );
 }
 
 .toursTest:hover {
@@ -13,11 +21,8 @@
   display: inline-block;
   height: 20rem;
   flex: 1;
-  background-color: var(--main-bg-color);
-  border-radius: 4px 0 0 4px;
   color: white;
   text-decoration: none;
-  margin-bottom: 3rem;
   font-size: 2rem;
 }
 
@@ -43,7 +48,7 @@
 .tour-info {
   width: 50%;
   height: 100%;
-  border-left: 2px solid white;
+  border-left: 2px solid grey;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -51,26 +56,18 @@
 }
 
 .tour-actions {
-  font-size: 1.5rem;
+  font-size: 2rem;
   height: 20rem;
   width: 20%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* padding: 0 2rem; */
   padding: 2rem;
-  background-color: var(--test-color);
+  border-left: 2px solid grey;
 }
 
 .tour-actions button {
-  max-width: 100%;
-  margin: 2rem auto;
-  width: 10rem;
-  background-color: white;
-  border: 2px solid green;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
+  margin: 1rem auto;
 }
 
 .rating-stars {

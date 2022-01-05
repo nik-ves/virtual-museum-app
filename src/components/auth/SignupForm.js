@@ -213,7 +213,9 @@ const SignUpForm = () => {
           </div>
 
           <div className="form-actions">
-            <button type="submit">Sign Up</button>
+            <button className="btn-general" type="submit">
+              Sign Up
+            </button>
             {<p>{signupMessage}</p>}
             <p className="form-question">
               Already have an account? Log in{" "}

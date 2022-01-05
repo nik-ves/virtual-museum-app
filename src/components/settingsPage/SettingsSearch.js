@@ -185,7 +185,9 @@ const SettingsSearch = (props) => {
         )}
 
         <div className={classes["form-actions"]}>
-          <button type="submit">Search</button>
+          <button className="btn-general" type="submit">
+            Search
+          </button>
         </div>
       </form>
     </section>

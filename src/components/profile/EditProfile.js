@@ -127,10 +127,10 @@ const EditProfile = (props) => {
           </div>
 
           <div className={classes["form-actions"]}>
-            <button className={classes["btn-save"]} type="submit">
+            <button className="btn-save" type="submit">
               Save Changes
             </button>
-            <button className={classes["btn-cancel"]} onClick={props.isEditing}>
+            <button className="btn-cancel" onClick={props.isEditing}>
               Cancel
             </button>
           </div>

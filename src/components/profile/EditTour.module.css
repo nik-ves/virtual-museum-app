@@ -70,13 +70,5 @@
 }
 
 .form-actions button {
-  text-transform: uppercase;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  background-color: var(--test-color);
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  margin: 0 1rem;
+  margin: auto 2rem;
 }

@@ -89,7 +89,9 @@ const ToursSearch = ({ showAllHandler }) => {
         </div>
 
         <div className={classes["form-actions"]}>
-          <button type="submit">Submit</button>
+          <button className="btn-general" type="submit">
+            Search
+          </button>
         </div>
       </form>
     </Container>

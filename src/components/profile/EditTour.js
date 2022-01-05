@@ -103,8 +103,13 @@ const EditTour = ({ currentTour, showEditHandler }) => {
       </div>
 
       <div className={classes["form-actions"]}>
-        <button type="submit">Save Changes</button>
-        <button onClick={showEditHandler}>Cancel</button>
+        <button className="btn-save" type="submit">
+          Save Changes
+        </button>
+
+        <button className="btn-cancel" onClick={showEditHandler}>
+          Cancel
+        </button>
       </div>
     </form>
   );

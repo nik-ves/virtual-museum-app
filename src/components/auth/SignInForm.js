@@ -66,7 +66,9 @@ const SignInForm = () => {
           </div>
 
           <div className="form-actions">
-            <button type="submit">Sign In</button>
+            <button className="btn-general" type="submit">
+              Sign In
+            </button>
           </div>
           {<p>{errorMessage}</p>}
           <p className="form-question">

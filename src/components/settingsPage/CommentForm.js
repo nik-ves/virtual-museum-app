@@ -60,7 +60,9 @@ const CommentForm = ({ setComments }) => {
       </div>
 
       <div className={classes["form-actions"]}>
-        <button type="submit">Add Comment</button>
+        <button className="btn-general" type="submit">
+          Add Comment
+        </button>
       </div>
     </form>
   );

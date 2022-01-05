@@ -39,7 +39,8 @@ const ProfileDetails = (props) => {
             </p>
 
             <button
-              className={classes["user-profile-edit"]}
+              // className={classes["user-profile-edit"]}
+              className="btn-general"
               onClick={props.isEditing}
             >
               Edit Profile

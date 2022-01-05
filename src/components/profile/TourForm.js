@@ -87,7 +87,9 @@ const TourForm = ({ allExhibits }) => {
       </div>
 
       <div className={classes["form-actions"]}>
-        <button type="submit">Make a tour</button>
+        <button className="btn-general" type="submit">
+          Make a Tour
+        </button>
       </div>
     </form>
   );

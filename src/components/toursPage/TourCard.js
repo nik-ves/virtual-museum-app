@@ -8,6 +8,7 @@ import Rating from "@material-ui/lab/Rating";
 const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
   const { deleteTour } = useContext(ToursContext);
+
   const [ratingValue, setRatingValue] = useState(0);
 
   const validateUser = currentUser.email === tour.maker;
@@ -51,10 +52,18 @@ const TourCard = ({ tour, showEditHandler }) => {
 
       <div className={classes["tour-actions"]}>
         {validateUser && (
-          <button onClick={showEditHandler.bind(this, tour)}>Edit Tour</button>
+          <button
+            className="btn-general"
+            onClick={showEditHandler.bind(this, tour)}
+          >
+            Edit Tour
+          </button>
         )}
         {validateUser && (
-          <button onClick={deleteTour.bind(this, tour.name)}>
+          <button
+            className="btn-general"
+            onClick={deleteTour.bind(this, tour.name)}
+          >
             Delete Tour
           </button>
         )}
