@@ -8,7 +8,8 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
-import MyTours from "./pages/MyTours";
+// import MyTours from "./pages/MyTours";
+import MyPlanner from "./pages/MyPlanner";
 import Tours from "./pages/Tours";
 import Settings from "./pages/Settings";
 import SettingInfo from "./pages/SettingInfo";
@@ -16,6 +17,7 @@ import ExhibitInfo from "./pages/ExhibitInfo";
 import ExhibitDetails from "./components/toursPage/ExhibitDetails";
 import Footer from "./components/layout/Footer";
 import TourDetails from "./components/toursPage/TourDetails";
+import MyTours from "./pages/MyTours";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -53,7 +55,12 @@ function App() {
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
-        <Route path="/profile/create-a-tour">
+        <Route path="/profile/my-planner">
+          {isLoggedIn && <MyPlanner />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+        </Route>
+
+        <Route path="/profile/my-tours">
           {isLoggedIn && <MyTours />}
           {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>

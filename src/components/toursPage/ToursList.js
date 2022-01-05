@@ -26,7 +26,7 @@ const ToursList = ({ showAll, showAllHandler }) => {
             <p>
               {toursCtx.filteredTours.length === 0
                 ? "No tours found."
-                : `${toursCtx.filteredTours.length} settings found.`}
+                : `${toursCtx.filteredTours.length} tours found.`}
             </p>
 
             <p>

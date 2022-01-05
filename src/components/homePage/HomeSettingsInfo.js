@@ -42,13 +42,3 @@ const HomeSettingsInfo = () => {
 };
 
 export default HomeSettingsInfo;
-
-// .map((setting) => (
-//   <HomeSettingCard
-//     key={setting.id}
-//     name={setting.name}
-//     shortDescription={setting.shortDescription}
-//     image={setting.image}
-//     params={setting.params}
-//   />
-// ))}

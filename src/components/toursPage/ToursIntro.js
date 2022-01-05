@@ -16,7 +16,7 @@ const ToursIntro = () => {
 
         <p>
           To make your own tour, visit your profile or click{" "}
-          <Link to="/profile/create-a-tour">here</Link>.
+          <Link to="/profile/my-planner">here</Link>.
         </p>
       </section>
     </Container>

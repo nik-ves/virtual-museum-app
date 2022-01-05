@@ -15,10 +15,8 @@ const TourDetails = () => {
 
   return (
     <Container>
-      <h1>{tour.name}</h1>
-
       <div className={classes["exhibit-box"]}>
-        <h2>Selected exhibits for this setting</h2>
+        <h2>Selected exhibits for this tour</h2>
 
         <div className={classes["exhibit-link"]}>
           <ExhibitCard

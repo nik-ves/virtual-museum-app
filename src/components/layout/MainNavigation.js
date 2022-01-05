@@ -71,13 +71,6 @@ const MainNavigation = () => {
             )}
             {isLoggedIn && (
               <li className={classes["profile-item"]}>
-                {/* <button
-                  className="btn-dropdown"
-                  href="#"
-                  onClick={isOpenHandler}
-                >
-                  Drop
-                </button> */}
                 <CgProfile onClick={isOpenHandler} className="btn-profile" />
 
                 {isOpen && <DropdownMenu isOpen={isOpenHandler} />}
