@@ -1,23 +1,23 @@
 .tours {
-  margin: 10rem auto;
+  margin: 5rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.setting-error {
+.tour-error {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.setting-error p {
+.tour-error p {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
 
-.setting-error a,
-.setting-list a {
+.tour-error a,
+.tour-list a {
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;

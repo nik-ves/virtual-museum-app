@@ -21,8 +21,8 @@ const ToursList = ({ showAll, showAllHandler }) => {
   return (
     <Container>
       {!showAll && (
-        <div className={classes["settings-list-cards"]}>
-          <div className={classes["setting-error"]}>
+        <div className={classes["tours-list-cards"]}>
+          <div className={classes["tour-error"]}>
             <p>
               {toursCtx.filteredTours.length === 0
                 ? "No tours found."
@@ -30,7 +30,11 @@ const ToursList = ({ showAll, showAllHandler }) => {
             </p>
 
             <p>
-              Click <Link to="/tours">here</Link> to show all of our tours.
+              Click{" "}
+              <Link onClick={showAllHandler} to="/tours">
+                here
+              </Link>{" "}
+              to show all of our tours.
             </p>
           </div>
 

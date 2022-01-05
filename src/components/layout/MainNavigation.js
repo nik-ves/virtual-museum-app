@@ -4,6 +4,7 @@ import classes from "./MainNavigation.module.css";
 import Container from "../UI/Container";
 import { AuthContext } from "../../context/auth-context";
 import DropdownMenu from "./DropdownMenu";
+import { CgProfile } from "react-icons/cg";
 
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
@@ -46,15 +47,17 @@ const MainNavigation = () => {
                 </NavLink>
               </li>
             )}
-            <li>
-              <NavLink
-                to="/tours"
-                onClick={() => setIsOpen(false)}
-                activeClassName={classes.active}
-              >
-                Tours
-              </NavLink>
-            </li>
+            {isLoggedIn && (
+              <li>
+                <NavLink
+                  to="/tours"
+                  onClick={() => setIsOpen(false)}
+                  activeClassName={classes.active}
+                >
+                  Tours
+                </NavLink>
+              </li>
+            )}
             {!isLoggedIn && (
               <li>
                 <NavLink
@@ -67,14 +70,15 @@ const MainNavigation = () => {
               </li>
             )}
             {isLoggedIn && (
-              <li>
-                <button
+              <li className={classes["profile-item"]}>
+                {/* <button
                   className="btn-dropdown"
                   href="#"
                   onClick={isOpenHandler}
                 >
                   Drop
-                </button>
+                </button> */}
+                <CgProfile onClick={isOpenHandler} className="btn-profile" />
 
                 {isOpen && <DropdownMenu isOpen={isOpenHandler} />}
               </li>

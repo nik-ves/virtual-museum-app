@@ -46,10 +46,9 @@ button {
   padding: 0 2rem;
 }
 
-.btn-dropdown {
-  border: none;
-  font-size: 1.7rem;
-  background-color: transparent;
+.btn-profile {
+  display: flex;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
 }

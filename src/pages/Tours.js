@@ -1,6 +1,7 @@
 import { useState } from "react";
-import ToursList from "../components/toursPage/ToursList";
+import ToursIntro from "../components/toursPage/ToursIntro";
 import ToursSearch from "../components/toursPage/ToursSearch";
+import ToursList from "../components/toursPage/ToursList";
 
 const Tours = () => {
   const [showAll, setShowAll] = useState(true);
@@ -11,6 +12,7 @@ const Tours = () => {
 
   return (
     <>
+      <ToursIntro />
       <ToursSearch showAll={showAll} showAllHandler={showAllHandler} />
       <ToursList showAll={showAll} showAllHandler={showAllHandler} />
     </>

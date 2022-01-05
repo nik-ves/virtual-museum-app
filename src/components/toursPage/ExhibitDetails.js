@@ -46,7 +46,6 @@ const ExhibitDetails = () => {
           <p>
             <span>Time to see</span>: {exhibit.time} min
           </p>
-          <p>{/* <span>Grade</span>: {rating.toFixed(1)} / 5 */}</p>
         </div>
       </section>
 

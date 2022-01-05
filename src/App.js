@@ -54,20 +54,24 @@ function App() {
         </Route>
 
         <Route path="/profile/create-a-tour">
-          <MyTours />
+          {isLoggedIn && <MyTours />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         {/* ===== TOURS ===== */}
         <Route path="/tours" exact>
-          <Tours />
+          {isLoggedIn && <Tours />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         <Route path="/tours/:tourId" exact>
-          <TourDetails />
+          {isLoggedIn && <TourDetails />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         <Route path="/tours/:tourId/:exhibitId" exact>
-          <ExhibitDetails />
+          {isLoggedIn && <ExhibitDetails />}
+          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
         </Route>
 
         {/* ===== AUTH ===== */}

@@ -19,7 +19,7 @@ const SettingsList = () => {
   return (
     <Container>
       <div className={classes["setting-list"]}>
-        <h1>Tour the history</h1>
+        <h1>History in one place</h1>
 
         <p>
           Tour the history of Europe through our settings bellow. Each setting
@@ -38,6 +38,7 @@ const SettingsList = () => {
           </p>
         )}
       </div>
+
       {showFilterForm && (
         <SettingsSearch
           showFilterForm={showFilterFormHandler}

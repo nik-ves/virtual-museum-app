@@ -1,41 +1,51 @@
 import classes from "./ToursSearch.module.css";
 import Container from "../UI/Container";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ToursContext } from "../../context/tours-context";
+import useInput from "../../hooks/use-input";
 
 const ToursSearch = ({ showAllHandler }) => {
-  const [priceFrom, setPriceFrom] = useState("");
-  const [priceTo, setPriceTo] = useState("");
-  const [lengthInMin, setLengthInMin] = useState("");
-  const [status, setStatus] = useState("");
+  const {
+    value: priceFrom,
+    valueChangeHandler: priceFromHandler,
+    resetValue: resetPriceFrom,
+  } = useInput((value) => value.trim() <= 1);
+
+  const {
+    value: priceTo,
+    valueChangeHandler: priceToHandler,
+    resetValue: resetPriceTo,
+  } = useInput((value) => value.trim() <= 1);
+
+  const {
+    value: maxLength,
+    valueChangeHandler: maxLengthChangeHandler,
+    resetValue: resetMaxLength,
+  } = useInput((value) => value.trim() <= 1);
+
+  const {
+    value: status,
+    valueChangeHandler: statusHandler,
+    resetValue: resetStatus,
+  } = useInput((value) => value.trim() <= 1);
+
+  const resetValues = () => {
+    resetPriceFrom();
+    resetPriceTo();
+    resetMaxLength();
+    resetStatus();
+  };
 
   const toursCtx = useContext(ToursContext);
-
-  const priceFromHandler = (event) => {
-    setPriceFrom(event.target.value);
-  };
-
-  const priceToHandler = (event) => {
-    setPriceTo(event.target.value);
-  };
-
-  const lengthHandler = (event) => {
-    setLengthInMin(event.target.value);
-  };
-
-  const statusHandler = (event) => {
-    setStatus(event.target.value);
-  };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    toursCtx.filterTours(priceFrom, priceTo, lengthInMin, status);
+    toursCtx.filterTours(priceFrom, priceTo, maxLength, status);
 
     showAllHandler();
+    resetValues();
   };
-
-  console.log(toursCtx.filteredTours);
 
   return (
     <Container>
@@ -64,8 +74,8 @@ const ToursSearch = ({ showAllHandler }) => {
           <input
             type="number"
             id="length"
-            value={lengthInMin}
-            onChange={lengthHandler}
+            value={maxLength}
+            onChange={maxLengthChangeHandler}
             required
           />
 
