@@ -29,7 +29,7 @@ const TourCard = ({ tour, showEditHandler }) => {
     });
 
   return (
-    <>
+    <section className={classes["toursTest"]}>
       <Link
         to={`/tours/${tour.name.split(" ").join("-").toLowerCase()}`}
         className={classes["tour-link"]}
@@ -48,6 +48,7 @@ const TourCard = ({ tour, showEditHandler }) => {
           </div>
         </div>
       </Link>
+
       <div className={classes["tour-actions"]}>
         {validateUser && (
           <button onClick={showEditHandler.bind(this, tour)}>Edit Tour</button>
@@ -70,7 +71,7 @@ const TourCard = ({ tour, showEditHandler }) => {
           />
         )}
       </div>
-    </>
+    </section>
   );
 };
 

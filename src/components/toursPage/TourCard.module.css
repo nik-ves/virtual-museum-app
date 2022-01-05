@@ -1,9 +1,13 @@
+.toursTest {
+  display: flex;
+  width: 100%;
+}
+
 .tour-link {
   display: inline-block;
   height: 20rem;
-  width: 80%;
+  flex: 1;
   background-color: var(--main-bg-color);
-  /* border: 2px solid black; */
   border-radius: 4px 0 0 4px;
   color: white;
   text-decoration: none;
@@ -41,15 +45,15 @@
 }
 
 .tour-actions {
-  background-color: var(--main-bg-color);
-  border-radius: 0 4px 4px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   height: 20rem;
   width: 20%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+  padding: 2rem;
+  background-color: var(--test-color);
 }
 
 .tour-actions button {

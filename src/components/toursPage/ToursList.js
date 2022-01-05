@@ -4,8 +4,12 @@ import { useContext, useState } from "react";
 import classes from "./ToursList.module.css";
 import TourCard from "./TourCard";
 import EditTour from "../profile/EditTour";
+import { Link } from "react-router-dom";
 
-const ToursList = () => {
+const ToursList = ({ showAll, showAllHandler }) => {
+  const toursCtx = useContext(ToursContext);
+
+  // edit states
   const [showEdit, setShowEdit] = useState(false);
   const [currentTour, setCurrentTour] = useState(null);
 
@@ -14,12 +18,37 @@ const ToursList = () => {
     setCurrentTour(tour);
   };
 
-  const tourCtx = useContext(ToursContext);
   return (
     <Container>
-      {!showEdit && (
+      {!showAll && (
+        <div className={classes["settings-list-cards"]}>
+          <div className={classes["setting-error"]}>
+            <p>
+              {toursCtx.filteredTours.length === 0
+                ? "No tours found."
+                : `${toursCtx.filteredTours.length} settings found.`}
+            </p>
+
+            <p>
+              Click <Link to="/tours">here</Link> to show all of our tours.
+            </p>
+          </div>
+
+          {!showAll &&
+            !showEdit &&
+            toursCtx.filteredTours.map((tour) => (
+              <TourCard
+                key={tour.id}
+                tour={tour}
+                showEditHandler={showEditHandler}
+              />
+            ))}
+        </div>
+      )}
+
+      {!showEdit && showAll && (
         <div className={classes["tours"]}>
-          {tourCtx.tours.map((tour) => {
+          {toursCtx.tours.map((tour) => {
             return (
               <TourCard
                 key={tour.id}

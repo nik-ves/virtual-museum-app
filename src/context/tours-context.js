@@ -521,6 +521,12 @@ const ToursContextProvider = (props) => {
         return tour.name !== tourName;
       })
     );
+
+    setFilteredTours(
+      filteredTours.filter((tour) => {
+        return tour.name !== tourName;
+      })
+    );
   };
 
   const filterTours = (priceFrom, priceTo, lengthInMins, status) => {

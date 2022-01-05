@@ -1,12 +1,7 @@
-import { Fragment } from "react";
 import SettingsList from "../components/settingsPage/SettingsList";
 
 const Settings = () => {
-  return (
-    <Fragment>
-      <SettingsList />
-    </Fragment>
-  );
+  return <SettingsList />;
 };
 
 export default Settings;
