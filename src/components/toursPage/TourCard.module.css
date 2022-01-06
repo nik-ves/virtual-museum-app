@@ -9,7 +9,7 @@
   background: linear-gradient(
     to right,
     var(--main-bg-color),
-    var(--test-color)
+    var(--color-text)
   );
 }
 

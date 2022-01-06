@@ -108,12 +108,9 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* max-width: 30rem; */
   padding: 2rem;
-  /* height: 10rem; */
   background-color: var(--main-bg-color);
   border-radius: 4px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,10 +160,12 @@ button {
 
 .form-signup {
   width: 73rem;
+  max-width: 100%;
 }
 
 .form-signin {
-  max-width: 35rem;
+  width: 35rem;
+  max-width: 100%;
 }
 
 .form-content h1 {
@@ -232,11 +231,6 @@ button {
   border: 2px solid var(--border-color);
 }
 
-.form-control button {
-  align-self: center;
-  justify-self: center;
-}
-
 .invalid input:focus {
   border: 2px solid red;
 }
@@ -244,33 +238,4 @@ button {
 .form-actions {
   text-align: center;
   margin: 1rem 0;
-}
-
-.form-actions button {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  font: inherit;
-  border: 2px solid gray;
-  border-radius: 4px;
-  margin-top: 1.5rem;
-}
-
-/* =========================== */
-
-.my-tours-box h2 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 5rem;
-}
-
-.exhibit {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.my-tours-box form {
-  font-size: 2rem;
 }

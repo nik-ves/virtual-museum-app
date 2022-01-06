@@ -8,16 +8,19 @@
 
 .tour-form h1 {
   text-align: center;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
+  font-size: 4rem;
+  margin-bottom: 4rem;
 }
 
 .tour-form h2 {
-  text-align: center;
   text-transform: uppercase;
   margin-bottom: 4rem;
   font-size: 3rem;
+  text-align: center;
+}
+
+.tour-form p {
+  font-size: 2rem;
 }
 
 .form-cards {
@@ -56,9 +59,11 @@
   max-width: 100%;
   padding: 1rem;
   align-self: center;
+  height: 100%;
 }
 
-.form-control input:focus {
+.form-control input:focus,
+.form-control textarea:focus {
   outline: none;
   border: 2px solid var(--border-color);
 }
@@ -71,4 +76,11 @@
 
 .form-actions button {
   margin: auto 2rem;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: space-around;
+  background-color: grey;
+  border: 2px solid white;
 }

@@ -62,6 +62,16 @@ const SettingsSearch = (props) => {
     resetValue: gradeResetValue,
   } = useInput((value) => value.trim());
 
+  const resetFormValues = () => {
+    exhibitTypeResetValue();
+    settingTypeResetValue();
+    exhibitNumberResetValue();
+    priceFromResetValue();
+    priceToResetValue();
+    averageTimeResetValue();
+    gradeResetValue();
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -78,16 +88,6 @@ const SettingsSearch = (props) => {
     );
 
     resetFormValues();
-  };
-
-  const resetFormValues = () => {
-    exhibitTypeResetValue();
-    settingTypeResetValue();
-    exhibitNumberResetValue();
-    priceFromResetValue();
-    priceToResetValue();
-    averageTimeResetValue();
-    gradeResetValue();
   };
 
   return (

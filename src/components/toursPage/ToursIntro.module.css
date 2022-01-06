@@ -12,9 +12,6 @@
 .tour-section-intro a {
   color: black;
   text-decoration: none;
-  border-bottom: 1px solid black;
-}
-
-.tour-section-intro a:hover {
-  font-style: italic;
+  border-bottom: 2px solid black;
+  font-weight: 700;
 }

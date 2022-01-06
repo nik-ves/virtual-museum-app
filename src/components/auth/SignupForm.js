@@ -174,7 +174,7 @@ const SignUpForm = () => {
               <label htmlFor="favorites">Favorite settings and exhibits</label>
               <textarea
                 type="text"
-                id="address"
+                id="favorites"
                 value={favoritesValue}
                 onChange={favoritesChangeHandler}
                 onBlur={favoritesBlurHandler}

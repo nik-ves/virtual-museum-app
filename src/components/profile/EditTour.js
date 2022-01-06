@@ -53,7 +53,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
       <h1>Edit Your Tour</h1>
 
-      <h2>Select exhibits for your tour</h2>
+      <h2>Select new exhibits for your tour</h2>
       <div className={classes["form-cards"]}>
         {filteredArray.map((exhibit) => {
           return (
@@ -82,24 +82,26 @@ const EditTour = ({ currentTour, showEditHandler }) => {
         )}
       </div>
 
-      <div className={classes["form-control"]}>
-        <label htmlFor="name">Tour Name</label>
-        <input
-          id="name"
-          type="text"
-          onChange={nameValueChangeHandler}
-          value={nameValue}
-        />
-      </div>
+      <div className={classes["form-inputs"]}>
+        <div className={classes["form-control"]}>
+          <label htmlFor="name">Tour Name</label>
+          <input
+            id="name"
+            type="text"
+            onChange={nameValueChangeHandler}
+            value={nameValue}
+          />
+        </div>
 
-      <div className={classes["form-control"]}>
-        <label htmlFor="description">Description</label>
-        <textarea
-          id="description"
-          type="text"
-          onChange={descriptionValueChangeHandler}
-          value={descriptionValue}
-        />
+        <div className={classes["form-control"]}>
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            type="text"
+            onChange={descriptionValueChangeHandler}
+            value={descriptionValue}
+          />
+        </div>
       </div>
 
       <div className={classes["form-actions"]}>

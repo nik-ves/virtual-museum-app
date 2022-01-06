@@ -3,8 +3,11 @@ import Container from "../UI/Container";
 import { useContext } from "react";
 import { ToursContext } from "../../context/tours-context";
 import useInput from "../../hooks/use-input";
+import { IoClose } from "react-icons/io5";
 
-const ToursSearch = ({ showAllHandler }) => {
+const ToursSearch = ({ showAllHandler, showFilterHandler }) => {
+  const toursCtx = useContext(ToursContext);
+
   const {
     value: priceFrom,
     valueChangeHandler: priceFromHandler,
@@ -36,8 +39,6 @@ const ToursSearch = ({ showAllHandler }) => {
     resetStatus();
   };
 
-  const toursCtx = useContext(ToursContext);
-
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -50,6 +51,13 @@ const ToursSearch = ({ showAllHandler }) => {
   return (
     <Container>
       <form onSubmit={submitHandler} className={classes["tour-search-form"]}>
+        <div className={classes["form-header"]}>
+          <h2>Search our tours</h2>
+          <IoClose
+            onClick={showFilterHandler}
+            className={classes["form-close"]}
+          />
+        </div>
         <div className={classes["form-control"]}>
           <label htmlFor="priceFrom">Price From</label>
           <input
@@ -70,7 +78,7 @@ const ToursSearch = ({ showAllHandler }) => {
           />
         </div>
         <div className={classes["form-control"]}>
-          <label>Length in Minutes</label>
+          <label htmlFor="length">Max Length in Minutes</label>
           <input
             type="number"
             id="length"
@@ -79,7 +87,7 @@ const ToursSearch = ({ showAllHandler }) => {
             required
           />
 
-          <label htmlFor="exhibitType">Status</label>
+          <label htmlFor="status">Status</label>
           <select id="status" value={status} onChange={statusHandler} required>
             <option disabled hidden value=""></option>
             <option value="Ongoing">Ongoing</option>

@@ -27,7 +27,7 @@ const TourForm = ({ allExhibits }) => {
 
   return (
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
-      <h1>Tour Maker</h1>
+      <h1>My Planner</h1>
 
       <p className={classes["tour-form-info"]}>
         Select exhibits to include in your personal tour. Mix histories by your
@@ -66,24 +66,26 @@ const TourForm = ({ allExhibits }) => {
         )}
       </div>
 
-      <div className={classes["form-control"]}>
-        <label htmlFor="name">Tour Name</label>
-        <input
-          id="name"
-          type="text"
-          onChange={nameValueChangeHandler}
-          value={nameValue}
-        />
-      </div>
+      <div className={classes["form-inputs"]}>
+        <div className={classes["form-control"]}>
+          <label htmlFor="name">Tour Name</label>
+          <input
+            id="name"
+            type="text"
+            onChange={nameValueChangeHandler}
+            value={nameValue}
+          />
+        </div>
 
-      <div className={classes["form-control"]}>
-        <label htmlFor="description">Description</label>
-        <textarea
-          id="description"
-          type="text"
-          onChange={descriptionValueChangeHandler}
-          value={descriptionValue}
-        />
+        <div className={classes["form-control"]}>
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            type="text"
+            onChange={descriptionValueChangeHandler}
+            value={descriptionValue}
+          />
+        </div>
       </div>
 
       <div className={classes["form-actions"]}>

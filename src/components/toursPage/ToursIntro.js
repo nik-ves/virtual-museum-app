@@ -2,7 +2,7 @@ import classes from "./ToursIntro.module.css";
 import Container from "../UI/Container";
 import { Link } from "react-router-dom";
 
-const ToursIntro = () => {
+const ToursIntro = ({ showFilter, showFilterHandler }) => {
   return (
     <Container>
       <section className={classes["tour-section-intro"]}>
@@ -18,6 +18,16 @@ const ToursIntro = () => {
           To make your own tour, visit your profile or click{" "}
           <Link to="/profile/my-planner">here</Link>.
         </p>
+
+        {!showFilter && (
+          <p>
+            If you're looking for something specific, click{" "}
+            <Link to="/tours" onClick={showFilterHandler}>
+              here
+            </Link>{" "}
+            for filter form.
+          </p>
+        )}
       </section>
     </Container>
   );
