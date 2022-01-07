@@ -25,6 +25,11 @@ const MainNavigation = () => {
     setShowHamburgerMenu(false);
   };
 
+  const hideHamburgers = () => {
+    setShowProfileHamburger(false);
+    setShowHamburgerMenu(false);
+  };
+
   return (
     <header className={classes.header}>
       <Container>
@@ -51,7 +56,7 @@ const MainNavigation = () => {
           )}
 
           <div className={classes["logo-box"]}>
-            <NavLink to="/">
+            <NavLink to="/" onClick={hideHamburgers}>
               <h1>Virtual Museum</h1>
             </NavLink>
           </div>

@@ -37,49 +37,49 @@ function App() {
         {/* ===== SETTINGS ===== */}
         <Route path="/settings" exact>
           {isLoggedIn && <Settings />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/settings/:settingId" exact>
           {isLoggedIn && <SettingInfo />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/settings/:settingId/:exhibitId">
           {isLoggedIn && <ExhibitInfo />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         {/* ===== PROFLE ===== */}
         <Route path="/profile" exact>
           {isLoggedIn && <Profile />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/profile/my-planner">
           {isLoggedIn && <MyPlanner />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/profile/my-tours">
           {isLoggedIn && <MyTours />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         {/* ===== TOURS ===== */}
         <Route path="/tours" exact>
           {isLoggedIn && <Tours />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/tours/:tourId" exact>
           {isLoggedIn && <TourDetails />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         <Route path="/tours/:tourId/:exhibitId" exact>
           {isLoggedIn && <ExhibitDetails />}
-          {!isLoggedIn && <Redirect to="/auth/sign-in" />}
+          {!isLoggedIn && <Redirect to="/sign-in" />}
         </Route>
 
         {/* ===== AUTH ===== */}
