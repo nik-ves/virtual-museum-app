@@ -10,6 +10,7 @@
   text-align: center;
   font-size: 4rem;
   margin-bottom: 4rem;
+  text-transform: uppercase;
 }
 
 .tour-form h2 {
@@ -83,4 +84,27 @@
   justify-content: space-around;
   background-color: grey;
   border: 2px solid white;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-control {
+    justify-content: flex-start;
+  }
+  .tour-form h1 {
+    font-size: 3rem;
+  }
+
+  .tour-form h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 368px) {
+  .form-cards {
+    justify-content: center;
+  }
 }

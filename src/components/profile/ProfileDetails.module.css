@@ -5,16 +5,17 @@
   padding: 3rem;
   background-color: #dbdbdb;
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .user-profile-image-box {
   width: 40%;
-  border: 2px solid black;
-  height: 50%;
+  max-width: 100%;
 }
 
 .user-profile-image-box img {
   width: 100%;
+  border: 2px solid black;
 }
 
 .user-profile-text-box {
@@ -36,6 +37,7 @@
 .user-profile-text-box p {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  max-width: 100%;
 }
 
 .user-profile-text-box span {
@@ -43,13 +45,30 @@
   text-transform: uppercase;
 }
 
-.user-profile-edit {
-  margin-top: 2rem;
-  font-size: 2.5rem;
-  padding: 0 2rem;
-  border-radius: 4px;
-  border: 1px solid var(--main-bg-color);
-  background-color: var(--main-bg-color);
-  color: white;
-  cursor: pointer;
+@media only screen and (max-width: 768px) {
+  .user-profile {
+    flex-direction: column;
+    padding: 2rem;
+    margin: 5rem 0;
+  }
+  .user-profile-image-box {
+    width: 40rem;
+    /* height: 33.5rem; */
+    align-self: center;
+    margin-bottom: 3rem;
+  }
+  .user-profile-text-box {
+    width: 100%;
+    margin: 0;
+    align-self: center;
+  }
+  .user-profile-text-box h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .user-profile-text-box p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 }

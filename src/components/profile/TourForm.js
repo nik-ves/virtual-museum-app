@@ -35,7 +35,7 @@ const TourForm = ({ allExhibits }) => {
         premade museum settings here.
       </p>
 
-      <h2>Select exhibits for your tour</h2>
+      <h2>Select exhibits</h2>
       <div className={classes["form-cards"]}>
         {allExhibits
           .filter((item) => !toursCtx.selectedExhibits.includes(item))

@@ -3,7 +3,7 @@ import classes from "./TourCard.module.css";
 import { AuthContext } from "../../context/auth-context";
 import { ToursContext } from "../../context/tours-context";
 import { useContext, useState } from "react";
-import Rating from "@material-ui/lab/Rating";
+// import Rating from "@material-ui/lab/Rating";
 
 const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
@@ -50,36 +50,26 @@ const TourCard = ({ tour, showEditHandler }) => {
         </div>
       </Link>
 
-      <div className={classes["tour-actions"]}>
-        {validateUser && (
-          <button
-            className="btn-general"
-            onClick={showEditHandler.bind(this, tour)}
-          >
-            Edit Tour
-          </button>
-        )}
-        {validateUser && (
-          <button
-            className="btn-general"
-            onClick={deleteTour.bind(this, tour.name)}
-          >
-            Delete Tour
-          </button>
-        )}
-        {tour.status === "Finished" && (
-          <Rating
-            name="star-rating"
-            precision={0.5}
-            size="large"
-            className={classes["rating-stars"]}
-            value={ratingValue}
-            onChange={(event, newValue) => {
-              setRatingValue(newValue);
-            }}
-          />
-        )}
-      </div>
+      {validateUser && (
+        <div className={classes["tour-actions"]}>
+          {validateUser && (
+            <button
+              className="btn-general"
+              onClick={showEditHandler.bind(this, tour)}
+            >
+              Edit Tour
+            </button>
+          )}
+          {validateUser && (
+            <button
+              className="btn-general"
+              onClick={deleteTour.bind(this, tour.name)}
+            >
+              Delete Tour
+            </button>
+          )}
+        </div>
+      )}
     </section>
   );
 };

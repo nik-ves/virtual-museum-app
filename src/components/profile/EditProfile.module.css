@@ -75,3 +75,12 @@
 .form-actions button {
   margin: auto 2rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .form-content {
+    margin: 5rem auto;
+  }
+  .form-edit {
+    padding: 1rem;
+  }
+}

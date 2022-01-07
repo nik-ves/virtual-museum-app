@@ -53,7 +53,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
       <h1>Edit Your Tour</h1>
 
-      <h2>Select new exhibits for your tour</h2>
+      <h2>Select new exhibits</h2>
       <div className={classes["form-cards"]}>
         {filteredArray.map((exhibit) => {
           return (

@@ -62,7 +62,8 @@
 .tour-actions {
   font-size: 2rem;
   height: 20rem;
-  width: 15rem;
+  /* width: 15rem; */
+  width: 100%;
   max-width: 100%;
   display: flex;
   justify-content: center;
