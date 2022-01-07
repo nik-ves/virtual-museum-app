@@ -42,7 +42,7 @@ const SettingCard = (props) => {
           <p>Type: {props.setting.type}</p>
           <p>Price: {settingPrice} EUR</p>
           <p>Length: {settingTime} min</p>
-          <p>Average Grade: {sumOfRatings / ratings.length} / 5</p>
+          <p>Rating: {sumOfRatings / ratings.length} / 5</p>
         </div>
       </div>
     </Link>

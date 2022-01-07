@@ -3,6 +3,7 @@ import { useContext } from "react";
 import BackgroundImage from "../UI/BackroundImage";
 import classes from "./EditProfile.module.css";
 import useEdit from "../../hooks/use-edit";
+import Container from "../UI/Container";
 
 const EditProfile = (props) => {
   const authCtx = useContext(AuthContext);
@@ -62,80 +63,81 @@ const EditProfile = (props) => {
 
   return (
     <BackgroundImage>
-      {" "}
-      <section className={classes["form-content"]}>
-        <form onSubmit={submitHandler} className={classes["form-edit"]}>
-          <h1>Edit Profile</h1>
+      <Container>
+        <section className={classes["form-content"]}>
+          <form onSubmit={submitHandler} className={classes["form-edit"]}>
+            <h1>Edit Profile</h1>
 
-          <div className={classes["form-row"]}>
-            <div className={classes["form-control"]}>
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                id="firstName"
-                value={firstNameValue}
-                onChange={firstNameChangeHandler}
-              />
-              {firstNameHasError && <p>Field must not be empty!</p>}
+            <div className={classes["form-row"]}>
+              <div className={classes["form-control"]}>
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  value={firstNameValue}
+                  onChange={firstNameChangeHandler}
+                />
+                {firstNameHasError && <p>Field must not be empty!</p>}
+              </div>
+
+              <div className={classes["form-control"]}>
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  value={lastNameValue}
+                  onChange={lastNameChangeHandler}
+                />
+                {lastNameHasError && <p>Field must not be empty!</p>}
+              </div>
+
+              <div className={classes["form-control"]}>
+                <label htmlFor="contactNumber">Contact Number</label>
+                <input
+                  type="number"
+                  id="contactNumber"
+                  value={contactNumberValue}
+                  onChange={contactNumberChangeHandler}
+                />
+                {contactNumberHasError && <p>Field must not be empty!</p>}
+              </div>
             </div>
 
-            <div className={classes["form-control"]}>
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                id="lastName"
-                value={lastNameValue}
-                onChange={lastNameChangeHandler}
-              />
-              {lastNameHasError && <p>Field must not be empty!</p>}
+            <div className={classes["form-row"]}>
+              <div className={classes["form-control"]}>
+                <label htmlFor="currentAddress">Current Address</label>
+                <input
+                  type="text"
+                  id="currentAddress"
+                  value={currentAddressValue}
+                  onChange={currentAddressChangeHandler}
+                />
+                {currentAddressHasError && <p>Field must not be empty!</p>}
+              </div>
+
+              <div className={classes["form-control"]}>
+                <label htmlFor="favorites">Favorites</label>
+                <textarea
+                  type="text"
+                  id="favorites"
+                  value={favoritesValue}
+                  onChange={favoritesChangeHandler}
+                />
+                {favoritesHasError && <p>Field must not be empty!</p>}
+              </div>
             </div>
 
-            <div className={classes["form-control"]}>
-              <label htmlFor="contactNumber">Contact Number</label>
-              <input
-                type="number"
-                id="contactNumber"
-                value={contactNumberValue}
-                onChange={contactNumberChangeHandler}
-              />
-              {contactNumberHasError && <p>Field must not be empty!</p>}
+            <div className={classes["form-actions"]}>
+              <button className="btn-save" type="submit">
+                Save Changes
+              </button>
+              <button className="btn-cancel" onClick={props.isEditing}>
+                Cancel
+              </button>
             </div>
-          </div>
-
-          <div className={classes["form-row"]}>
-            <div className={classes["form-control"]}>
-              <label htmlFor="currentAddress">Current Address</label>
-              <input
-                type="text"
-                id="currentAddress"
-                value={currentAddressValue}
-                onChange={currentAddressChangeHandler}
-              />
-              {currentAddressHasError && <p>Field must not be empty!</p>}
-            </div>
-
-            <div className={classes["form-control"]}>
-              <label htmlFor="favorites">Favorites</label>
-              <textarea
-                type="text"
-                id="favorites"
-                value={favoritesValue}
-                onChange={favoritesChangeHandler}
-              />
-              {favoritesHasError && <p>Field must not be empty!</p>}
-            </div>
-          </div>
-
-          <div className={classes["form-actions"]}>
-            <button className="btn-save" type="submit">
-              Save Changes
-            </button>
-            <button className="btn-cancel" onClick={props.isEditing}>
-              Cancel
-            </button>
-          </div>
-        </form>
-      </section>
+          </form>
+        </section>
+      </Container>
     </BackgroundImage>
   );
 };

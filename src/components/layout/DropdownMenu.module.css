@@ -43,3 +43,9 @@
   font-size: 1.7rem;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1400px) {
+  .dropdown {
+    transform: translateX(-70%);
+  }
+}

@@ -33,8 +33,12 @@
 }
 
 .setting-info {
+  font-size: 2rem;
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
+  border: 2px solid grey;
+  background-color: rgba(236, 236, 236, 0.5);
 }
 
 .setting-image {
@@ -49,8 +53,4 @@
 .setting h2 {
   font-size: 3rem;
   text-transform: uppercase;
-}
-
-.setting p {
-  font-size: 1.5rem;
 }

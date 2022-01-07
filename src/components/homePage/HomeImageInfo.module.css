@@ -36,3 +36,38 @@
   margin-left: 40%;
   font-style: italic;
 }
+
+@media only screen and (max-width: 768px) {
+  .text-box h1,
+  .text-box p {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content-box-box--1,
+  .content-box-box--2,
+  .content-box-box--3 {
+    flex-direction: column;
+  }
+  .text-box h1 {
+    width: 80%;
+  }
+  .home-image-text img {
+    width: 100%;
+    height: 100%;
+  }
+  .text-box {
+    text-align: center;
+    height: 20rem;
+    width: 100%;
+    margin: 2rem auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .text-box h1,
+  .text-box p {
+    font-size: 2rem;
+  }
+}
