@@ -6,6 +6,7 @@
   text-align: center;
   font-size: 4rem;
   margin-bottom: 4rem;
+  text-transform: uppercase;
 }
 
 .setting-list p {
@@ -43,4 +44,10 @@
   color: var(--main-bg-color);
   background-color: transparent;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .setting-list h1 {
+    font-size: 3rem;
+  }
 }

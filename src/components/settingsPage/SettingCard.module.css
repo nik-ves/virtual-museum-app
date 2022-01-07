@@ -11,8 +11,11 @@
   color: #fff;
   text-align: center;
   overflow: hidden;
-  margin-bottom: 2rem;
+
   border-radius: 4px;
+}
+.setting:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .setting img {
@@ -36,6 +39,7 @@
   font-size: 2rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1rem;
   border: 2px solid grey;
   background-color: rgba(236, 236, 236, 0.5);
@@ -53,4 +57,23 @@
 .setting h2 {
   font-size: 3rem;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .setting {
+    height: 20rem;
+  }
+  .setting-info {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .setting {
+    height: 15rem;
+  }
+  .setting h2 {
+    font-size: 2rem;
+  }
 }

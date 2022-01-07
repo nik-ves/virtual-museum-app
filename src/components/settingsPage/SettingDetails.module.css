@@ -23,12 +23,23 @@
   margin-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 740px) {
+  .setting-text-box h1 {
+    font-size: 3rem;
+  }
+  .setting-text-box p {
+    font-size: 1.8rem;
+  }
+}
+
 /* ===================================== */
 
 .exhibit-box h2 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 5rem;
+  font-size: 3.5rem;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 .exhibit-link {
@@ -52,4 +63,37 @@
 
 .exhibit-link a:hover {
   transform: scale(1.05);
+}
+
+@media only screen and (max-width: 1100px) {
+  .setting-image-box {
+    height: 50rem;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .setting-image-box {
+    height: 40rem;
+  }
+  .exhibit-box h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  .exhibit-link {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .setting-image-box {
+    height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .setting-image-box {
+    height: 20rem;
+  }
 }
