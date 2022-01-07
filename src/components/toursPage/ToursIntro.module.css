@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 4rem;
   margin: 3rem auto 4rem auto;
+  text-transform: uppercase;
 }
 
 .tour-section-intro p {
@@ -14,4 +15,10 @@
   text-decoration: none;
   border-bottom: 2px solid black;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .tour-section-intro h1 {
+    font-size: 3rem;
+  }
 }

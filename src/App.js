@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import Profile from "./pages/Profile";
-// import MyTours from "./pages/MyTours";
 import MyPlanner from "./pages/MyPlanner";
 import Tours from "./pages/Tours";
 import Settings from "./pages/Settings";
@@ -18,6 +17,7 @@ import ExhibitDetails from "./components/toursPage/ExhibitDetails";
 import Footer from "./components/layout/Footer";
 import TourDetails from "./components/toursPage/TourDetails";
 import MyTours from "./pages/MyTours";
+import Fix from "./components/UI/Fix";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -25,6 +25,7 @@ function App() {
 
   return (
     <Fragment>
+      <Fix />
       <MainNavigation />
 
       <ScrollToTop />
@@ -82,12 +83,12 @@ function App() {
         </Route>
 
         {/* ===== AUTH ===== */}
-        <Route path="/auth/sign-in">
+        <Route path="/sign-in">
           {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignIn />}
         </Route>
 
-        <Route path="/auth/sign-up">
+        <Route path="/sign-up">
           {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignUp />}
         </Route>

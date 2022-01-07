@@ -43,7 +43,7 @@ button {
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .btn-profile {
@@ -77,6 +77,15 @@ button {
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .btn-general,
+  .btn-save,
+  .btn-cancel {
+    font-size: 1.5rem;
+    width: 10rem;
+  }
+}
+
 .btn-general:hover,
 .btn-save:hover,
 .btn-cancel:hover {
@@ -90,6 +99,10 @@ button {
 
 .btn-cancel {
   background-color: var(--color-btn-red);
+}
+
+.heigth-fix {
+  height: 6.5rem;
 }
 
 /* =========================== */
@@ -145,12 +158,16 @@ button {
 .form-personal {
   flex: 1;
   align-self: center;
-  max-width: 35rem;
+  /* max-width: 35rem; */
+  width: 35rem;
+  max-width: 100%;
 }
 
 .form-login {
-  /* padding-left: 2rem; */
-  max-width: 35rem;
+  flex: 1;
+  /* max-width: 35rem; */
+  width: 35rem;
+  max-width: 100%;
 }
 
 .form-content {
@@ -221,6 +238,7 @@ button {
   padding: 0 0.5rem;
   font-size: 1.5rem;
   width: 30rem;
+  /* width: 100%; */
   max-width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -244,5 +262,30 @@ button {
 @media only screen and (max-width: 1000px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form-content {
+    margin: 5rem auto;
+  }
+  .form-content form {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .form-actions {
+    width: 100%;
+  }
+  .form-login {
+    align-self: center;
+  }
+  .form {
+    flex-direction: column;
+  }
+  .form-signup input,
+  .form-signup textarea {
+    width: 100%;
   }
 }

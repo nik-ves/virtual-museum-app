@@ -8,44 +8,46 @@ const DropdownMenu = (props) => {
   const authCtx = useContext(AuthContext);
 
   return (
-    <ul className={classes.dropdown}>
-      <li className={classes["dropdown-item"]}>
-        <NavLink
-          to="/profile"
-          exact
-          activeClassName={classes.active}
-          onClick={props.isOpen}
-        >
-          Profile
-        </NavLink>
-      </li>
+    <nav className={classes["dropdown-nav"]}>
+      <ul className={classes.dropdown}>
+        <li className={classes["dropdown-item"]}>
+          <NavLink
+            to="/profile"
+            exact
+            activeClassName={classes.active}
+            onClick={props.isOpen}
+          >
+            Profile
+          </NavLink>
+        </li>
 
-      <li className={classes["dropdown-item"]}>
-        <NavLink
-          to="/profile/my-planner"
-          exact
-          activeClassName={classes.active}
-          onClick={props.isOpen}
-        >
-          My Planner
-        </NavLink>
-      </li>
+        <li className={classes["dropdown-item"]}>
+          <NavLink
+            to="/profile/my-planner"
+            exact
+            activeClassName={classes.active}
+            onClick={props.isOpen}
+          >
+            My Planner
+          </NavLink>
+        </li>
 
-      <li className={classes["dropdown-item"]}>
-        <NavLink
-          to="/profile/my-tours"
-          exact
-          activeClassName={classes.active}
-          onClick={props.isOpen}
-        >
-          My Tours
-        </NavLink>
-      </li>
+        <li className={classes["dropdown-item"]}>
+          <NavLink
+            to="/profile/my-tours"
+            exact
+            activeClassName={classes.active}
+            onClick={props.isOpen}
+          >
+            My Tours
+          </NavLink>
+        </li>
 
-      <li onClick={props.isOpen} className={classes["dropdown-item"]}>
-        <button onClick={authCtx.logoutUser}>Logout</button>
-      </li>
-    </ul>
+        <li onClick={props.isOpen} className={classes["dropdown-item"]}>
+          <button onClick={authCtx.logoutUser}>Logout</button>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

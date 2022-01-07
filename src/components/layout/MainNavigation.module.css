@@ -1,6 +1,12 @@
 .header {
   background-color: var(--main-bg-color);
   padding: 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  min-height: 6.5rem;
 }
 
 .content {
@@ -13,33 +19,44 @@
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--color-text);
+  order: 0;
 }
 
-.list {
-  list-style-type: none;
+.hamburger-btn-box,
+.profile-btn-box {
   display: flex;
-  font-size: 1.7rem;
+  justify-content: center;
   align-items: center;
 }
 
-.list li {
-  margin-left: 3rem;
-  color: var(--color-text);
+.hamburger-btn-box {
+  order: 1;
 }
 
-.list a {
-  text-decoration: none;
-  padding-bottom: 0.3rem;
-  color: var(--color-text);
+.profile-btn-box {
+  order: 3;
 }
 
-.list a.active {
-  color: #fff;
-  border-bottom: 3px solid #fff;
+.icon {
+  display: none;
+  z-index: 10;
+  color: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
-  .list {
-    display: none;
+  .icon {
+    display: block;
+  }
+  .profile-btn-box {
+    order: 0;
+  }
+  .logo-box {
+    order: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logo-box {
+    align-self: flex-start;
   }
 }
