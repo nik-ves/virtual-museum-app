@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import { ToursContext } from "../../context/tours-context";
 import { AuthContext } from "../../context/auth-context";
 import EditTour from "./EditTour";
+import { Link } from "react-router-dom";
 
 const ProfileTours = () => {
   const [showEdit, setShowEdit] = useState(false);
@@ -18,9 +19,14 @@ const ProfileTours = () => {
     setCurrentTour(tour);
   };
 
+  const hasTours =
+    toursCtx.tours.filter((tour) => {
+      return currentUser.email === tour.maker;
+    }).length > 0;
+
   return (
     <Container>
-      {!showEdit && (
+      {!showEdit && hasTours && (
         <div className={classes["tours"]}>
           {toursCtx.tours
             .filter((tour) => {
@@ -39,6 +45,13 @@ const ProfileTours = () => {
       )}
       {showEdit && (
         <EditTour currentTour={currentTour} showEditHandler={showEditHandler} />
+      )}
+      {!hasTours && (
+        <div className={classes["tours-info"]}>
+          <p>
+            No tours found. Make one <Link to="/profile/my-planner">here</Link>!
+          </p>
+        </div>
       )}
     </Container>
   );

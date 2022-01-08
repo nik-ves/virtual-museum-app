@@ -17,6 +17,7 @@ import ExhibitDetails from "./components/toursPage/ExhibitDetails";
 import Footer from "./components/layout/Footer";
 import TourDetails from "./components/toursPage/TourDetails";
 import MyTours from "./pages/MyTours";
+import NotFound from "./pages/NotFound";
 import Fix from "./components/UI/Fix";
 
 function App() {
@@ -91,6 +92,10 @@ function App() {
         <Route path="/sign-up">
           {isLoggedIn && <Redirect to="/" />}
           {!isLoggedIn && <SignUp />}
+        </Route>
+
+        <Route path="*" exact>
+          <NotFound />
         </Route>
       </Switch>
 

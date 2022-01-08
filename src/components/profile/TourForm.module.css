@@ -18,10 +18,12 @@
   margin-bottom: 4rem;
   font-size: 3rem;
   text-align: center;
+  margin-top: 4rem;
 }
 
 .tour-form p {
   font-size: 2rem;
+  text-align: center;
 }
 
 .form-cards {

@@ -85,10 +85,11 @@
 
 @media only screen and (max-width: 768px) {
   .tour-actions {
-    padding: 1rem;
-    width: 10rem;
+    padding: 0.5rem;
+    width: 11rem;
   }
   .tour-info {
     padding: 0 1rem;
+    font-size: 1.5rem;
   }
 }
