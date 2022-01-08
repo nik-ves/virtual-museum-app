@@ -58,7 +58,7 @@
 
 .form-control input:focus {
   outline: none;
-  border: 2px solid blue;
+  border: 2px solid var(--border-color);
 }
 
 .form-control button {
