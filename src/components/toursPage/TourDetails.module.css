@@ -1,7 +1,22 @@
-.exhibit-box h2 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 5rem;
+.exhibit-box {
+  margin: 5rem auto;
+}
+
+.exhibit-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.exhibit-heading h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.exhibit-heading p {
+  font-size: 2rem;
 }
 
 .exhibit-link {
@@ -16,13 +31,52 @@
   position: relative;
   width: 36rem;
   height: 35rem;
-  margin-bottom: 3rem;
+
   transition: all 0.3s;
   overflow: hidden;
   background-color: var(--main-bg-color);
   border-radius: 4px;
 }
 
+.exhibit-link a:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
 .exhibit-link a:hover {
   transform: scale(1.05);
+}
+
+.exhibit-rating {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  background-color: grey;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1100px) {
+  .exhibit-link {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .exhibit-link {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .exhibit-heading h2 {
+    font-size: 3rem;
+  }
+  .exhibit-rating {
+    font-size: 1.5rem;
+  }
+  .exhibit-link {
+    justify-content: center;
+  }
 }

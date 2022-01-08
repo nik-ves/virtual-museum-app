@@ -40,3 +40,19 @@
 .exhibit-text-box h3 {
   font-size: 2.5rem;
 }
+
+@media only screen and (max-width: 690px) {
+  .exhibit-card {
+    width: 15rem;
+    height: 12rem;
+  }
+  .exhibit-text-box h3 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .exhibit-card {
+    width: 10rem;
+    height: 9rem;
+  }
+}

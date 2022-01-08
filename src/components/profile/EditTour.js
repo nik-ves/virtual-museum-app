@@ -12,6 +12,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
     value: descriptionValue,
     valueChangeHandler: descriptionValueChangeHandler,
   } = useEdit(currentTour.description);
+  const [infoMessage, setInfoMessage] = useState(null);
 
   const settingsCtx = useContext(SettingsContext);
 
@@ -45,7 +46,15 @@ const EditTour = ({ currentTour, showEditHandler }) => {
     currentTour.name = nameValue;
     currentTour.description = descriptionValue;
     currentTour.selectedExhibits = selectedExhibits;
+
+    setInfoMessage("Changes Saved!");
   };
+
+  setTimeout(() => {
+    if (infoMessage) {
+      setInfoMessage(null);
+    }
+  }, 5000);
 
   const filteredArray = _.differenceBy(allExhibits, selectedExhibits, "name");
 
@@ -113,6 +122,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
           Cancel
         </button>
       </div>
+      {<p className="info-message">{infoMessage}</p>}
     </form>
   );
 };

@@ -1,3 +1,7 @@
+.section-comments {
+  margin: 3rem auto;
+}
+
 .section-comments h1 {
   font-size: 3.5rem;
   border-bottom: 3px solid black;
@@ -27,5 +31,9 @@
 @media only screen and (max-width: 740px) {
   .section-comments h1 {
     font-size: 2.5rem;
+  }
+  .comment-box {
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }

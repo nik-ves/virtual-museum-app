@@ -24,7 +24,6 @@ const ExhibitCard = ({ params, exhibits }) => {
 
             <div className={classes["exhibit-text-box"]}>
               <h3>{formatedName(exhibit.name)}</h3>
-              {/* <h3>{averageGrade}</h3> */}
             </div>
           </Link>
         );

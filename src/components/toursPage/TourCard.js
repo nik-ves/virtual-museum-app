@@ -2,14 +2,11 @@ import { Link } from "react-router-dom";
 import classes from "./TourCard.module.css";
 import { AuthContext } from "../../context/auth-context";
 import { ToursContext } from "../../context/tours-context";
-import { useContext, useState } from "react";
-// import Rating from "@material-ui/lab/Rating";
+import { useContext } from "react";
 
 const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
   const { deleteTour } = useContext(ToursContext);
-
-  const [ratingValue, setRatingValue] = useState(0);
 
   const validateUser = currentUser.email === tour.maker;
 

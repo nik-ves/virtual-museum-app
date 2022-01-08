@@ -30,6 +30,12 @@ const SignInForm = () => {
     setErrorMessage("Incorrect login parameters!");
   };
 
+  setTimeout(() => {
+    if (errorMessage) {
+      setErrorMessage(null);
+    }
+  }, 5000);
+
   const emailClasses = emailHasError ? "form-control invalid" : "form-control";
 
   const passwordClasses = passwordHasError
@@ -72,7 +78,7 @@ const SignInForm = () => {
                 Sign In
               </button>
             </div>
-            {<p>{errorMessage}</p>}
+            {<p className="info-message">{errorMessage}</p>}
             <p className="form-question">
               No account? Create account <Link to="/sign-up">here</Link>.
             </p>

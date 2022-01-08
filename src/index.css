@@ -46,6 +46,11 @@ button {
   padding: 0 1rem;
 }
 
+.info-message {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
 .btn-profile {
   display: flex;
   font-size: 2rem;

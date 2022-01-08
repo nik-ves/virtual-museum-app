@@ -58,3 +58,10 @@
   justify-content: center;
   margin-top: 3rem;
 }
+
+@media only screen and (max-width: 330px) {
+  .form-control textarea {
+    width: 50rem;
+    margin-bottom: 2rem;
+  }
+}

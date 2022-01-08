@@ -112,6 +112,12 @@ const SignUpForm = () => {
   const emailClasses = formClasses(firstNameHasError);
   const passwordClasses = formClasses(firstNameHasError);
 
+  setTimeout(() => {
+    if (signupMessage) {
+      setSignupMessage(null);
+    }
+  }, 5000);
+
   return (
     <BackgroundImage>
       <Container>
@@ -221,7 +227,7 @@ const SignUpForm = () => {
               <button className="btn-general" type="submit">
                 Sign Up
               </button>
-              {<p>{signupMessage}</p>}
+              {<p className="info-message">{signupMessage}</p>}
               <p className="form-question">
                 Already have an account? Log in <Link to="/sign-in">here</Link>.
               </p>
