@@ -112,6 +112,7 @@ const SettingsSearch = (props) => {
             <option disabled hidden value=""></option>
             <option value="art">Art</option>
             <option value="history">History</option>
+            <option value="war">War</option>
           </select>
 
           <label htmlFor="exhibitType">Type of exhibits</label>
@@ -124,6 +125,8 @@ const SettingsSearch = (props) => {
             <option disabled hidden value=""></option>
             <option value="Masks">Masks</option>
             <option value="Vases">Vases</option>
+            <option value="Statues">Statues</option>
+            <option value="Pictures">Pictures</option>
           </select>
 
           <label htmlFor="exhibitNumber">Max number of exhibits</label>

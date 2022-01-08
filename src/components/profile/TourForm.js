@@ -7,6 +7,7 @@ import ExhibitCard from "./ExhibitCard";
 const TourForm = ({ allExhibits }) => {
   const [nameValue, setNameValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
+  const [infoMessage, setInfoMessage] = useState(null);
 
   const toursCtx = useContext(ToursContext);
   const { currentUser } = useContext(AuthContext);
@@ -22,8 +23,21 @@ const TourForm = ({ allExhibits }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (toursCtx.selectedExhibits.length <= 3) {
+      setInfoMessage("You need to select at least 3 exhibits!");
+      return;
+    }
+
     toursCtx.makeTour(nameValue, descriptionValue, currentUser.email);
+
+    setInfoMessage("Tour successfully created!");
   };
+
+  setTimeout(() => {
+    if (infoMessage) {
+      setInfoMessage(null);
+    }
+  }, 5000);
 
   return (
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
@@ -93,6 +107,7 @@ const TourForm = ({ allExhibits }) => {
           Make a Tour
         </button>
       </div>
+      {<p className="info-message">{infoMessage}</p>}
     </form>
   );
 };

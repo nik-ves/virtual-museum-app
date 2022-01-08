@@ -9,6 +9,7 @@ const TourCard = ({ tour, showEditHandler }) => {
   const { deleteTour } = useContext(ToursContext);
 
   const validateUser = currentUser.email === tour.maker;
+  const validateTour = tour.status === "Finished";
 
   const tourPrice = tour.selectedExhibits
     .map((exhibit) => {
@@ -49,7 +50,7 @@ const TourCard = ({ tour, showEditHandler }) => {
 
       {validateUser && (
         <div className={classes["tour-actions"]}>
-          {validateUser && (
+          {!validateTour && (
             <button
               className="btn-general"
               onClick={showEditHandler.bind(this, tour)}
@@ -57,14 +58,12 @@ const TourCard = ({ tour, showEditHandler }) => {
               Edit Tour
             </button>
           )}
-          {validateUser && (
-            <button
-              className="btn-general"
-              onClick={deleteTour.bind(this, tour.name)}
-            >
-              Delete Tour
-            </button>
-          )}
+          <button
+            className="btn-general"
+            onClick={deleteTour.bind(this, tour.name)}
+          >
+            Delete Tour
+          </button>
         </div>
       )}
     </section>
