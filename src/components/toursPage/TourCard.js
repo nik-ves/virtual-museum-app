@@ -39,11 +39,9 @@ const TourCard = ({ tour, showEditHandler }) => {
           </div>
 
           <div className={classes["tour-info"]}>
-            {/* <p>Description: {tour.description}</p> */}
             <p>Price: {tourPrice} EUR</p>
             <p>Length: {tourTime} min</p>
             <p>Status: {tour.status}</p>
-            {/* <p>By: {tour.maker}</p> */}
           </div>
         </div>
       </Link>

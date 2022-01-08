@@ -88,6 +88,9 @@
     padding: 0.5rem;
     width: 11rem;
   }
+  .tour-name {
+    font-size: 3rem;
+  }
   .tour-info {
     padding: 0 1rem;
     font-size: 1.5rem;
