@@ -3,6 +3,7 @@ import { SettingsContext } from "../../context/settings-context";
 import classes from "./EditTour.module.css";
 import ExhibitCard from "./ExhibitCard";
 import useEdit from "../../hooks/use-edit";
+import useModal from "../../hooks/use-modal";
 const _ = require("lodash");
 
 const EditTour = ({ currentTour, showEditHandler }) => {
@@ -15,6 +16,11 @@ const EditTour = ({ currentTour, showEditHandler }) => {
   const [infoMessage, setInfoMessage] = useState(null);
 
   const settingsCtx = useContext(SettingsContext);
+
+  const { showModal, showModalHandler, modalBox } = useModal(
+    "Are you sure you want to exit? Changes will not be saved!",
+    showEditHandler
+  );
 
   const sum = [];
   settingsCtx.settingsList.forEach((setting) => {
@@ -60,6 +66,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
 
   return (
     <form onSubmit={submitHandler} className={classes["tour-form"]}>
+      {showModal && modalBox}
       <h1>Edit Your Tour</h1>
 
       <h2>Select new exhibits</h2>
@@ -118,7 +125,7 @@ const EditTour = ({ currentTour, showEditHandler }) => {
           Save Changes
         </button>
 
-        <button className="btn-cancel" onClick={showEditHandler}>
+        <button type="button" className="btn-cancel" onClick={showModalHandler}>
           Cancel
         </button>
       </div>

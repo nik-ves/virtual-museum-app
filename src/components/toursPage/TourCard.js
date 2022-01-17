@@ -4,9 +4,16 @@ import { AuthContext } from "../../context/auth-context";
 import { ToursContext } from "../../context/tours-context";
 import { useContext } from "react";
 
+import useModal from "../../hooks/use-modal";
+
 const TourCard = ({ tour, showEditHandler }) => {
   const { currentUser } = useContext(AuthContext);
   const { deleteTour } = useContext(ToursContext);
+
+  const { showModal, showModalHandler, modalBox } = useModal(
+    "Are you sure you want to delete this tour?",
+    deleteTour.bind(this, tour.name)
+  );
 
   const validateUser = currentUser.email === tour.maker;
   const validateTour = tour.status === "Finished";
@@ -28,43 +35,44 @@ const TourCard = ({ tour, showEditHandler }) => {
     });
 
   return (
-    <section className={classes["toursTest"]}>
-      <Link
-        to={`/tours/${tour.name.split(" ").join("-").toLowerCase()}`}
-        className={classes["tour-link"]}
-      >
-        <div className={classes["tour-content"]}>
-          <div className={classes["tour-name"]}>
-            <p>{tour.name}</p>
-          </div>
+    <>
+      {showModal && modalBox}
 
-          <div className={classes["tour-info"]}>
-            <p>Price: {tourPrice} EUR</p>
-            <p>Length: {tourTime} min</p>
-            <p>Status: {tour.status}</p>
-          </div>
-        </div>
-      </Link>
+      <section className={classes["toursTest"]}>
+        <Link
+          to={`/tours/${tour.name.split(" ").join("-").toLowerCase()}`}
+          className={classes["tour-link"]}
+        >
+          <div className={classes["tour-content"]}>
+            <div className={classes["tour-name"]}>
+              <p>{tour.name}</p>
+            </div>
 
-      {validateUser && (
-        <div className={classes["tour-actions"]}>
-          {!validateTour && (
-            <button
-              className="btn-general"
-              onClick={showEditHandler.bind(this, tour)}
-            >
-              Edit Tour
+            <div className={classes["tour-info"]}>
+              <p>Price: {tourPrice} EUR</p>
+              <p>Length: {tourTime} min</p>
+              <p>Status: {tour.status}</p>
+            </div>
+          </div>
+        </Link>
+
+        {validateUser && (
+          <div className={classes["tour-actions"]}>
+            {!validateTour && (
+              <button
+                className="btn-general"
+                onClick={showEditHandler.bind(this, tour)}
+              >
+                Edit Tour
+              </button>
+            )}
+            <button className="btn-general" onClick={showModalHandler}>
+              Delete Tour
             </button>
-          )}
-          <button
-            className="btn-general"
-            onClick={deleteTour.bind(this, tour.name)}
-          >
-            Delete Tour
-          </button>
-        </div>
-      )}
-    </section>
+          </div>
+        )}
+      </section>
+    </>
   );
 };
 

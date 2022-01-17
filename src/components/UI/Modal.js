@@ -1,12 +1,29 @@
-const Modal = (props) => {
-  return (
-    <section className="backdrop">
-      <div className="modal">
-        <p>You have to be logged in to access this!</p>
+import ReactDom from "react-dom";
 
-        <button>Okay</button>
+const Modal = (props) => {
+  const modalConfirm = () => {
+    props.onConfirm();
+    props.onCancel();
+  };
+
+  return ReactDom.createPortal(
+    <>
+      <div className="backdrop" onClick={props.onCancel}></div>
+
+      <div className="modal">
+        <p>{props.message}</p>
+
+        <div className="modal-actions">
+          <button className="btn-general" onClick={modalConfirm}>
+            Yes
+          </button>
+          <button className="btn-general" onClick={props.onCancel}>
+            Cancel
+          </button>
+        </div>
       </div>
-    </section>
+    </>,
+    document.getElementById("modal")
   );
 };
 

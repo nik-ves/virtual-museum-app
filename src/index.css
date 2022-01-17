@@ -114,14 +114,14 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 290;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
   background-color: rgba(0, 0, 0, 0.75);
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -132,18 +132,25 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 50rem;
+  max-width: 100%;
+  z-index: 11;
+  border: 2px solid white;
 }
 
 .modal p {
   font-size: 2.5rem;
   color: white;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.modal button {
-  width: 5rem;
-  margin: 0 auto;
-  font-size: 2rem;
-  margin-top: 2rem;
+.modal-actions {
+  display: flex;
+}
+
+.modal-actions button {
+  margin: auto 3rem;
 }
 
 /* =========================== */

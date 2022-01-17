@@ -4,10 +4,16 @@ import BackgroundImage from "../UI/BackroundImage";
 import classes from "./EditProfile.module.css";
 import useEdit from "../../hooks/use-edit";
 import Container from "../UI/Container";
+import useModal from "../../hooks/use-modal";
 
 const EditProfile = (props) => {
   const authCtx = useContext(AuthContext);
   const currentUser = authCtx.currentUser;
+
+  const { showModal, showModalHandler, modalBox } = useModal(
+    "Are you sure you want to exit? Changes will not be saved!",
+    props.isEditing
+  );
 
   const {
     value: firstNameValue,
@@ -63,6 +69,7 @@ const EditProfile = (props) => {
 
   return (
     <BackgroundImage>
+      {showModal && modalBox}
       <Container>
         <section className={classes["form-content"]}>
           <form onSubmit={submitHandler} className={classes["form-edit"]}>
@@ -131,7 +138,11 @@ const EditProfile = (props) => {
               <button className="btn-save" type="submit">
                 Save Changes
               </button>
-              <button className="btn-cancel" onClick={props.isEditing}>
+              <button
+                onClick={showModalHandler}
+                type="button"
+                className="btn-cancel"
+              >
                 Cancel
               </button>
             </div>
