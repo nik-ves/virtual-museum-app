@@ -34,14 +34,17 @@ const MainNavigation = () => {
     <header className={classes.header}>
       <Container>
         <div className={classes.content}>
-          {showHamburgerMenu && (
-            <HamburgerMenu
-              showHamburgerMenuHandler={showHamburgerMenuHandler}
+          {isLoggedIn && (
+            <ProfileHamburgerMenu
+              isActive={showProfileHamburger}
+              showProfileHamburgerHandler={showProfileHamburgerHandler}
             />
           )}
-          {showProfileHamburger && (
-            <ProfileHamburgerMenu
-              showProfileHamburgerHandler={showProfileHamburgerHandler}
+
+          {isLoggedIn && (
+            <HamburgerMenu
+              isActive={showHamburgerMenu}
+              showHamburgerMenuHandler={showHamburgerMenuHandler}
             />
           )}
 

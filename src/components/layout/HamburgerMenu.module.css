@@ -3,7 +3,7 @@
   position: fixed;
   width: 60vw;
   height: 100vh;
-  background-color: rgba(43, 43, 43, 0.9);
+  background-color: rgba(43, 43, 43, 0.95);
   top: 6.4rem;
   right: 0;
   list-style-type: none;
@@ -31,6 +31,34 @@
 .hamburger-menu a.active {
   color: #fff;
   border-bottom: 3px solid #fff;
+}
+
+.hamburger-open {
+  animation: slideIn 0.4s forwards;
+}
+
+.hamburger-close {
+  animation: slideOut 0.4s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @media only screen and (min-width: 768px) {

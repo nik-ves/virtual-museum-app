@@ -8,8 +8,7 @@ import { CgProfile } from "react-icons/cg";
 const DesktopNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const authCtx = useContext(AuthContext);
-  const isLoggedIn = authCtx.isLoggedIn;
+  const { isLoggedIn } = useContext(AuthContext);
 
   const isOpenHandler = () => {
     setIsOpen(!isOpen);

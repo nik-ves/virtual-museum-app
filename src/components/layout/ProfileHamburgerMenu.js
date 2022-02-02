@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth-context";
 import classes from "./ProfileHamburgerMenu.module.css";
 import useModal from "../../hooks/use-modal";
+import { CSSTransition } from "react-transition-group";
 
 const ProfileHamburgerMenu = (props) => {
   const authCtx = useContext(AuthContext);
-  const isLoggedIn = authCtx.isLoggedIn;
 
   const { showModal, showModalHandler, modalBox } = useModal(
     "Are you sure you want to log out?",
@@ -17,7 +17,16 @@ const ProfileHamburgerMenu = (props) => {
     <>
       {showModal && modalBox}
 
-      {isLoggedIn && (
+      <CSSTransition
+        in={props.isActive}
+        timeout={400}
+        mountOnEnter
+        unmountOnExit
+        classNames={{
+          enterActive: classes["profile-open"],
+          exitActive: classes["profile-close"],
+        }}
+      >
         <ul className={classes["hamburger-menu"]}>
           <li>
             <NavLink
@@ -54,7 +63,7 @@ const ProfileHamburgerMenu = (props) => {
             <button>Logout</button>
           </li>
         </ul>
-      )}
+      </CSSTransition>
     </>
   );
 };
