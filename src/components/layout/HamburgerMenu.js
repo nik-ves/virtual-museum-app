@@ -4,7 +4,6 @@ import { AuthContext } from "../../context/auth-context";
 import { CSSTransition } from "react-transition-group";
 
 import classes from "./HamburgerMenu.module.css";
-import { GiBowlingPropulsion } from "react-icons/gi";
 
 const HamburgerMenu = (props) => {
   const authCtx = useContext(AuthContext);

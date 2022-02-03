@@ -33,11 +33,27 @@ const TourForm = ({ allExhibits }) => {
     setInfoMessage("Tour successfully created!");
   };
 
-  setTimeout(() => {
-    if (infoMessage) {
+  if (infoMessage) {
+    setTimeout(() => {
       setInfoMessage(null);
-    }
-  }, 5000);
+    }, 5000);
+  }
+
+  // const tourPrice = tour.selectedExhibits
+  //   .map((exhibit) => {
+  //     return exhibit.price;
+  //   })
+  //   .reduce((prev, cur) => {
+  //     return prev + cur;
+  //   });
+
+  // const tourTime = tour.selectedExhibits
+  //   .map((exhibit) => {
+  //     return exhibit.time;
+  //   })
+  //   .reduce((prev, cur) => {
+  //     return prev + cur;
+  //   });
 
   return (
     <form onSubmit={submitHandler} className={classes["tour-form"]}>

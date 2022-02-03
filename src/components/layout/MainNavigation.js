@@ -34,6 +34,7 @@ const MainNavigation = () => {
     <header className={classes.header}>
       <Container>
         <div className={classes.content}>
+          {/* PROFILE MENU */}
           {isLoggedIn && (
             <ProfileHamburgerMenu
               isActive={showProfileHamburger}
@@ -41,13 +42,13 @@ const MainNavigation = () => {
             />
           )}
 
-          {isLoggedIn && (
-            <HamburgerMenu
-              isActive={showHamburgerMenu}
-              showHamburgerMenuHandler={showHamburgerMenuHandler}
-            />
-          )}
+          {/* HAMBURGER MENU */}
+          <HamburgerMenu
+            isActive={showHamburgerMenu}
+            showHamburgerMenuHandler={showHamburgerMenuHandler}
+          />
 
+          {/* PROFILE ICON */}
           {isLoggedIn && (
             <div className={classes["profile-btn-box"]}>
               <CgProfile
@@ -58,12 +59,14 @@ const MainNavigation = () => {
             </div>
           )}
 
+          {/* LOGO ICON */}
           <div className={classes["logo-box"]}>
             <NavLink to="/" onClick={hideHamburgers}>
               <h1>Virtual Museum</h1>
             </NavLink>
           </div>
 
+          {/* HAMBURGER ICON */}
           <div className={classes["hamburger-btn-box"]}>
             <GiHamburgerMenu
               onClick={showHamburgerMenuHandler}
