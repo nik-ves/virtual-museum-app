@@ -19,17 +19,14 @@ import TourDetails from "./components/toursPage/TourDetails";
 import MyTours from "./pages/MyTours";
 import NotFound from "./pages/NotFound";
 import Fix from "./components/UI/Fix";
-import DialogFlowBot from "./components/UI/DialogFlowBot";
 
 function App() {
-  const authCtx = useContext(AuthContext);
-  const isLoggedIn = authCtx.isLoggedIn;
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <Fragment>
       <Fix />
       <MainNavigation />
-      {isLoggedIn && <DialogFlowBot />}
 
       <ScrollToTop />
       <Switch>
